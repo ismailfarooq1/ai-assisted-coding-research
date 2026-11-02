@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "run_id": null,
+  "experiment_id": "pilot-memory",
+  "task_id": null,
+  "repetition": null,
+  "condition": null,
+  "allowed_conditions": [
+    "no-handover",
+    "plain-handover",
+    "structured-handover"
+  ],
+  "status": "not-started",
+  "protocol_version": null,
+  "protocol_frozen_at": null,
+  "task_definition_path": null,
+  "started_at": null,
+  "ended_at": null,
+  "benchmark": {
+    "id": null,
+    "source": null,
+    "license": null,
+    "base_commit": null,
+    "checkpoint_id": null,
+    "checkpoint_commit": null,
+    "checkpoint_patch_path": null
+  },
+  "agent": {
+    "name": null,
+    "version": null,
+    "model_provider": null,
+    "model_id": null,
+    "model_settings": {},
+    "tools": [],
+    "network_policy": null
+  },
+  "environment": {
+    "os": null,
+    "runtime_versions": {},
+    "dependency_lockfile_path": null,
+    "isolation_method": null,
+    "context_reset_method": null
+  },
+  "execution": {
+    "randomization_seed": null,
+    "order_within_checkpoint": null,
+    "token_budget": null,
+    "time_limit_seconds": null,
+    "tool_call_limit": null,
+    "retry_policy": null,
+    "attempt_number": null
+  },
+  "context": {
+    "prompt_path": null,
+    "repository_instructions_paths": [],
+    "handover_path": null,
+    "handover_template_version": null,
+    "handover_tokens": null,
+    "content_audit_path": null,
+    "preparation_record_path": null,
+    "agent_visible_validation_feedback": null
+  },
+  "evaluation": {
+    "status": "not-evaluated",
+    "evaluator_version": null,
+    "task_success": null,
+    "acceptance_passed": null,
+    "acceptance_total": null,
+    "architecture_violations": null,
+    "output_path": null
+  },
+  "usage": {
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached_input_tokens": null,
+    "cached_tokens_included_in_input": null,
+    "tool_calls": null,
+    "elapsed_seconds": null,
+    "raw_usage_path": null
+  },
+  "cost": {
+    "continuation_amount": null,
+    "currency": null,
+    "price_source": null,
+    "price_date": null,
+    "calculation_notes": null,
+    "preparation_cost_record_path": null
+  },
+  "artifacts": {
+    "transcript_path": null,
+    "changes_patch_path": null,
+    "notes_path": null
+  },
+  "deviations": [],
+  "missing_data_notes": [],
+  "redactions": []
+}
