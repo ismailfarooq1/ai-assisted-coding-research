@@ -1,20 +1,23 @@
-# Research log
+# Memos research log
 
-## 2026-10-19 — Workspace initialized
+## 2026-11-03 — Current direction
 
-- Preserved the user-supplied research outline in `sources/original-research-outline.txt`.
-- Created a local folder structure, draft study plan, pilot protocol, and reusable templates.
-- Chose interrupted-task recovery as the draft starting scope, following the outline's recommendation.
-- Kept the handover pilot separate from the broader normal-repository / AGENTS.md / full-framework evaluation.
-- No papers verified, benchmark selected, runner implemented, or experiments executed.
+- Study development benefits/resources and the effort to maintain accurate, consistent project context.
+- Selected Memos; inspected documentation at `b40d8a7b573774c52b022c8d6537d6baf2129dc0`. This is provenance, not a validated executable benchmark.
+- Reference workflows are existing project practice and deliberately prepared context files. The alternative architecture and final method count remain open; retrieval is not required.
+- Prepared the research-design white paper, literature guidance, protocol and task/preparation/maintenance/resource templates. No Memos experiments have been run.
 
-Next: verify the literature, select a benchmark, and finalize task definitions and the pilot controls.
+## 2026-11-03 — Workspace cleanup
 
-For future entries, record the date, decision, rationale, affected artifacts, and any implications for already collected data.
+At the user's request, removed superseded experiments, their implementation/results, the old research outline and archives, obsolete handover materials, legacy integrity records and generated build files. Updated navigation and the literature index. Retained the current Memos study, relevant research background, templates and white-paper deliverables. The PDF, LaTeX, bibliography and Makefile were unchanged.
 
-## 2026-10-19 — Initial literature scoping
+Next: resolve [open decisions](../research/open-decisions.md) before implementing the Memos evaluation.
 
-- Added a focused reading guide and five paper records, based on primary abstract/publication/project pages.
-- Full-text review, replication, and artifact inspection remain pending.
-- Found direct overlap between Handoff Debt and the proposed interrupted-task pilot. Read this work before finalizing the protocol; potential extensions are candidates, not established research gaps.
-- No experiment protocol has been frozen or executed.
+## 2026-11-03 — Three experiment projects set up
+
+- Created existing-workflow and prepared-context projects with independent Memos copies at candidate commit `b40d8a7b573774c52b022c8d6537d6baf2129dc0`, separate Git metadata and no remotes. No new Git commits were created.
+- Added a task-independent, source-linked prepared context pack and appended its loading notice only in method two. It is provisional and has no task solution or evaluator material.
+- Created proposed-method as an explicitly disabled shell for later discussion; no retrieval or other architecture implemented.
+- Added shared configuration, task/evaluator boundaries, preparation manifests, environment reporting and setup safeguards. Physical copies do not establish OS-enforced agent isolation; no agent launcher is included.
+- Pinned source declarations require Go 1.27.2, Node >=24 and pnpm 11.0.1. Go and pnpm are missing locally, so application dependencies/build/tests remain unvalidated. No agent experiments or Memos task results were produced.
+- Seven setup safeguard tests passed. Both starting trees passed source/context checks; the third-method setup was refused as intended. These are scaffold checks, not Memos application or agent performance results.

@@ -1,23 +1,21 @@
-# Paper review: <verified title>
+# Paper review template
 
-Status: unverified / verified / reviewed
+Status: unfilled recording aid.
 
-- Authors:
-- Publication and year:
-- DOI or primary-source URL:
-- Accessed on:
-- Local source path, if retained:
+- Verified title/authors/year/version and primary URL/DOI:
+- Publication status and evidence (conference, workshop, journal, preprint):
+- Metadata checked date:
+- Paper sections actually reviewed:
+- Artifact access, inspection, execution and reproduction status (separate):
 
-## Research question and method
+## Question, method and evidence
 
-## Dataset, models, and experimental conditions
+Record tasks/repos/agents, information available, preparation/loading, baselines, limits and independent evaluation. Distinguish whole-workflow comparisons from component ablations.
 
-## Metrics and main findings
+## Findings and uncertainty
 
-Separate the authors' findings from our interpretation. Include page, section, or table references for specific claims.
+Record correctness, regressions, tokens/time, preparation/update resources and observed human effort where measured. Link sections/tables. Separate author claims, measured evidence and our inference.
 
-## Limitations and threats to validity
+## Limitations and current relevance
 
-## Relevance to RQ1–RQ4 and our design
-
-## Follow-up questions
+Explain relevance to RQ1 benefits/resources or RQ2 context accuracy/consistency/effort. Do not infer missing measurements or prove novelty from an abstract. Record unresolved questions and any design decision supported by the evidence.

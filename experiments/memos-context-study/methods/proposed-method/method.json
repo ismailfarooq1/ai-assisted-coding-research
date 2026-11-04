@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "proposed-method",
+  "setup_enabled": false,
+  "execution_enabled": false,
+  "status": "shell",
+  "source": "../../shared/study.json",
+  "native_project_context": null,
+  "additional_context": null,
+  "implementation": null,
+  "knowledge_architecture": null
+}

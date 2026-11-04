@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "prepared-context",
+  "setup_enabled": true,
+  "execution_enabled": false,
+  "status": "project-scaffold",
+  "source": "../../shared/study.json",
+  "native_project_context": "retained",
+  "additional_context": "context/*.md copied to project/.project-context; source AGENTS.md body retained with appended loading notice",
+  "implementation": "Memos working copy and setup audit",
+  "knowledge_architecture": null
+}

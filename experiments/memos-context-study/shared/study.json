@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "project": {
+    "repository": "https://github.com/usememos/memos.git",
+    "candidate_commit": "b40d8a7b573774c52b022c8d6537d6baf2129dc0",
+    "git_tree": "9f86f8a96542b5724d7968c70e7cfed3d4ee06a1",
+    "environment_validated": false
+  },
+  "runtime_requirements": {
+    "go": "1.27.2",
+    "node": ">=24",
+    "pnpm": "11.0.1",
+    "source_files": [
+      "go.mod",
+      "web/package.json"
+    ]
+  },
+  "method_slots": [
+    "existing-workflow",
+    "prepared-context",
+    "proposed-method"
+  ],
+  "agent_model": null,
+  "agent_configuration": null,
+  "execution_budget": null,
+  "task_set": null,
+  "repetitions": null,
+  "scored_execution_enabled": false
+}

@@ -1,9 +1,5 @@
 # Literature review
 
-Start with [the focused reading guide](reading-guide.md), which proposes four review themes and five starting papers for the interrupted-task recovery study.
+The [reading guide](reading-guide.md) prioritizes project-context practice, experimental evaluation and maintenance. [review.csv](review.csv) indexes the relevant context-engineering studies, evaluation background and structural references. Record IDs remain stable. [paper-template.md](paper-template.md) separates publication, paper review and artifact verification.
 
-Use `review.csv` as the paper index and `paper-template.md` for detailed notes. Source-page checks and full paper reviews are separate statuses.
-
-As of 2026-10-19, primary pages for five papers have been checked. Full-text reviews have not been completed. The source outline's three initial leads are now included alongside Handoff Debt and MemTrace.
-
-Handoff Debt directly overlaps the draft pilot. Read its full methodology and related work before finalizing the study or making novelty claims. The original research outline remains unchanged in `sources/`.
+Current focus: RQ1 workflow benefits/resources and RQ2 context accuracy/maintenance effort. This is a focused evidence review, not a systematic search. Metadata was checked against primary paper/author/publisher pages on 2026-11-03. An arXiv posting is not evidence of peer review; paper reading is not artifact reproduction.

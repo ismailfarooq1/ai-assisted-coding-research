@@ -1,1 +1,0 @@
-run_id,task_id,repetition,checkpoint_id,condition,protocol_version,status,task_success,acceptance_passed,acceptance_total,architecture_violations,input_tokens,output_tokens,cached_input_tokens,tool_calls,elapsed_seconds,continuation_cost,cost_currency,manifest_path,notes

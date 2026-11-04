@@ -1,9 +1,14 @@
-# Proposed framework
+# Context-workflow framework
 
-Status: design placeholder. SADE is the provisional name used by the source outline; no implementation or benefits are established.
+Status: evaluation design; the proposed method architecture is undecided.
 
-Start with `templates/handover.md` for the memory pilot. Keep this candidate template versioned and freeze the tested version before scored runs. It is not an instruction to expose research materials to benchmark agents.
+Reference workflows are existing Memos practice and deliberately prepared context files. Native instructions and documentation remain available in both. Record additional content and delivery differences. The shared structure is orchestration: pinned inputs, isolated executions, independent evaluation and resource accounting. It is not a knowledge-base implementation. See the [current protocol](../experiments/memos-context-study/protocol.md).
 
-For a plain-text control, convey the same factual content as continuous prose under the same budget. Define the exact construction and validation procedure in the pilot protocol. No-handover runs receive neither form.
+## Current recording templates
 
-Future components may include project knowledge, architecture descriptions, selective retrieval, and validation feedback. Add them only as explicit experimental factors so their effects can be distinguished.
+- [Task](templates/task.md): agent requirements and separate evaluator evidence.
+- [Context preparation](templates/context-preparation.md): sources, construction, exposure and review.
+- [Maintenance observation](templates/maintenance-observation.md): stale claims, repairs and observed effort.
+- [Resources](templates/resource-record.md): phase-level usage, time, effort and missingness.
+
+These are unfilled recording aids, not frozen inputs or an adopted context schema. Keep research templates outside benchmark-agent access. Three method slots are created in the [experiment projects](../experiments/memos-context-study/README.md); the third remains a disabled shell. Retrieval is not required. The initial prepared-file pack is available for review; these research recording templates are separate from agent-visible project context.

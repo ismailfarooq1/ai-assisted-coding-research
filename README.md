@@ -1,39 +1,36 @@
 # AI-assisted coding research
 
-A local workspace for investigating whether structured project knowledge helps AI coding agents complete software engineering tasks reliably and efficiently.
+**Current study: Memos project-context workflows. Research design and project setup, 2026-11-03; no Memos experiments executed.**
 
-**Status:** research setup, 2026-10-19. No experiments have been run and no results have been collected. The first study focuses on recovery after a conversation reset.
+We investigate (1) the benefits and resource costs of project-context methods for development tasks, and (2) the effort to keep context accurate and consistent as code changes. Compare complete workflows, accounting for preparation, execution and maintenance. Methods may supply different information; inventory that difference and its costs.
 
-## Workspace map
-
-| Folder | What belongs here |
-| --- | --- |
-| `sources/` | Original material, preserved separately from our interpretation |
-| `research/` | Research questions, scope, and literature reviews |
-| `framework/` | Proposed knowledge structure and handover templates |
-| `benchmarks/` | Benchmark application specifications and repository provenance |
-| `experiments/` | Protocols, task definitions, run records, and raw evidence |
-| `analysis/` | Analysis scripts, derived tables, and figures |
-| `reports/` | Pilot reports, papers, and presentation material |
-| `notes/` | Dated working notes and decisions |
+Memos is selected because it already maintains agent instructions and project documentation. The inspected documentation commit is provenance, not an experimentally validated snapshot. The reference methods are the existing project workflow and deliberately prepared context files. Three experiment slots are set up: existing workflow, prepared context files, and a disabled shell for the proposed alternative. Its architecture remains for later discussion; retrieval is not required.
 
 ## Start here
 
-1. Read [the research plan](research/plan.md).
-2. Review [the draft pilot protocol](experiments/pilot-memory/protocol.md).
-3. Select a benchmark application using [these requirements](benchmarks/README.md).
-4. Define five interrupted-development tasks using [the task template](experiments/pilot-memory/tasks/task-template.md).
-5. Verify the literature and finalize the protocol before collecting scored runs.
+1. [Research plan](research/plan.md) and [open decisions](research/open-decisions.md).
+2. [Memos selection and provenance](benchmarks/memos/README.md).
+3. [The three experiment projects](experiments/memos-context-study/README.md), [shared protocol](experiments/memos-context-study/protocol.md) and [templates](framework/README.md).
+4. [Literature guide](research/literature/reading-guide.md).
+5. [White paper and build instructions](reports/memos-context-white-paper/README.md).
+
+## Workspace map
+
+| Folder | Purpose |
+| --- | --- |
+| `research/` | Current questions, literature and unresolved decisions |
+| `framework/` | Workflow definitions and recording templates |
+| `benchmarks/` | Application provenance and rationale |
+| `experiments/` | Three method projects, shared configuration, setup tools and draft protocol |
+| `analysis/` | Analysis rules and future derived evidence |
+| `reports/` | Research-design paper, sources and build instructions |
+| `notes/` | Dated decisions and verification records |
 
 ## Working conventions
 
-- Keep primary evidence unchanged; put interpretations and derived data in separate files.
-- Use Markdown for documents, CSV for tables, and JSON for machine-readable metadata.
-- Use IDs such as `T01` for tasks and `pilot-memory_T01_R01_structured-handover` for runs.
-- Record dates as `YYYY-MM-DD`; include a timezone in timestamps.
-- Mark documents as draft until their decisions are settled. Log protocol changes and deviations.
-- Never treat the outline's example numbers as measurements or its references as verified citations.
-- Keep this research workspace outside agent-visible benchmark checkouts. Hidden tests, reference solutions, and research notes must not leak into experimental context.
-- Store data locally here. Do not commit credentials, private prompts, or sensitive logs; keep sanitized evidence and document any redactions.
-
-This scaffold provides storage and study templates. The benchmark application, agent runner, tests, and analysis code still need to be built or selected.
+- Preserve primary evidence; keep interpretations and derived data separate.
+- Freeze project, task, context and evaluator inputs before scored execution. Keep hidden tests and reference solutions outside agent and preparer access.
+- Isolate workspaces, conversations, caches and writable state. Do not expose another method's outputs or conclusions.
+- Record failed attempts, missing measurements and deviations. Unobserved human effort and unavailable monetary costs are unknown, not zero.
+- Distinguish source preparation, validated application setup and measured outcomes. Two source working copies are prepared; Memos builds/tests and agent experiments remain unvalidated.
+- Keep credentials and sensitive data out of source control. No commits or publication are included in this revision.

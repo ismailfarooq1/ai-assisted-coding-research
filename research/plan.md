@@ -1,46 +1,47 @@
-# Research plan
+# Research plan: project-context workflows in Memos
 
-Status: draft · Created: 2026-10-19
-
-## Overall question
-
-Can a structured development environment help AI coding agents build and maintain large software projects more reliably, efficiently, and consistently than conventional environments?
-
-The aim is to find out whether, when, and why a proposed framework helps. Null or negative findings are valid outcomes.
+Status: research design and experiment scaffolding, revised 2026-11-03. No Memos experiments executed.
 
 ## Research questions
 
-| ID | Question | Stage |
-| --- | --- | --- |
-| RQ1 — Memory | Does persistent structured project knowledge improve recovery after conversational context is reset? | First pilot |
-| RQ2 — Architecture | Does explicit architectural knowledge reduce violations of software design constraints? | Later study |
-| RQ3 — Efficiency | Does selective retrieval reduce tokens, cost, or time while preserving correctness? | Later study |
-| RQ4 — Scalability | How does effectiveness change with repository size, dependency depth, and cross-module interactions? | Later study |
+| ID | Question |
+| --- | --- |
+| RQ1 | What benefits and resource costs do project-context methods produce when coding agents perform development tasks? |
+| RQ2 | How much effort is required to keep that context accurate and consistent as the project changes? |
 
-## First study
+Compare complete workflows, including context creation and upkeep. Information may differ; account for its content, delivery and costs rather than imposing equal-information controls. This comparison cannot by itself attribute an effect to formatting, retrieval or extra information alone.
 
-Compare interrupted-task recovery with no handover, a plain-text handover, and a structured handover. Hold ordinary repository instructions constant across these conditions. The incremental comparison of structured versus plain-text handover is the primary comparison; it tests whether organization adds value beyond providing a handover at all.
+Memos is selected; see [provenance](../benchmarks/memos/README.md). Commit `b40d8a7b573774c52b022c8d6537d6baf2129dc0` identifies inspected documentation, not a validated executable benchmark.
 
-See `../experiments/pilot-memory/protocol.md` for controls, metrics, and unresolved design choices.
+## Reference workflows
 
-## Broader evaluation, after the pilot
+- **Existing project workflow:** retain native instructions, documentation and ordinary repository tools. Record what the selected agent automatically loads and discovers. This is not a no-context condition.
+- **Deliberately prepared context files:** retain the existing workflow and add prepared, versioned project context. Record allowed sources, construction, review, exposure, size and resources. The preparation rules must be selected and frozen before scored runs.
 
-The original proposal also compares a normal repository (A), a repository with AGENTS.md (B), and a full structured environment, provisionally called SADE (C). This is a separate design from the first pilot. Do not conflate the condition labels or infer full-framework benefits from a handover-only study.
+Three experiment slots are now created: existing workflow, prepared context files, and a disabled proposed-method shell. The first two have independent Memos working copies and setup checks. The prepared-file workflow has an initial task-independent pack for review; its final construction rules must still be frozen before scored work. The third method's knowledge schema, retrieval architecture and implementation remain undecided. No method is presumed superior. See [experiment projects](../experiments/memos-context-study/README.md).
 
-Later studies may investigate selective retrieval, architectural feedback, individual component ablations, repository complexity, and generalization across applications or models. Preserve identical objective evaluation across conditions and explicitly control agent access to feedback.
+## Shared evaluation flow
+
+Pinned project and task inputs → sealed method context → fresh isolated executions → independent evaluation → resource-linked comparison. See the [draft protocol](../experiments/memos-context-study/protocol.md).
+
+Each execution starts from the same source state and task requirements. All methods receive the same evaluation, tool policy and execution limits once selected. Preparation can differ but must be auditable. Separate workspaces, conversations, caches and writable storage prevent cross-method learning. Hidden tests and reference patches remain unavailable to agents and context preparers. The evaluator receives final artifacts after execution ends.
+
+For RQ2, observe common project changes and each workflow's own context updates as paired maintenance episodes. Keep these separate from independent task executions. Carry forward only the workflow's intended context history. Track stale claims, contradictions, repairs and review effort. Agent runtime is not a proxy for human labor.
+
+## Measures and analysis
+
+Record task correctness, original regressions, token categories, elapsed time, preparation, maintenance and human effort where observed. Include failed attempts and timeouts. Keep raw usage semantics; cached input and reasoning may overlap other categories and must not be counted twice. Tokens are not monetary costs. Separate initial and recurring resources. See [analysis guidance](../analysis/README.md).
+
+Use task-level paired comparisons, denominators and uncertainty appropriate to the eventual sample. Repeated attempts are not independent tasks. Models, tasks, sample sizes, budgets and thresholds remain open in the [internal decision register](open-decisions.md). A small project study does not establish corporate savings or general productivity effects.
 
 ## Milestones
 
-- [x] Preserve the original outline and create the workspace.
-- [ ] Verify starting literature and document the evidence gap.
-- [ ] Choose one benchmark application and record a pinned source revision.
-- [ ] Define five tasks, interruption checkpoints, acceptance tests, and architecture checks.
-- [ ] Finalize handover construction rules, isolation, budgets, and scoring before scored runs.
-- [ ] Build and smoke-test the two-session runner and evidence logger.
-- [ ] Run the pilot and assess feasibility, variance, and measurement quality.
-- [ ] Analyze outcomes, costs, memory errors, and failure cases.
-- [ ] Write the pilot report and decide whether a larger evaluation is justified.
-
-## Interpretation rules
-
-The outline's suggested 45 pilot continuations and 300 main-evaluation runs are planning examples, not power calculations. Its improvement and cost thresholds are illustrative, not adopted acceptance criteria. Final claims must report effect sizes, uncertainty, limitations, and failures. A small pilot primarily establishes feasibility and informs the next study.
+- [x] Select Memos and document existing context and testing guidance.
+- [x] Reframe current plans and prepare a research-design white paper.
+- [x] Materialize two independent Memos projects and create the disabled third-method shell.
+- [ ] Validate the candidate application environment and adopt an executable benchmark revision.
+- [ ] Select development tasks and independent evaluators.
+- [ ] Review/finalize the initial context pack and design the proposed third method.
+- [ ] Choose models, repetitions, budgets and analysis before scored execution.
+- [ ] Specify observable maintenance episodes and effort collection.
+- [ ] Implement and validate orchestration in a later implementation stage.

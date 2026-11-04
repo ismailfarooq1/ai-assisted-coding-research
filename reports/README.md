@@ -1,7 +1,5 @@
 # Reports
 
-No results have been collected. Add `pilot-memory-report.md` after the pilot.
+The current deliverable is [Evaluating Project Context Workflows for AI Assisted Software Development](memos-context-white-paper/README.md): a research-design white paper with PDF, editable LaTeX, bibliography and build instructions. It defines questions and evaluation principles; it reports no Memos experiment results.
 
-A report should include the question, frozen protocol version and deviations, benchmark and tasks, model/agent configuration, outcomes with uncertainty, resource costs, failure examples, limitations, and reproducibility instructions. Link evidence and analysis files. Separate observed results from hypotheses and illustrative examples.
-
-Store later papers, presentations, and shareable summaries here with their source files.
+Future empirical reports must link frozen protocol versions, application/task provenance, model/agent configuration, deviations, correctness/regressions, resource phases, maintenance observations and evidence. Separate observations, hypotheses and exploratory interpretations. Do not fill absent settings or results with examples.

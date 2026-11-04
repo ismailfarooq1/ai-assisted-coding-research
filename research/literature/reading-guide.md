@@ -1,94 +1,43 @@
-# First literature review: memory and continuity in coding agents
+# Project-context workflows: focused reading guide
 
-Created: 2026-10-19
-Status: scoped reading guide, not a completed literature review.
+Updated 2026-11-03. Prioritize direct empirical evidence, distinguish publication status and avoid treating the absence of a common format as proof that no comparisons exist. This is not a systematic review or exhaustive novelty search.
 
-## Recommended review question
+## Central evidence
 
-What evidence shows that persistent project knowledge helps coding agents resume interrupted tasks, and how do the content, structure, and freshness of that knowledge affect correctness and recovery cost?
-
-A literature review compares existing methods, evidence, disagreements, and limitations to identify a defensible next experiment. Individual paper summaries are inputs to that comparison.
-
-## Four useful themes
-
-| Theme | Question to investigate | Connection to our study |
+| Record | Role and publication status | Relevant boundary |
 | --- | --- | --- |
-| Memory and handovers | What must survive a reset, and how is it reconstructed? | Primary focus for the first pilot |
-| Repository instructions | When do static instructions help or add overhead? | Establish a realistic baseline |
-| Context selection | Which evidence should be provided, retrieved, or omitted? | Inform later retrieval experiments |
-| Evaluation | How are correctness, recovery, cost, and leakage measured? | Make experimental results credible |
+| P06: [Mohsenimofidi et al.](https://doi.org/10.1145/3793302.3793350) | MSR 2026; inspected arXiv 2510.21413v4 | Observational context engineering, not a performance trial |
+| P02: [Gloaguen et al.](https://arxiv.org/abs/2602.11988v3) | ICLR 2026 MemAgents workshop; later arXiv revision reviewed | Experimental evidence scoped to benchmark tasks and agents |
+| P07: [Khatri](https://aclanthology.org/2026.realm-1.5/) | REALM 2026 workshop; reviewed arXiv v1 | Two agents; correctness and process measures, not maintenance labor |
+| P08: [Chatlatanagulchai et al.](https://doi.org/10.1145/3840295) | TOSEM 2026; reviewed arXiv v2 | Repository content/evolution rather than causal effectiveness |
 
-Architecture preservation and repository scalability can be reviewed next, after narrowing the first study.
+**MSR context engineering.** The study finds varied structures, writing styles and edits in project context files. It proposes investigation of how content and presentation affect agent behavior, as well as coevolution with code. This supports both questions, but does not demonstrate that standardization improves outcomes.
 
-## Starting papers, in suggested reading order
+**AGENTS.md evaluation.** The revised experimental paper finds increased inference cost and no statistically significant success improvement against its no-file comparisons. Do not generalize this into a verdict that all project context is useless.
 
-### 1. Handoff Debt — Dipesh KC and Anjila Budathoki (2026)
+**Two-agent ablation.** The REALM study compares context delivery strategies. Its unequal selective corpora limit component attribution but remain relevant to whole-workflow comparisons. No maintenance labor estimate is supplied.
 
-[Handoff Debt: The Rediscovery Cost When Coding Agents Take Over Interrupted Tasks](https://arxiv.org/abs/2606.02875v2)
+**Agent READMEs.** The study treats context files as evolving configuration-like artifacts. It informs maintenance observations rather than proving a return on authoring effort.
 
-The abstract describes deterministic interruptions and successor agents receiving repository state only, raw traces, summary notes, or structured notes. It reports consistent efficiency gains from context-bearing handoffs, with smaller, model-dependent effects on solving tasks.
+## Structural references for the white paper
 
-Read for: interruption rules, checkpoint construction, summary-versus-structure comparisons, cost accounting, and whether handovers contain equivalent information. Inspect the actual comparisons before attributing an effect to structure.
+- P09: [Esposito et al. (2024), Generative AI in Evidence-Based Software Engineering: A White Paper](https://arxiv.org/html/2407.17440v3). Use its problem, design, roadmap and limitations progression. Cite the verified arXiv version; the manuscript's journal-style header does not establish complete journal publication metadata.
+- P10: [Hassan et al. (2026), Towards AI-Native Software Engineering](https://doi.org/10.1145/3807901). Publisher metadata confirms TOSEM 35(9), article 268, published 21 August 2026. Use its separation of motivation, vision and research challenges. It is a vision, not validation of this workflow.
 
-This directly overlaps our draft pilot. We cannot claim that testing handover-based interrupted-task recovery is itself new. Potential extensions such as equal-information comparisons, stale decisions, or architectural constraints must first be checked against the full paper and its related work.
+Write original prose. These sources guide structure and framing without importing their architectures or promised effects.
 
-### 2. Evaluating AGENTS.md — Gloaguen et al. (2026)
+## Review and artifact boundaries
 
-[Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?](https://www.sri.inf.ethz.ch/publications/gloaguen2026agentsmd)
+The central experimental papers were reviewed for setup/results/limitations; the MSR paper for content/evolution/future work. Agent READMEs informs content characterization. No external experimental software, released datasets, analysis scripts or numerical outputs have been independently audited or reproduced here. In particular, Khatri's [released repository](https://github.com/codeprakhar25/context-files-coding-agents) remains unverified experimental material. Do not label an accessible artifact validated.
 
-The authors' publication page reports no overall task-success improvement and increased inference cost in their tested settings. This concerns repository context files, not a universal verdict on all memory or handover methods.
+The bibliography distinguishes publication records from reviewed manuscript versions. See [metadata verification](metadata-verification.md) for primary evidence, including the newer workshop/journal records.
 
-Read for: generated versus developer-written instructions, model/task differences, unnecessary requirements, and baseline construction.
+## Evaluation and context-use background
 
-### 3. Lost in the Middle — Liu et al. (2024)
+P03 [Lost in the Middle](https://aclanthology.org/2024.tacl-1.9/) is background on how models use supplied context. P05 [SWE-bench](https://www.swebench.com/original.html) is background for repository-task evaluation. Both remain primary-page checks only; no new full-method review or artifact validation is claimed. They are not evidence of Memos outcomes.
 
-[Lost in the Middle: How Language Models Use Long Contexts](https://aclanthology.org/2024.tacl-1.9/)
+## Extraction questions
 
-The abstract reports that relevant information's position affects performance on multi-document question answering and key-value retrieval.
+Use [the paper template](paper-template.md). Record information supplied, how it was created/loaded, tested tasks and models, evaluator independence, correctness/resources, uncertainty, maintenance observations and unavailable evidence. Keep author claims separate from our inference. Whole-workflow comparisons and component ablations answer different questions. A null result is not automatically equivalence.
 
-Read for: experimental controls, context positions, and why information availability does not guarantee effective use. These are not coding-recovery experiments, so relevance to our setting is a hypothesis to test.
-
-### 4. MemTrace — Xu et al. (2026)
-
-[MemTrace: State-Consistent Memory for Long-Horizon Coding Agents](https://arxiv.org/abs/2610.04838v3)
-
-The abstract proposes memory tied to execution evidence and repository state, checking whether historical information remains valid before reuse.
-
-Read for: stale evidence detection, source tracking, state reconstruction, baselines, and component ablations. Consider whether benefits arise from representation, retrieval, or additional validation.
-
-### 5. SWE-bench — Jimenez et al. (ICLR 2024; preprint 2023)
-
-[SWE-bench: Can Language Models Resolve Real-World GitHub Issues?](https://www.swebench.com/original.html)
-
-The official project page describes repository-level tasks drawn from GitHub issues and pull requests, reproducible execution environments, and tests that fail before the fix and pass afterward.
-
-Read for: task construction, executable evaluation, preservation of existing behavior, and the limits of issue-resolution benchmarks for interrupted development.
-
-## How to review each paper
-
-Use `paper-template.md`. Start with the abstract, introduction, experimental setup, main results, and limitations. Record:
-
-1. The exact question and what the authors actually tested.
-2. What information the agent could access and how memory was created.
-3. Models, tasks, baselines, budgets, and evaluation controls.
-4. Correctness, resource costs, failures, and uncertainty.
-5. What the results do not establish.
-6. The resulting decision or unanswered question for our experiment.
-
-Then synthesize across papers: compare methods, explain disagreements, and state which gaps remain supported after reading the full texts. Do not assume that a gap exists because an abstract omits a detail.
-
-For a manageable first pass, review these five papers and follow their references and later citing papers to find additional directly relevant work. This is a focused exploratory review. A systematic review would additionally require a predefined search strategy, databases, inclusion criteria, deduplication, and a documented screening process.
-
-## Search phrases
-
-- coding agent interrupted task handover evaluation
-- coding agent persistent memory context reset
-- repository instructions context files empirical evaluation
-- coding agent stale memory repository state
-- software engineering agent recovery cost benchmark
-
-Record search dates, queries, selected papers, and exclusions if the review will support a formal publication.
-
-## Verification boundary
-
-On 2026-10-19, titles and bibliographic details were checked against primary-source abstract, publisher, project, or author publication pages. The descriptions above are based on those pages; full methods, results tables, artifacts, and reproducibility have not been reviewed. Handoff Debt and MemTrace are linked to specific arXiv versions; no peer-review status is inferred from arXiv hosting.
+A formal review would additionally require logged queries/dates, databases, inclusion/exclusion rules, deduplication and screening. No exhaustive review claim is made.

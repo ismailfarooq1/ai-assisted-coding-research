@@ -6,3 +6,11 @@ node_modules/
 .env
 .env.*
 !.env.example
+
+# Local Memos source, materialized experiment projects, and execution artifacts
+.local/
+experiments/memos-context-study/methods/*/project/
+experiments/memos-context-study/methods/*/setup-manifest.json
+experiments/memos-context-study/methods/*/.preparing-*/
+experiments/memos-context-study/runs/*/
+experiments/memos-context-study/shared/setup-report.json
