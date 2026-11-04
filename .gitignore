@@ -1,8 +1,14 @@
 .DS_Store
-__pycache__/
-*.py[cod]
-.venv/
-node_modules/
-.env
-.env.*
-!.env.example
+
+# Local Memos application copies; revision recorded in sharedInputs
+experiments/existingWorkflow/memos/
+experiments/preparedContext/memos/
+experiments/proposedStrategy/memos/
+
+# Generated LaTeX files
+research/build/
+research/*.aux
+research/*.log
+research/*.out
+research/*.toc
+research/*.pdf

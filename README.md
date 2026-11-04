@@ -1,39 +1,43 @@
 # AI-assisted coding research
 
-A local workspace for investigating whether structured project knowledge helps AI coding agents complete software engineering tasks reliably and efficiently.
+We are planning a comparison of project-context strategies for coding agents using Memos. Metrics, tasks and execution details will be decided together.
 
-**Status:** research setup, 2026-10-19. No experiments have been run and no results have been collected. The first study focuses on recovery after a conversation reset.
+```text
+research/                    Buildable LaTeX thesis project
+experiments/
+    existingWorkflow/
+        memos/               First Memos copy
+        strategy/            Existing-workflow description
+        runs/                Future raw execution records
+    preparedContext/
+        memos/               Second Memos copy
+        strategy/            Prepared-context strategy description
+        runs/                Future raw execution records
+    proposedStrategy/
+        memos/               Third Memos copy
+        strategy/            Shell for our later design discussion
+        runs/                Future raw execution records
+    tools/                   Shared preparation, measurement and comparison tools
+reports/                     Experiment reports and comparisons
+sharedInputs/                Common snapshot reference, tasks, evaluation and metrics
+```
 
-## Workspace map
+All three Memos copies start at the same pinned revision. Their source files are initially identical; strategy descriptions live outside the application copies. The third strategy remains undesigned. No experiments have run and no metrics have been selected.
 
-| Folder | What belongs here |
-| --- | --- |
-| `sources/` | Original material, preserved separately from our interpretation |
-| `research/` | Research questions, scope, and literature reviews |
-| `framework/` | Proposed knowledge structure and handover templates |
-| `benchmarks/` | Benchmark application specifications and repository provenance |
-| `experiments/` | Protocols, task definitions, run records, and raw evidence |
-| `analysis/` | Analysis scripts, derived tables, and figures |
-| `reports/` | Pilot reports, papers, and presentation material |
-| `notes/` | Dated working notes and decisions |
+Our folders and files use lower camelCase. Memos retains its upstream filenames. The application copies are local working directories ignored by the research repository; their revision is recorded in [projectSnapshot.json](sharedInputs/projectSnapshot.json).
 
-## Start here
+Start with the strategy descriptions: [existing workflow](experiments/existingWorkflow/strategy/strategyDescription.md), [prepared context](experiments/preparedContext/strategy/strategyDescription.md), and [proposed strategy](experiments/proposedStrategy/strategy/strategyDescription.md).
 
-1. Read [the research plan](research/plan.md).
-2. Review [the draft pilot protocol](experiments/pilot-memory/protocol.md).
-3. Select a benchmark application using [these requirements](benchmarks/README.md).
-4. Define five interrupted-development tasks using [the task template](experiments/pilot-memory/tasks/task-template.md).
-5. Verify the literature and finalize the protocol before collecting scored runs.
+## Generate the research PDF
 
-## Working conventions
+The main LaTeX file is [thesis.tex](research/thesis.tex). It includes [literatureReview.tex](research/literatureReview.tex) and [methodology.tex](research/methodology.tex).
 
-- Keep primary evidence unchanged; put interpretations and derived data in separate files.
-- Use Markdown for documents, CSV for tables, and JSON for machine-readable metadata.
-- Use IDs such as `T01` for tasks and `pilot-memory_T01_R01_structured-handover` for runs.
-- Record dates as `YYYY-MM-DD`; include a timezone in timestamps.
-- Mark documents as draft until their decisions are settled. Log protocol changes and deviations.
-- Never treat the outline's example numbers as measurements or its references as verified citations.
-- Keep this research workspace outside agent-visible benchmark checkouts. Hidden tests, reference solutions, and research notes must not leak into experimental context.
-- Store data locally here. Do not commit credentials, private prompts, or sensitive logs; keep sanitized evidence and document any redactions.
+From the project root, run:
 
-This scaffold provides storage and study templates. The benchmark application, agent runner, tests, and analysis code still need to be built or selected.
+```sh
+make -C research
+```
+
+The PDF is generated at `research/build/thesis.pdf`. Temporary compilation files also stay in `research/build/`, which is ignored by Git. Edit the `.tex` files and run the same command to update the PDF.
+
+To remove generated files, run `make -C research clean`. Building requires a LaTeX installation with `latexmk` and pdfLaTeX, such as MacTeX or TeX Live. Both tools are available on this computer. The document is an initial thesis scaffold; metrics and experiment results have not been filled in.

@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/usememos/memos",
+  "commit": "b40d8a7b573774c52b022c8d6537d6baf2129dc0",
+  "gitTree": "9f86f8a96542b5724d7968c70e7cfed3d4ee06a1",
+  "copiedOn": "2026-11-04",
+  "projectCopies": [
+    "experiments/existingWorkflow/memos",
+    "experiments/preparedContext/memos",
+    "experiments/proposedStrategy/memos"
+  ],
+  "sourceCopiesVerified": true,
+  "applicationEnvironmentValidated": false,
+  "experimentsExecuted": false
+}
