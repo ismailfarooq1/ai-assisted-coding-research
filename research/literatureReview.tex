@@ -1,2 +1,177 @@
 \section{Literature Review}
-% Add reviewed literature and verified references as the thesis develops.
+\label{sec:literature}
+
+\subsection{Scope and strength of evidence}
+This is a focused literature review with a search cutoff of 8 November 2026,
+not a systematic review or an exhaustive novelty assessment. Searches combined
+terms for repository context files, coding agents, instruction adherence,
+efficiency and maintenance. Recent directly relevant work was prioritized,
+while earlier evaluation work was retained where it informs the experiment.
+Conference, journal and workshop records were checked against primary
+publication, conference or author pages. An arXiv version is identified
+separately from a confirmed publication venue.
+
+Ten directly relevant empirical papers are considered below. A dataset
+publication, an evaluation benchmark and statistical-method references supply
+supporting methods. For the
+central papers, the review examines the relevant methods, results and stated
+limitations. GHAgentFiles is considered at the conference-description and
+dataset-metadata level; SWE-bench supplies an evaluation precedent from its
+official description. External code, datasets and published numerical results
+have not been independently audited or reproduced. A paper's reported result
+is therefore attributed to its authors rather than presented as our own
+verified experiment.
+
+\subsection{The newest directly applicable proposal}
+\label{sec:template}
+\citet{shanto2026}, in a preprint posted on 2 November 2026, propose an instruction
+template and test coverage and alignment of generated files. They do not evaluate
+coding-task performance (Sections~6 and~9). They also distinguish divergent
+guidance from contradictions. Their framework is a preparation candidate;
+operational benefits remain unestablished.
+
+\subsection{Experimental findings: efficiency and task success}
+\label{sec:experiments}
+\citet{lulla2026}, presented at the ICSE Journal Ahead Workshop, compare
+with-file and without-file conditions over 124 pull-request tasks from ten
+repositories. They report 28.64\% lower median runtime and 16.58\% fewer median
+output tokens with \texttt{AGENTS.md}. However, Section~3.1.8 explicitly excludes
+comprehensive semantic correctness evaluation; a manual sanity check does not
+establish that patches satisfy all requirements. The finding motivates an
+efficiency hypothesis, while leaving correctness and total workflow cost to be
+tested. Lower output tokens alone do not establish lower total consumption.
+
+\citet{gloaguen2026} offer complementary benchmark evidence. Their September
+revision reports no statistically significant success improvement against the
+no-file comparisons, while generated context increases inference cost by about
+20--23\% on average. Developer-written context outperforms generated context,
+but its comparison against no context is not significant. These are different
+contrasts and should not be merged into a claim that human context universally
+improves correctness. The publication record identifies a MemAgents workshop
+paper; this review uses the later arXiv revision, especially Section~4.2 and
+Tables~2--3.
+
+\citet{khatri2026}, published at REALM 2026, compares absent, always-loaded and
+selective context across two agents and three repositories. The study reports no
+detectable correctness gain, with narrow process-efficiency effects. Its
+limitations acknowledge limited power, a missing natural-discovery condition,
+and selective corpora that differ in content as well as delivery. The paper's
+descriptive equivalence bounds should not be read as a general powered proof
+of equivalence. It is a close methodological precedent, but does not establish
+how context performs in Memos or what maintaining it costs.
+
+\citet{shepard2026}, in a June preprint, compare absent, static and
+probe-refined guidance on SWE-bench Verified. Across four trials they report
+33.0\% mean resolution with refined guidance, against 28.3\% with static
+guidance and 25.5\% without guidance. Refinement uses synthetic probes rather
+than scored benchmark tasks. The demonstrated benefit depends on the model and
+execution budget; transfer to another model is harmful in their setup.
+Guidance length also changes. This is positive evidence for testing a
+\emph{preparation procedure}, not proof that any additional context helps.
+The reviewed version is arXiv v2, revised 19 June 2026; no peer-reviewed venue
+was established by the checked record.
+
+\citet{kerbel2026}, published at AgenticDev alongside ASE, study context
+authorship and delivery. Capable-author context improves a smaller agent's
+file localization on deliberately constraint-matched tasks; that is not an
+established bug-resolution improvement. Their threats section discloses topic
+conditioning, possible author contamination, analysis deviations and unrun
+conditions. Review, automatic extraction and long-term accumulation are not
+validated by the experiment. This close overlap limits novelty claims for a
+versioned project knowledge layer and motivates separating navigation,
+correctness and measured upkeep. The accepted paper's source was reviewed;
+its released experiment implementation and records were not audited.
+
+\subsection{Structure, adherence and maintained artifacts}
+\citet{mcmillan2026}, an arXiv preprint, manipulates four file-structure variables
+across 1,650 coding-agent sessions. The study finds no detectable structural contrasts
+for a simple annotation-adherence outcome. Some null contrasts have stronger
+Bayesian support than others. Its dependent variable is a marker-insertion
+proxy, not functional task correctness; the limitations discuss model/tool
+confounding and transfer to demanding instructions. This is counterevidence
+to assuming that reorganizing Markdown necessarily helps, and shows that
+structural ablations already exist.
+
+\citet{mohsenimofidi2026}, published at MSR, describe adoption, content,
+presentation and evolution of project context files. Their observational study
+finds varied organization and writing styles, alongside recurring topics.
+Their conclusion calls for tests connecting content and presentation to agent
+behavior and for investigation of code/context coevolution. The study motivates
+an intervention, but does not identify a universally beneficial schema. The
+absence of a common structure is not the absence of experimental comparisons.
+
+\citet{chatlatanagulchai2026}, listed by their authors as a TOSEM publication,
+characterize context files as maintained configuration-like artifacts. The
+reviewed manuscript analyzes content and edit histories, but does not directly
+trace which code changes cause context updates. Section~5.1 proposes studying
+paired changes and synchronization tools. This supports observing actual
+code/context maintenance episodes rather than inferring maintenance quality
+or labor from edit counts alone.
+
+\Needspace{8\baselineskip}
+\subsection{Organizational evidence and supporting resources}
+\citet{denisov2026}, published at ASE, examine committed AI configuration and
+software-quality outcomes. Their maturity analysis is associated with lower
+quality costs in relevant repository strata, but the authors explicitly treat
+the association as hypothesis-generating: engineering discipline and model
+capability may explain part of it. This supplies an organizational motivation
+for controlled comparisons, not a causal estimate of savings from adding
+context files to Memos.
+
+\citet{cardoen2026} provide GHAgentFiles, an ICSME dataset publication with
+context-file histories and an accompanying extraction tool. It could support
+later selection of realistic maintenance changes. Its availability does not
+itself validate a maintenance intervention, and the dataset has not been
+examined or downloaded for this study.
+
+\citet{jimenez2024} provide an evaluation precedent in SWE-bench: issue-based
+repository changes are assessed using executable tests. The Memos study can
+adopt independent behavioral evaluation without claiming to reproduce that
+benchmark or treating test-suite success as exhaustive software quality.
+
+\subsection{What the combined evidence establishes}
+The literature already contains comparisons of repository context and controlled
+structural variations. A thesis claim that nobody has compared these approaches
+would therefore be inaccurate. The findings are also not a simple vote for or
+against context: studies change different information, use different agents and
+measure different outcomes. Operational efficiency, annotation adherence,
+document coverage, task correctness and project-level quality are distinct
+constructs.
+
+The defensible starting point is uncertainty about \emph{incremental practical
+value under a specified workflow}. More guidance may reduce exploration, add
+unnecessary work, repeat facts available in source, or become outdated. Those
+are competing mechanisms to investigate. Publication recency improves relevance
+to current practice but does not replace controls, independent correctness
+checks or careful interpretation.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Evidence map. Findings are scoped to each study's setting.}
+\label{tab:evidence}
+\begin{tabularx}{\textwidth}{@{}p{0.23\textwidth}Y Y@{}}
+\toprule
+Work & Evidence type & Main boundary for this thesis \\
+\midrule
+Shanto et al. & Template/generation preprint & Artifact quality is not task success. \\
+\addlinespace
+Lulla et al. & Efficiency experiment; JAWs & Correctness not comprehensively evaluated. \\
+\addlinespace
+Gloaguen et al. & Task benchmark; workshop/revision & Added guidance can increase cost. \\
+\addlinespace
+Khatri & Two-agent task comparison; REALM & Limited power; delivery/content differ. \\
+\addlinespace
+Shepard and Albrecht & Guidance-refinement preprint & Benefits depend on model and budget. \\
+\addlinespace
+Kerbel et al. & Context-transfer experiment; AgenticDev & Localization is not resolution; scope and deviations matter. \\
+\addlinespace
+McMillan & Factorial adherence preprint & Marker compliance is a narrow proxy. \\
+\addlinespace
+Mohsenimofidi et al. & Repository study; MSR & Description does not demonstrate benefit. \\
+\addlinespace
+Chatlatanagulchai et al. & Content/evolution; TOSEM & Changes do not measure active labor. \\
+\addlinespace
+Denisov-Blanch et al. & Repository panel; ASE & Association is not a causal return estimate. \\
+\bottomrule
+\end{tabularx}
+\end{table}

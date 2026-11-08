@@ -38,6 +38,6 @@ From the project root, run:
 make -C research
 ```
 
-The PDF is generated at `research/build/thesis.pdf`. Temporary compilation files also stay in `research/build/`, which is ignored by Git. Edit the `.tex` files and run the same command to update the PDF.
+The PDF is generated at `research/build/thesis.pdf` and copied to `research/thesis.pdf` for convenient viewing. Running the build keeps both copies in sync. Temporary compilation files stay in `research/build/`, which is ignored by Git. Edit the `.tex` files and run the same command to update the PDF.
 
 To remove generated files, run `make -C research clean`. Building requires a LaTeX installation with `latexmk` and pdfLaTeX, such as MacTeX or TeX Live. Both tools are available on this computer. The document is an initial thesis scaffold; metrics and experiment results have not been filled in.

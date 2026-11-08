@@ -1,12 +1,168 @@
-\section{Methodology}
+\section{Evaluation Design}
+\label{sec:methodology}
 
-The planned study compares project-context strategies for coding agents using
-Memos. It investigates development benefits and resource costs, together with
-the effort required to keep context accurate as the project changes.
+\subsection{Research questions and comparison target}
+\textbf{RQ1:} How do project-context workflows change independently verified
+completion of development tasks, and what resources do they consume?
 
-The three experiment projects represent the existing project workflow,
-deliberately prepared context files, and a proposed strategy to be designed.
-Each project starts from the same Memos revision.
+\textbf{RQ2:} How much preparation, checking and repair work is required to keep
+context accurate as the same project changes?
 
-% Metrics, tasks, agent configuration, repetitions and execution details
-% will be decided before experimental execution.
+The primary outcome is verified task completion under a common execution-limit
+policy. Resources and upkeep are separate secondary outcomes. These are design
+choices for the research; they do not configure or execute the experiments.
+Section~\ref{sec:comparison} defines the pairwise decision rule. The study tests
+complete workflows, so unequal information is permitted and documented.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Methods and the contrast each permits.}
+\label{tab:methods}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.15\textwidth}Y Y@{}}
+\toprule
+Method & Available context & Interpretation \\
+\midrule
+A: existing workflow & Native Memos instructions, documentation and source through the selected agent's normal tools. & Reference practice; already contains context. \\
+\addlinespace
+B: prepared context & The same native material plus deliberately prepared context, frozen before scored work. & Incremental value of a documented preparation workflow. \\
+\addlinespace
+C: proposed strategy & Undesigned; retained as a shell. & No scored contrast until its inputs, preparation and delivery are specified. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+B's eventual specification must identify the preparation sources, author/tool,
+review procedure, loading rules and update policy. Preparation may use source
+and public documentation, but not scored task solutions or hidden evaluation.
+Task-specific preparation, if later permitted, must be declared symmetrically
+as an available workflow stage and fully costed. Revisions learned from scored
+outcomes belong to a later study, not the original comparison. C is not assumed
+to be retrieval-based.
+
+\subsection{Pinned inputs, isolation and evaluation flow}
+The candidate source revision is
+\nolinkurl{b40d8a7b573774c52b022c8d6537d6baf2129dc0}. It was inspected for
+project documentation; it is not an experimentally validated baseline.
+Before scoring, verify the build environment and baseline checks, freeze the
+revision, dependencies, task statements, acceptance criteria and evaluator,
+and record their hashes. All methods receive the same task and starting code.
+
+For each task and repetition, use a fresh conversation and independent writable
+checkout. Apply the method's frozen context, run the agent, close the session,
+seal the final patch and usage record, then evaluate the patch independently.
+The evaluator runs on a fresh copy of the same baseline. It must not trust the
+agent's declaration of success or its edited tests as the sole oracle.
+
+Keep model/version, agent configuration, tool access, network policy, environment
+and execution-limit policy common within the comparison. The limit policy must
+state exactly which of tokens, time and tool steps are capped and how termination
+works; equal limits do not imply equal actual consumption. Randomize method
+order within task/repetition blocks, balancing scheduling across methods.
+Record provider drift and any reproducibility controls that are unavailable.
+
+Separate access permissions, processes, conversations, caches, writable homes
+and persistent memory as applicable. Folder duplication alone does not enforce
+isolation. Neither coding agents nor context preparers may read hidden checks,
+reference patches, another method's context, or its outputs. Record actual
+context loading: available text is not evidence that an agent consumed it.
+
+\subsection{Task selection and independent acceptance}
+Define the intended Memos workload and task eligibility before observing
+comparative success. Sample across the chosen change surfaces rather than
+selecting tasks because prepared context already contains their answers.
+Record provenance, public-solution exposure and exclusions. A convenience task
+set supports a conclusion about that set; broader inference requires a justified
+sampling argument. No tasks have yet been selected.
+
+Use separate pilot tasks to validate installation, task clarity, acceptance
+coverage and analysis feasibility. Do not include preparation-tuning tasks in
+scored evaluation. Validate checks against the unchanged baseline and a known
+acceptable implementation where available. Behavioral bug checks should fail
+before a repair and pass after it; existing behavior checks should already pass.
+Review test sensitivity with deliberately invalid changes when feasible.
+Any convention or design requirement needs an explicit executable check or a
+frozen review rubric, with reviewers blinded to the method where possible.
+
+This follows the independent issue-to-tests principle used by
+\citet{jimenez2024}. Passing checks establishes the measured acceptance criteria,
+not exhaustive software quality. Keep the evaluator identical across methods.
+If evaluation is found defective, preserve the initial verdicts and apply a
+method-blind correction to every affected artifact; document the deviation.
+
+\subsection{Outcome and resource records}
+For method $m$, task $t$ and repetition $r$, define $Y_{mtr}=1$ only when the
+final artifact passes all frozen task-acceptance checks, required regression
+checks and change-permission checks within the execution policy. Otherwise
+$Y_{mtr}=0$. Record individual check outcomes and regression failures as well as
+this binary endpoint. An agent-added test, a plausible patch or a loaded context
+file is not sufficient for success.
+
+Timeouts, invalid patches, agent-caused errors and unauthorized manual rescue
+count as failures. Before scoring, define infrastructure-failure criteria and a
+balanced rerun policy independent of the observed winner. Preserve original
+attempts and their consumption; do not silently drop failures or retain only
+the best retry. Unknown verdicts must be shown separately with best/worst-case
+sensitivity bounds. If missing outcomes can change a claimed winner, the
+conclusion remains inconclusive.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Required records and their accounting boundaries.}
+\label{tab:measurements}
+\begin{tabularx}{\textwidth}{@{}p{0.20\textwidth}Y@{}}
+\toprule
+Record & Definition and boundary \\
+\midrule
+Correctness & Task/repetition identifiers, acceptance and regression verdicts, failure category, baseline/evaluator hashes and final artifact. \\
+\addlinespace
+Tokens & Provider-reported input, cached input, output and reasoning categories with their overlap semantics; all attempts, including preparation calls. \\
+\addlinespace
+Elapsed time & Separate preparation, execution, updating and evaluation intervals; include execution timeouts and retries. \\
+\addlinespace
+Human work & Observed active preparation, review, intervention and maintenance minutes; concurrent waiting is not active work. \\
+\addlinespace
+Context provenance & Context version, permitted sources, factual review, preparation procedure and evidence of actual loading. \\
+\addlinespace
+Maintenance & Shared source-change identifier, audited claims, defects, repairs, unresolved cases and observed update/review resources. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Cached tokens may be part of input and reasoning tokens part of output: do not
+add overlapping categories twice. Document size is not consumed usage. Missing
+usage remains unknown, not zero. Monetary cost requires actual charges or dated
+rates mapped to compatible categories. Report evaluator/research overhead
+separately from costs an adopting team would incur.
+
+For a declared workload of $N$ executions and resource component $j$, report
+\[
+ R_{m,j}(N)=P_{m,j}+\sum_{i=1}^{N}E_{m,i,j}+\sum_k U_{m,k,j},
+\]
+where $P$ is initial preparation, $E$ execution and $U$ context updating/review.
+Apply the equation separately to compatible units. Include failures and retries.
+Show initial and recurring amounts and the observed reuse horizon; extrapolated
+amortization is a labelled scenario, not observed company savings.
+
+\subsection{Maintenance episodes}
+RQ2 needs source evolution, beyond the static task comparison. Supply the same
+preselected code changes to each method's own context history, retaining no
+cross-method learning. Label changes as natural or designed and record their
+selection. Audit relevant guidance immediately after each change, then again
+after the method's declared update procedure. Keep task scoring at matched
+source revisions separate from these maintenance observations.
+
+Classify audited claims as supported, stale, unsupported or unresolved, retaining
+source evidence and scope. Report inspected and affected denominators, known
+error rates, unresolved fractions and active checking/repair time. Empty or
+incomplete context must not earn an accuracy advantage merely by making fewer
+claims: separately audit coverage of a shared set of relevant requirements.
+Different scope can explain divergent instructions; divergence alone is not a
+contradiction. Edit frequency does not measure factual accuracy or human labor.
+
+A maintenance-efficiency claim requires comparable post-update accuracy and
+coverage as well as lower effort. Prespecify any acceptable degradation margins
+before seeing outcomes. Keep operator experience and learning/order effects
+visible and balanced where feasible. Episodes within one project trajectory
+are dependent; report that trajectory as a case study unless independent
+trajectories support formal inference. With no observed episodes, RQ2 remains
+unanswered.

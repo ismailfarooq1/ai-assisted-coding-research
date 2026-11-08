@@ -1,0 +1,166 @@
+\section{When Can One Method Be Called Better?}
+\label{sec:comparison}
+
+\subsection{Primary estimand and paired comparisons}
+The primary claim is \emph{higher verified completion probability under the
+same execution policy}, not universal superiority. Let $T$ be the number of
+independent eligible tasks and $R$ the balanced number of attempts per method
+and task, both fixed before scoring. Define
+\[
+ \widehat p_m=\frac{1}{T}\sum_{t=1}^{T}\overline Y_{mt},\qquad
+ \overline Y_{mt}=\frac{1}{R}\sum_{r=1}^{R}Y_{mtr},\qquad
+ \widehat\Delta_{AB}=\frac{1}{T}\sum_{t=1}^{T}
+ (\overline Y_{At}-\overline Y_{Bt}).
+\]
+Report $100\widehat\Delta_{AB}$ in percentage points. Each task has equal weight;
+any deployment-weighted alternative must be fixed in advance. Reverse direction
+is the same contrast: $\widehat\Delta_{BA}=-\widehat\Delta_{AB}$.
+More attempts measure stochastic variation; they do not create more independent
+tasks. Related tasks derived from one issue must remain in a shared analysis
+cluster, or be removed under an eligibility rule fixed before scoring.
+
+One frozen preparation artifact estimates performance conditional on that
+artifact. Generalizing to the reliability of an authoring procedure requires
+independent preparations and corresponding analysis of their variation.
+Repeating task execution does not supply those observations.
+
+A/B is the presently defined comparison. Once C is specified, a frozen three-arm
+study has three unordered contrasts: A/B, A/C and B/C. The reverse directions
+are not three additional tests. C cannot be designed using A/B's scored failures
+and then compared on those same tasks as if held out. Use a new held-out cohort
+for such a later comparison and rerun the reference workflows under its common
+conditions.
+
+\subsection{Prespecified analysis and error control}
+Use a two-sided paired randomization test on the mean task-level difference,
+keeping each task's entire vector of repeated outcomes together when swapping
+method labels. Enumerate all swaps where feasible; otherwise use a frozen seed
+and 100,000 random swaps, with the Monte Carlo correction
+$(b+1)/(100{,}000+1)$, where $b$ counts absolute permuted statistics at least as
+large as observed. Exact enumeration uses its exact tail fraction. Randomizing
+method assignment to execution slots and preventing carryover are required
+parts of the design. The test relies on exchangeability under the no-method-effect
+null, not on treating every run as independent. With one binary observation per
+task it reduces to the exact paired discordance test.
+
+The adaptation of paired testing to this design follows the principles discussed
+by \citet{dror2018}. Tasks are the resampling unit. If the eligible task structure
+requires larger independent clusters, swap those clusters instead; freeze that
+choice before scoring. If no credible exchangeable units exist, give descriptive
+contrasts rather than an unsupported significance claim.
+
+Set the primary family-wise error level to $0.05$. For $K$ planned pairwise
+quality contrasts, apply Holm's step-down procedure \citep{holm1979}: order raw
+$p$-values, compare the smallest with $0.05/K$, then successive values with
+$0.05/(K-1)$ and so on, stopping at the first non-rejection. Report raw and
+adjusted $p$-values. Here $K=1$ for A/B alone and $K=3$ for a prespecified
+three-arm study. Additional confirmatory agent configurations enlarge the
+registered family; do not choose the favorable model afterward.
+
+For effect magnitude, report paired task-cluster bootstrap percentile intervals
+at 95\%, resampling whole task vectors 100,000 times with a recorded seed.
+These intervals are approximate, pointwise estimation intervals; they are not
+simultaneous intervals and do not replace the multiplicity-adjusted test.
+Small or nearly invariant samples can yield unreliable bootstrap intervals:
+show the paired outcomes and flag that limitation rather than presenting false
+precision. The power stage must validate this analysis for the intended sample.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Symmetric primary decision rule for any registered pair A/B.}
+\label{tab:decisions}
+\begin{tabularx}{\textwidth}{@{}Y Y@{}}
+\toprule
+Evidence & Permitted conclusion \\
+\midrule
+Positive completion difference and Holm-adjusted $p\leq0.05$ & A achieved higher verified completion than B under the tested policy. \\
+\addlinespace
+Negative completion difference and Holm-adjusted $p\leq0.05$ & B achieved higher verified completion than A under the tested policy. \\
+\addlinespace
+Neither condition holds, or data integrity is unresolved & Evidence is inconclusive about superiority; report the estimate and uncertainty. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Significance does not establish an adoption-worthy effect. A practically
+meaningful improvement additionally needs a minimum worthwhile completion
+difference justified before scoring from the intended workload and adoption
+costs. Report whether the uncertainty excludes smaller effects. No company
+requirement or practical-effect threshold has been supplied, so this document
+does not invent one. Nonsignificance is not proof of equal performance
+\citep{lakens2017}.
+
+\subsection{Resource, efficiency and maintenance conclusions}
+Report all-method resource totals, per-attempt distributions and paired changes,
+including unsuccessful attempts. A supplementary operational measure is total
+workflow resource per verified completion:
+\[
+ C_{m,j}=\frac{R_{m,j}(TR)}{\sum_{t,r}Y_{mtr}}.
+\]
+This allocates the declared preparation and upkeep horizon across all measured
+attempts; it must not count only successful-run consumption. If no task succeeds,
+the ratio has no finite useful estimate and must not be reported as zero.
+Keep tokens, elapsed seconds and human minutes separate. Recompute ratios within
+paired cluster resamples when intervals are estimable. Preparation uncertainty
+requires independent preparation observations; resampling execution tasks alone
+does not measure variation in context-authoring effort.
+
+These are secondary estimates, not additional chances to declare the primary
+winner. ``A used fewer tokens'' can be reported alongside lower or uncertain
+correctness, provided both are explicit. ``A is more efficient at preserved
+correctness'' requires a prespecified correctness non-inferiority margin,
+adequate power, and a supported resource reduction. For a registered margin
+$\delta_Q>0$, the lower confidence bound on $\Delta_{AB}$ must exceed
+$-\delta_Q$. A resource reduction requires an upper bound below zero for
+$R_{A,j}-R_{B,j}$, or below one for its ratio. These bounds must have error
+control for the complete registered efficiency-claim family. Until a meaningful
+margin and that family are frozen, efficiency claims remain descriptive.
+
+For maintenance, compare observed checking/repair effort jointly with supported
+claims, unresolved cases and coverage after shared changes. No-update behavior
+is not a maintenance win when guidance becomes stale. A rigorous maintenance
+superiority claim needs enough independent evolution units and prespecified
+accuracy/coverage guardrails; otherwise report measured case-level trade-offs.
+
+Do not force a total ranking. A can complete more tasks while B consumes fewer
+resources. A primary correctness winner is not automatically the cheapest or
+easiest to maintain. An overall organizational recommendation requires stated
+priorities, cost accounting and acceptable trade-offs; no weighted score or
+projected savings are assumed here.
+
+\subsection{Sample planning and stopping}
+Set the smallest completion difference worth detecting and the desired power
+before final task selection. Use an independent pilot to estimate paired
+outcome discordance, task heterogeneity and run-to-run variation. Simulate the
+registered randomization test and Holm family over candidate task counts and
+repetitions; select a design that reaches the declared power under the justified
+planning assumptions. Preserve the simulation specification and sensitivity to
+less favorable assumptions. Literature sample sizes are not our power analysis.
+
+Independent tasks, rather than repeated attempts at one task, determine breadth
+of evidence. If the feasible task pool cannot support the relevant effect, label
+the study exploratory and report uncertainty. Freeze the task count, repetition
+count, exclusions, analysis code and stopping rule before scoring. Do not keep
+adding tasks until a significant result appears. A small pilot can establish
+feasibility; it cannot guarantee a method-ranking claim.
+
+\subsection{Research conclusion and remaining execution inputs}
+The supported thesis direction is an incremental comparison against existing
+project practice, with independently checked outcomes and full preparation and
+upkeep accounting. The competing hypotheses remain live: preparation can remove
+repeated discovery, or it can duplicate native guidance, consume attention and
+increase upkeep. The study can distinguish these explanations in Memos; the
+literature alone cannot select its winner.
+
+The comparison definitions above are ready for protocol development. The
+remaining inputs are concrete tasks and acceptance checks, B's preparation
+procedure, an agent/model version, validated environment, execution limits,
+independent-unit and sample/power choices, and maintenance changes. C needs its
+own definition before inclusion. These are required experimental inputs, not
+missing literature conclusions. There are no measured Memos outcomes yet.
+
+A final result should name the tested workload, revision, agent and budget;
+report the paired completion difference and uncertainty; apply the registered
+pairwise decision; and state preparation, execution and maintenance trade-offs.
+This supports ``better on verified completion in this setting'' when the data
+justify it, and an explicit inconclusive result when they do not.

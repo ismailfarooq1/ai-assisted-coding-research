@@ -4,6 +4,7 @@ latexmk ?= latexmk
 
 pdf:
 	$(latexmk) -pdf -pdflatex='pdflatex -no-shell-escape %O %S' -interaction=nonstopmode -halt-on-error -outdir=build thesis.tex
+	cp build/thesis.pdf thesis.pdf
 
 clean:
 	$(latexmk) -C -outdir=build thesis.tex

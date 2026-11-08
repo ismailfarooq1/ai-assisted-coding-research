@@ -4,14 +4,47 @@
 \usepackage{lmodern}
 \usepackage[margin=1in]{geometry}
 \usepackage{microtype}
+\usepackage[round,authoryear]{natbib}
+\usepackage{booktabs,tabularx,array}
+\usepackage{amsmath,amssymb}
+\usepackage{xurl}
 \usepackage[hidelinks]{hyperref}
+\usepackage{needspace}
+\usepackage{etoolbox}
+\pretocmd{\subsection}{\Needspace{9\baselineskip}}{}{}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\setlength{\emergencystretch}{1em}
+\setlength{\parskip}{3pt}
+\setlength{\bibsep}{8pt}
+\raggedbottom
 
-\title{AI-Assisted Coding Research}
+\title{Evaluating Project Context Workflows\\for AI-Assisted Software Development\\[4pt]\large Literature Review and Comparative Research Design}
 \author{}
-\date{}
+\date{Research design: 8 November 2026}
 
 \begin{document}
 \maketitle
+\begin{abstract}
+This research design asks whether project-context workflows improve coding-agent
+outcomes beyond Memos's existing documented practice, and what preparation and
+maintenance they require. The literature contains positive, negative and
+inconclusive results; it does not establish a universal winning workflow.
+The primary comparison defined here is independently verified task completion
+under common execution limits. Paired task-level analysis, correction for
+multiple comparisons and explicit decision rules distinguish superiority from
+inconclusive evidence. Tokens, elapsed time and observed human effort are
+reported alongside correctness, including preparation, failures and upkeep.
+Methods A and B denote existing practice and deliberately prepared context;
+method C remains undesigned. This document completes the literature synthesis
+and specifies the comparison framework. It reports no Memos experiment results.
+Concrete tasks, models, budgets and sample sizes require a subsequent frozen
+execution protocol; no experimental configuration is changed here.
+\end{abstract}
+
 \input{literatureReview}
+\input{researchPosition}
 \input{methodology}
+\input{comparisonFramework}
+\Needspace{8\baselineskip}
+\input{references}
 \end{document}

@@ -1,0 +1,104 @@
+\Needspace{12\baselineskip}
+\section{Where the Memos Experiment Fits}
+\label{sec:position}
+
+\subsection{Recommended research claim}
+The recommended framing is:
+\begin{quote}
+Under what conditions does deliberately prepared project context improve coding
+agent development outcomes or reduce resource use beyond an existing documented
+workflow, once preparation and context maintenance are included?
+\end{quote}
+This asks for evidence of benefit rather than a predetermined winner. A useful
+result could be improved correctness, lower resources with acceptable
+correctness, or lower maintenance effort with preserved context accuracy.
+A negative or uncertain result would also answer the question within the tested
+setting.
+
+The main contribution would be a controlled within-project case study and
+extension of existing evaluation approaches. It would not automatically be a
+new general context architecture. The strongest practical distinction is the
+comparison with \emph{existing project practice}, coupled with observed
+preparation and upkeep. That proposed combination is supported by the evidence
+review; it has not been established as unique across all literature.
+
+\subsection{Why Memos supplies a meaningful baseline}
+The pinned project documentation already includes agent instructions, a domain
+terminology file, change-routing guidance and test commands
+\citep{memos2026}. The existing-workflow condition therefore contains context.
+Removing that guidance would change the question into a no-context ablation.
+The intended comparison is whether additional preparation earns its place in a
+project that already documents its workflow.
+
+Memos also gives a concrete Go/TypeScript setting, rather than treating one
+result on a particular benchmark as universal. Using another project and task
+mix is a replication/extension opportunity, not proof that language differences
+will produce an advantage. Downloaded source copies establish a common starting
+revision; they do not establish a validated executable baseline.
+
+\subsection{The most useful literature-to-experiment links}
+\begin{enumerate}
+\item \textbf{Test operational benefits.}
+An evidence-based template is a preparation candidate \citep{shanto2026}.
+Evaluate the resulting workflow on independent tasks; document coverage alone
+is not acceptance evidence. Template adoption remains a proposal.
+\item \textbf{Reconcile efficiency with correctness.}
+Measure resources together with successful implementations, including failed
+attempts. This allows a project-level test of whether apparently faster work
+still satisfies requirements, rather than selecting only the outcome that
+favors a method.
+\item \textbf{Include context upkeep in the comparison.}
+Observe shared code changes, resulting guidance defects, repairs and measured
+update/review effort. This moves from descriptive edit histories toward a
+bounded evaluation of maintenance work. A static task comparison alone cannot
+answer the maintenance question.
+\end{enumerate}
+
+\subsection{How to justify a method without assuming it wins}
+A defensible prepared-context method needs a proposed mechanism. For example,
+accurate instructions could reduce repeated discovery of relevant commands or
+constraints. The competing explanation is that those facts are already easy
+to find in Memos, so the added material mainly consumes attention. This
+mechanism can be tested through correctness, resource records and supporting
+process observations.
+
+As a preparation hypothesis, first audit native guidance for relevant omissions
+or hard-to-find requirements. Record the source and intended purpose of every
+addition. Avoid repeating already accessible information merely to fill a
+heading; an absence of useful additions is itself informative about the
+incremental question.
+
+A large generic project summary is consequently a weak default intervention.
+A stronger candidate is concise, project-specific guidance linked to verified
+sources and task-relevant constraints. This is a hypothesis, not an established
+best practice or a selected implementation. The comparison should document
+what is added and how it is delivered, including whether the agent actually
+loads it. Merely placing a file in a folder does not demonstrate exposure.
+
+The third method should remain open. Its eventual design should name a failure
+mechanism it intends to address and the evidence that would show improvement.
+Neither retrieval nor a knowledge graph follows automatically from the review.
+If it adds another mechanism, its preparation and updating costs must be part
+of the same accounting boundary.
+
+The preparation procedure itself can be an intervention, as the positive
+refinement results of \citet{shepard2026} suggest. Their particular method is
+not selected here. Any preparation or tuning must remain separate from scored
+tasks. Versioned context and transfer are also studied by \citet{kerbel2026};
+the contribution should therefore be the measured Memos comparison and upkeep
+evidence, rather than a claim to have first proposed a project knowledge layer.
+
+\subsection{What the experiment could support}
+If a prepared workflow solves more of the prespecified tasks under the same
+execution policy, with uncertainty narrow enough to support the contrast, the
+study could report a correctness improvement for that task set and agent.
+If correctness is shown to remain within an agreed acceptable range while
+resources fall, it could support an efficiency claim. If context remains
+accurate after source changes with less observed repair/review work, it could
+support a maintenance-efficiency claim.
+
+It could not establish universal superiority, organization-wide savings or a
+causal effect of document structure alone. Complete workflows may deliberately
+supply different information; their contrast combines content, presentation
+and delivery. A later equal-information ablation would be needed to attribute
+an effect specifically to representation or selection.
