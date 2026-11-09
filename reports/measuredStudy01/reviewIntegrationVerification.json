@@ -1,0 +1,12 @@
+{
+  "classification": "Synthetic isolated test; no human review data",
+  "checks": {
+    "pageServed": true,
+    "crossOriginBlocked": true,
+    "startReturnsClaims": true,
+    "pauseExcluded": true,
+    "completionSaved": true,
+    "completedReviewSealed": true
+  },
+  "passed": true
+}

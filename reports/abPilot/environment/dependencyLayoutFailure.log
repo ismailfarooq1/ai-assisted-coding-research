@@ -1,0 +1,50 @@
+ ERR_PNPM_ABORTED_REMOVE_MODULES_DIR_NO_TTY  Aborted removal of modules directory due to no TTY
+
+If you are running pnpm in CI, set the CI environment variable to "true", or set "confirmModulesPurge" to "false".
+ ERROR  Command failed with exit code 1: pnpm install
+
+pnpm: Command failed with exit code 1: pnpm install
+    at getFinalError (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:28538:14)
+    at makeError (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:30845:21)
+    at getSyncResult (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:32689:10)
+    at spawnSubprocessSync (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:32649:14)
+    at execaCoreSync (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:32579:23)
+    at callBoundExeca (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:35107:23)
+    at boundExeca (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:35084:49)
+    at sync (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:35239:14)
+    at runPnpmCli (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:208072:5)
+    at runDepsStatusCheck (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:209733:7)
+ ERR_PNPM_ABORTED_REMOVE_MODULES_DIR_NO_TTY  Aborted removal of modules directory due to no TTY
+
+If you are running pnpm in CI, set the CI environment variable to "true", or set "confirmModulesPurge" to "false".
+ ERROR  Command failed with exit code 1: pnpm install
+
+pnpm: Command failed with exit code 1: pnpm install
+    at getFinalError (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:28538:14)
+    at makeError (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:30845:21)
+    at getSyncResult (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:32689:10)
+    at spawnSubprocessSync (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:32649:14)
+    at execaCoreSync (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:32579:23)
+    at callBoundExeca (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:35107:23)
+    at boundExeca (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:35084:49)
+    at sync (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:35239:14)
+    at runPnpmCli (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:208072:5)
+    at runDepsStatusCheck (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:209733:7)
+ ERR_PNPM_ABORTED_REMOVE_MODULES_DIR_NO_TTY  Aborted removal of modules directory due to no TTY
+
+If you are running pnpm in CI, set the CI environment variable to "true", or set "confirmModulesPurge" to "false".
+ ERROR  Command failed with exit code 1: pnpm install
+
+pnpm: Command failed with exit code 1: pnpm install
+    at getFinalError (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:28538:14)
+    at makeError (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:30845:21)
+    at getSyncResult (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:32689:10)
+    at spawnSubprocessSync (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:32649:14)
+    at execaCoreSync (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:32579:23)
+    at callBoundExeca (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:35107:23)
+    at boundExeca (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:35084:49)
+    at sync (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:35239:14)
+    at runPnpmCli (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:208072:5)
+    at runDepsStatusCheck (file:///usr/local/lib/node_modules/pnpm/dist/pnpm.mjs:209733:7)
+
+PILOT_NATIVE_STATUS lint=1 test=1 build=1

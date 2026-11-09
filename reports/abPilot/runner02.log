@@ -1,0 +1,3 @@
+{"finished": "A", "elapsedSeconds": 110.896, "exitCode": 0}
+{"finished": "B", "elapsedSeconds": 78.99, "exitCode": 0}
+{"report": "reports/abPilot/pilotSummary.json", "verifiedCompletion": {"A": true, "B": true}}

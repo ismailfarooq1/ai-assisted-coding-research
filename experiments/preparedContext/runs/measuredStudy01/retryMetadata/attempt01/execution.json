@@ -1,0 +1,137 @@
+{
+  "item": {
+    "task": "retryMetadata",
+    "attempt": 1,
+    "method": "B"
+  },
+  "stage": {
+    "dockerExitCode": 0,
+    "hostWallSeconds": 123.6575111253187,
+    "finishedAt": "2026-11-08T21:39:01.834577+00:00",
+    "resources": {
+      "exitCode": 0,
+      "timedOut": false,
+      "processWallSeconds": 119.74697259599998,
+      "cpuUsageSeconds": 111.754226,
+      "cpuStatDelta": {
+        "usage_usec": 111754226,
+        "user_usec": 87194932,
+        "system_usec": 24559295,
+        "nr_periods": 1181,
+        "nr_throttled": 69,
+        "throttled_usec": 4109122
+      },
+      "initialMemoryBytes": 7008256,
+      "sampledPeakMemoryBytes": 1516400640,
+      "memorySamples": 1181,
+      "samplingIntervalSeconds": 0.1,
+      "memoryDefinition": "Observed maximum memory.current, including container cache/kernel; not exact peak or process RSS. Startup before wrapper is excluded.",
+      "cpuDefinition": "Container cgroup CPU delta during stage including local descendants and metering; remote inference compute unobserved.",
+      "rolloutUsageObservations": [
+        {
+          "input_tokens": 13629,
+          "cached_input_tokens": 8960,
+          "output_tokens": 78,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 13707
+        },
+        {
+          "input_tokens": 28186,
+          "cached_input_tokens": 22400,
+          "output_tokens": 156,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 28342
+        },
+        {
+          "input_tokens": 44570,
+          "cached_input_tokens": 36736,
+          "output_tokens": 289,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 44859
+        },
+        {
+          "input_tokens": 63377,
+          "cached_input_tokens": 52992,
+          "output_tokens": 635,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 64012
+        },
+        {
+          "input_tokens": 82554,
+          "cached_input_tokens": 71680,
+          "output_tokens": 850,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 83404
+        },
+        {
+          "input_tokens": 102673,
+          "cached_input_tokens": 90624,
+          "output_tokens": 896,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 103569
+        },
+        {
+          "input_tokens": 122955,
+          "cached_input_tokens": 110592,
+          "output_tokens": 997,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 123952
+        },
+        {
+          "input_tokens": 143664,
+          "cached_input_tokens": 130688,
+          "output_tokens": 1047,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 144711
+        },
+        {
+          "input_tokens": 164495,
+          "cached_input_tokens": 151168,
+          "output_tokens": 1156,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 165651
+        }
+      ]
+    },
+    "usage": {
+      "completedTurns": 1,
+      "inputTokens": 164495,
+      "outputTokens": 1156,
+      "cachedInputTokens": 151168,
+      "cacheWriteInputTokens": 0,
+      "reasoningOutputTokens": 0,
+      "totalTokens": 165651,
+      "failedTurnEvents": 0,
+      "note": "Input includes cached input; output includes reported reasoning. Subsets are not added twice. Incomplete/failed turns may have unreported usage.",
+      "sessionCumulativeUsage": {
+        "input_tokens": 164495,
+        "cached_input_tokens": 151168,
+        "output_tokens": 1156,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 165651
+      },
+      "coverage": "completed-turn-reported",
+      "source": "CLI completed-turn events; cumulative session metadata fallback for incomplete turns",
+      "crossCheckMatches": true
+    },
+    "providerInfrastructureFailure": false
+  },
+  "changes": {
+    "files": [
+      "web/src/lib/error.ts",
+      "web/tests/error-info.test.ts"
+    ],
+    "permitted": true,
+    "headUnchanged": true,
+    "testFilesChanged": [
+      "web/tests/error-info.test.ts"
+    ],
+    "fileHashes": {
+      "web/src/lib/error.ts": "3b7e5aadcf06cb3c50b445d98b0fab262e95b789fdd080f23e3223a551b713bf",
+      "web/tests/error-info.test.ts": "920fc41f8be8642a0fe5035587769c7e067c0b0f2bb173850744d053f365fb33"
+    },
+    "patchSha256": "9500221c91bc1f62e14493b5045aa856bcc6f27e957b6f9255f12d0f101df1db"
+  },
+  "executionProtocolSha256": "fcf0a9ad30869458d1cc9af6d5706a6c7fbf4b0961296f67a5f92ea78c499298",
+  "fullGuideExposureObserved": true
+}

@@ -1,0 +1,233 @@
+$ tsc --noEmit --skipLibCheck && biome check src tests
+$ vitest run
+[90mstderr[2m | tests/spaces-section.test.tsx[2m > [22m[2mSpacesSection[2m > [22m[2mkeeps ordinary Space members read-only and hides governance controls
+[22m[39mEncountered two children with the same key, `spaces/product/members/alice`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[90mstderr[2m | tests/paged-memo-list.test.tsx[2m > [22m[2m<PagedMemoList>[2m > [22m[2mkeeps prior pages but stops automatic pagination after a failed page until Retry
+[22m[39mEach child in a list should have a unique "key" prop.
+
+Check the render method of `div`. It was passed a child from PagedMemoList. See https://react.dev/link/warning-keys for more information.
+
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+[90mstderr[2m | tests/create-space-dialog.test.tsx[2m > [22m[2mCreateSpaceDialog[2m > [22m[2mreveals and associates a conflicting Space UID returned by the server
+[22m[39mConnectError: [already_exists] space already exists
+    at [90m/project/web/[39mtests/create-space-dialog.test.tsx:107:41
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:302:11
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:1903:26
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2326:20
+    at new Promise (<anonymous>)
+    at runWithCancel [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2323:10[90m)[39m
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2305:20
+    at new Promise (<anonymous>)
+    at runWithTimeout [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2272:10[90m)[39m
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2955:64 {
+  rawMessage: [32m'space already exists'[39m,
+  code: [33m6[39m,
+  metadata: Headers {},
+  details: [],
+  cause: [90mundefined[39m
+}
+
+[90mstderr[2m | tests/create-space-dialog.test.tsx[2m > [22m[2mCreateSpaceDialog[2m > [22m[2mreuses the Space UID for retries and generates a new one for the next open
+[22m[39mError: Unavailable
+    at [90m/project/web/[39mtests/create-space-dialog.test.tsx:126:45
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:302:11
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:1903:26
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2326:20
+    at new Promise (<anonymous>)
+    at runWithCancel [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2323:10[90m)[39m
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2305:20
+    at new Promise (<anonymous>)
+    at runWithTimeout [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2272:10[90m)[39m
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2955:64
+
+[90mstderr[2m | tests/sso-auth-pages.test.tsx[2m > [22m[2mautomatic SSO auth pages[2m > [22m[2mreturns to manual controls after initiation fails without automatically retrying
+[22m[39mError: Storage unavailable
+    at [90m/project/web/[39mtests/sso-auth-pages.test.tsx:175:52
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:302:11
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:1903:26
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2326:20
+    at new Promise (<anonymous>)
+    at runWithCancel [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2323:10[90m)[39m
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2305:20
+    at new Promise (<anonymous>)
+    at runWithTimeout [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2272:10[90m)[39m
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2955:64
+
+[90mstderr[2m | tests/space-invitation-message.test.tsx[2m > [22m[2mSpaceInvitationMessage[2m > [22m[2mreports a failed accept without pretending it succeeded
+[22m[39mError: space invitation not found
+    at [90m/project/web/[39mtests/space-invitation-message.test.tsx:124:50
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:302:11
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:1903:26
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2326:20
+    at new Promise (<anonymous>)
+    at runWithCancel [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2323:10[90m)[39m
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2305:20
+    at new Promise (<anonymous>)
+    at runWithTimeout [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2272:10[90m)[39m
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2955:64
+
+[90mstderr[2m | tests/space-invitation-message.test.tsx[2m > [22m[2mSpaceInvitationMessage[2m > [22m[2marchives through the shared notification mutation and reports failures
+[22m[39mError: offline
+    at [90m/project/web/[39mtests/space-invitation-message.test.tsx:169:53
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:1903:20
+
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+[90mstderr[2m | tests/memo-editor-source-mode.test.tsx[2m > [22m[2mMemoEditor source mode[2m > [22m[2mswitches back when saving the mode fails
+[22m[39mError: unavailable
+    at [90m/project/web/[39mtests/memo-editor-source-mode.test.tsx:119:83
+    at Mock [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+spy@4.1.5/node_modules/[4m@vitest/spy[24m/dist/index.js:332:34[90m)[39m
+    at [90m/project/web/[39msrc/hooks/useSourceMode.ts:24:7
+    at onToggle [90m(/project/web/[39msrc/components/MemoEditor/edit/EditSession.tsx:104:54[90m)[39m
+    at handleClick [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@base-ui+react@1.7.0_@types+react@19.2.14_react-dom@19.2.6_react@19.2.6__react@19.2.6/node_modules/[4m@base-ui/react[24m/menu/checkbox-item/MenuCheckboxItem.mjs:79:22[90m)[39m
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@base-ui+react@1.7.0_@types+react@19.2.14_react-dom@19.2.6_react@19.2.6__react@19.2.6/node_modules/[4m@base-ui/react[24m/merge-props/mergeProps.mjs:179:22
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@base-ui+react@1.7.0_@types+react@19.2.14_react-dom@19.2.6_react@19.2.6__react@19.2.6/node_modules/[4m@base-ui/react[24m/merge-props/mergeProps.mjs:179:22
+    at onClick [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@base-ui+react@1.7.0_@types+react@19.2.14_react-dom@19.2.6_react@19.2.6__react@19.2.6/node_modules/[4m@base-ui/react[24m/internals/use-button/useButton.mjs:83:26[90m)[39m
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@base-ui+react@1.7.0_@types+react@19.2.14_react-dom@19.2.6_react@19.2.6__react@19.2.6/node_modules/[4m@base-ui/react[24m/merge-props/mergeProps.mjs:199:12
+    at executeDispatch [90m(/project/web/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.6_react@19.2.6/node_modules/[4mreact-dom[24m/cjs/react-dom-client.development.js:19116:9[90m)[39m
+
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+[90mstderr[2m | tests/media-metadata-service.test.ts[2m > [22m[2mmediaMetadataService[2m > [22m[2mfalls back to browser dimensions when EXIF parsing fails
+[22m[39mMedia metadata extraction failed; continuing without metadata.
+
+[90mstderr[2m | tests/media-metadata-service.test.ts[2m > [22m[2mmediaMetadataService[2m > [22m[2mtimes out video extraction, revokes the object URL, and returns no metadata
+[22m[39mMedia metadata extraction failed; continuing without metadata.
+
+[90mstderr[2m | tests/memo-editor-upload-retry.test.tsx[2m > [22m[2museMemoSave after a failed save[2m > [22m[2mkeeps uploaded files on the draft so a retry does not upload them again
+[22m[39mError: quota exceeded
+    at Object.<anonymous> [90m(/project/web/[39mtests/memo-editor-upload-retry.test.tsx:96:13[90m)[39m
+    at Object.Mock [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+spy@4.1.5/node_modules/[4m@vitest/spy[24m/dist/index.js:332:34[90m)[39m
+    at Object.save [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+spy@4.1.5/node_modules/[4m@vitest/spy[24m/dist/index.js:332:34[90m)[39m
+    at Object.current [90m(/project/web/[39msrc/components/MemoEditor/edit/hooks/useMemoSave.ts:107:40[90m)[39m
+    at [90m/project/web/[39mtests/memo-editor-upload-retry.test.tsx:104:34
+    at [90m/project/web/[39mnode_modules/[4m.pnpm[24m/@testing-library+react@16.3.2_@testing-library+dom@10.4.1_@types+react-dom@19.2.3_@type_01f2c7bab43719bd0469ec1c0554baf5/node_modules/[4m@testing-library/react[24m/dist/act-compat.js:47:24
+    at process.env.NODE_ENV.exports.act [90m(/project/web/[39mnode_modules/[4m.pnpm[24m/react@19.2.6/node_modules/[4mreact[24m/cjs/react.development.js:814:22[90m)[39m
+    at Proxy.<anonymous> [90m(/project/web/[39mnode_modules/[4m.pnpm[24m/@testing-library+react@16.3.2_@testing-library+dom@10.4.1_@types+react-dom@19.2.3_@type_01f2c7bab43719bd0469ec1c0554baf5/node_modules/[4m@testing-library/react[24m/dist/act-compat.js:46:25[90m)[39m
+    at [90m/project/web/[39mtests/memo-editor-upload-retry.test.tsx:104:11
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:302:11
+
+[90mstderr[2m | tests/memo-editor-upload-retry.test.tsx[2m > [22m[2museMemoSave after a failed save[2m > [22m[2mleaves the draft alone when nothing uploaded
+[22m[39mError: offline
+    at [90m/project/web/[39mtests/memo-editor-upload-retry.test.tsx:119:38
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:302:11
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:1903:26
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2326:20
+    at new Promise (<anonymous>)
+    at runWithCancel [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2323:10[90m)[39m
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2305:20
+    at new Promise (<anonymous>)
+    at runWithTimeout [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2272:10[90m)[39m
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2955:64
+
+[90mstderr[2m | tests/attachment-library-source-link.test.tsx[2m > [22m[2m<AttachmentMediaGrid>[2m > [22m[2mlinks a media attachment to its source memo without replacing the direct file action
+[22m[39mBase UI: A component that acts as a button expected a native <button> because the `nativeButton` prop is true. Rendering a non-<button> removes native button semantics, which can impact forms and accessibility. Use a real <button> in the `render` prop, or set `nativeButton` to `false`.
+    at Button (/project/web/src/components/ui/button.tsx:52:146)
+    at AttachmentOpenButton (/project/web/src/components/AttachmentLibrary/AttachmentLibraryPrimitives.tsx:128:58)
+    at AttachmentMediaCard (/project/web/src/components/AttachmentLibrary/AttachmentMediaGrid.tsx:144:64)
+    at /project/web/src/components/AttachmentLibrary/AttachmentMediaGrid.tsx:191:89
+    at Array.map (<anonymous>)
+    at /project/web/src/components/AttachmentLibrary/AttachmentMediaGrid.tsx:191:27
+    at Array.map (<anonymous>)
+    at AttachmentMediaGrid (/project/web/src/components/AttachmentLibrary/AttachmentMediaGrid.tsx:169:20)
+
+[90mstderr[2m | tests/attachment-library-source-link.test.tsx[2m > [22m[2m<AttachmentMediaGrid>[2m > [22m[2mshows the uploader on document rows
+[22m[39mBase UI: A component that acts as a button expected a native <button> because the `nativeButton` prop is true. Rendering a non-<button> removes native button semantics, which can impact forms and accessibility. Use a real <button> in the `render` prop, or set `nativeButton` to `false`.
+    at Button (/project/web/src/components/ui/button.tsx:52:146)
+    at AttachmentOpenButton (/project/web/src/components/AttachmentLibrary/AttachmentLibraryPrimitives.tsx:128:58)
+    at /project/web/src/components/AttachmentLibrary/AttachmentFileRows.tsx:155:53
+    at Array.map (<anonymous>)
+    at AttachmentDocumentRows (/project/web/src/components/AttachmentLibrary/AttachmentFileRows.tsx:91:19)
+
+Not implemented: Window's scrollBy() method
+[90mstderr[2m | tests/memo-editor-transcription.test.tsx[2m > [22m[2mexisting memo audio transcription[2m > [22m[2mblocks save while transcribing, inserts into the editable draft and retains the original attachment on save
+[22m[39mError: [vitest] No "userKeys" export is defined on the "@/hooks/useUserQueries" mock. Did you forget to return it from "vi.mock"?
+If you need to partially mock a module, you can use "importOriginal" helper inside:
+
+    at VitestMocker.createError [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/vitest@4.1.5_@types+node@24.12.2_jsdom@29.1.1_vite@8.0.11_@types+node@24.12.2_jiti@2.6.1_/node_modules/[4mvitest[24m/dist/chunks/startVitestModuleRunner.bRl2_oI_.js:62:17[90m)[39m
+    at Object.get [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/vitest@4.1.5_@types+node@24.12.2_jsdom@29.1.1_vite@8.0.11_@types+node@24.12.2_jiti@2.6.1_/node_modules/[4mvitest[24m/dist/chunks/startVitestModuleRunner.bRl2_oI_.js:324:16[90m)[39m
+    at Object.onSuccess [90m(/project/web/[39msrc/hooks/useMemoQueries.ts:383:49[90m)[39m
+    at Mutation.execute [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@tanstack+query-core@5.100.9/node_modules/[4m@tanstack/query-core[24m/build/modern/mutation.js:123:37[90m)[39m
+    at Object.save [90m(/project/web/[39msrc/components/MemoEditor/edit/services/memoService.ts:121:20[90m)[39m
+    at [90m/project/web/[39msrc/components/MemoEditor/edit/hooks/useMemoSave.ts:107:22 {
+  codeFrame: [32m'vi.mock(import("@/hooks/useUserQueries"), async (importOriginal) => {\n'[39m +
+    [32m'  const actual = await importOriginal()\n'[39m +
+    [32m'  return {\n'[39m +
+    [32m'    ...actual,\n'[39m +
+    [32m'    // your mocked methods\n'[39m +
+    [32m'  }\n'[39m +
+    [32m'})'[39m
+}
+
+[90mstderr[2m | tests/sso-callback.test.tsx[2m > [22m[2mSSO callback recovery[2m > [22m[2mdoes not trust the return path when cancellation state does not match
+[22m[39mOAuth state mismatch - possible CSRF attack
+
+[90mstderr[2m | tests/sso-callback.test.tsx[2m > [22m[2mSSO callback recovery[2m > [22m[2mretains the destination after the sign-in RPC fails without retrying
+[22m[39mError: Provider unavailable
+    at [90m/project/web/[39mtests/sso-callback.test.tsx:60:40
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:1903:20
+
+[90mstderr[2m | tests/memo-comment-section.test.tsx[2m > [22m[2mMemoCommentSection[2m > [22m[2mopens and focuses the existing comment editor through its sidebar handle
+[22m[39mThe current testing environment is not configured to support act(...)
+
+Not implemented: Window's scrollTo() method
+$ vite build
+Found 1 warning while optimizing generated CSS:
+
+[2m│     color: var(--foreground);[22m
+[2m│   }[22m
+[2m│[22m   ::highlight(memo-search-match) {
+[2m┆[22m               [33m[2m^--[22m 'highlight' is not recognized as a valid pseudo-element. Did you mean ':highlight' (pseudo-class) or is this a typo?[39m
+[2m┆[22m
+[2m│     background-color: var(--warning);[22m
+[2m│     @supports (color: color-mix(in lab, red, red)) {[22m
+
+[lightningcss minify] 'highlight' is not recognized as a valid pseudo-element. Did you mean ':highlight' (pseudo-class) or is this a typo?
+1  |  /*! tailwindcss v4.2.4 | MIT License | https://tailwindcss.com */
+2  |  ...color:var(--background);color:var(--foreground)}::highlight(memo-search-match){background-color:var(--warning)}@su...
+   |                                                                 ^
+3  |  
+[lightningcss minify] 'highlight' is not recognized as a valid pseudo-element. Did you mean ':highlight' (pseudo-class) or is this a typo?
+1  |  /*! tailwindcss v4.2.4 | MIT License | https://tailwindcss.com */
+2  |  ...)}@supports (color:color-mix(in lab, red, red)){::highlight(memo-search-match){background-color:color-mix(in oklch...
+   |                                                                 ^
+3  |  
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[33m[PLUGIN_TIMINGS] Warning:[0m Your build spent significant time in plugins. Here is a breakdown:
+  - @rolldown/plugin-babel (87%)
+  - vite:css (6%)
+See https://rolldown.rs/options/checks#plugintimings for more details.
+

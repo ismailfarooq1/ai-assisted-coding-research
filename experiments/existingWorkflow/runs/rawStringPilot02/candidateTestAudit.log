@@ -1,0 +1,97 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.5 [39m[90m/project/web[39m
+
+ [31m❯[39m tests/memo-suggestions.test.ts [2m([22m[2m63 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 38[2mms[22m[39m
+     [32m✓[39m extracts explicit tags conservatively: "work" in tags[32m 3[2mms[22m[39m
+     [32m✓[39m extracts explicit tags conservatively: 'work/project' in tags[32m 0[2mms[22m[39m
+     [32m✓[39m extracts explicit tags conservatively: tag in ["work", "release",][32m 0[2mms[22m[39m
+     [32m✓[39m extracts explicit tags conservatively: ("work" in tags && "release" in tags) || "personal" in tags[32m 0[2mms[22m[39m
+     [32m✓[39m extracts explicit tags conservatively: has_task_list && "work" in tags && content.contains("release")[32m 0[2mms[22m[39m
+     [32m✓[39m extracts explicit tags conservatively: "work" in tags // ignore this: && !("work" in tags)[32m 0[2mms[22m[39m
+     [32m✓[39m extracts explicit tags conservatively: "\u5de5\u4f5c" in tags[32m 0[2mms[22m[39m
+     [32m✓[39m extracts explicit tags conservatively: r"\u5de5\n\q" in tags[32m 0[2mms[22m[39m
+     [32m✓[39m extracts explicit tags conservatively: R'work/project' in tags[32m 0[2mms[22m[39m
+[31m     [31m×[31m extracts explicit tags conservatively: r"work && // literal" in tags || !R'other' in tags[39m[32m 16[2mms[22m[39m
+     [32m✓[39m extracts explicit tags conservatively: 'it\'s' in tags[32m 0[2mms[22m[39m
+     [32m✓[39m extracts explicit tags conservatively: !("archived" in tags)[32m 0[2mms[22m[39m
+     [32m✓[39m extracts explicit tags conservatively: !("archived" in tags || "private" in tags)[32m 0[2mms[22m[39m
+     [32m✓[39m extracts explicit tags conservatively: !("archived" in tags && !("work" in tags))[32m 0[2mms[22m[39m
+     [32m✓[39m extracts explicit tags conservatively: content.contains("work")[32m 0[2mms[22m[39m
+     [32m✓[39m extracts explicit tags conservatively: content.contains('"work" in tags')[32m 0[2mms[22m[39m
+     [32m✓[39m extracts explicit tags conservatively: tags.exists(t, t.startsWith("work/"))[32m 0[2mms[22m[39m
+     [32m✓[39m extracts explicit tags conservatively: ("work" in tags) == false[32m 0[2mms[22m[39m
+     [32m✓[39m extracts explicit tags conservatively: true ? "work" in tags : "personal" in tags[32m 0[2mms[22m[39m
+     [32m✓[39m extracts explicit tags conservatively: "work" in tags &&[32m 0[2mms[22m[39m
+     [32m✓[39m extracts explicit tags conservatively: "work" in tags && visibility ==[32m 0[2mms[22m[39m
+     [32m✓[39m extracts explicit tags conservatively: ("work" in tags[32m 0[2mms[22m[39m
+     [32m✓[39m extracts explicit tags conservatively: "work" in tags || content.contains("x"[32m 0[2mms[22m[39m
+     [32m✓[39m extracts explicit tags conservatively: "work" in tags && x[)[32m 0[2mms[22m[39m
+     [32m✓[39m extracts explicit tags conservatively: "work" in tags && @[32m 0[2mms[22m[39m
+     [32m✓[39m extracts explicit tags conservatively: r"work[32m 0[2mms[22m[39m
+     [32m✓[39m extracts explicit tags conservatively: tag in ["work", variable][32m 0[2mms[22m[39m
+     [32m✓[39m extracts explicit tags conservatively: tag in [][32m 0[2mms[22m[39m
+     [32m✓[39m combines unconditional exclusions without treating an OR branch as a global exclusion[32m 0[2mms[22m[39m
+     [32m✓[39m ranks selection before search before View, deduplicates, and leaves the visible limit to the editor[32m 3[2mms[22m[39m
+     [32m✓[39m applies exclusions across sources and ignores plain-text searches[32m 0[2mms[22m[39m
+     [32m✓[39m does not exclude a selected tag merely because one alternative negates it[32m 0[2mms[22m[39m
+     [32m✓[39m validates complete tag identities and preserves case, Unicode, punctuation, and paths[32m 1[2mms[22m[39m
+     [32m✓[39m reads task conditions: has_task_list[32m 0[2mms[22m[39m
+     [32m✓[39m reads task conditions: has_incomplete_tasks[32m 0[2mms[22m[39m
+     [32m✓[39m reads task conditions: has_task_list == true[32m 0[2mms[22m[39m
+     [32m✓[39m reads task conditions: has_task_list != false[32m 0[2mms[22m[39m
+     [32m✓[39m reads task conditions: !(has_task_list == false)[32m 0[2mms[22m[39m
+     [32m✓[39m reads task conditions: has_task_list || content.contains('todo')[32m 0[2mms[22m[39m
+     [32m✓[39m reads task conditions: !has_task_list[32m 0[2mms[22m[39m
+     [32m✓[39m reads task conditions: has_task_list == false[32m 0[2mms[22m[39m
+     [32m✓[39m reads task conditions: has_task_list && !has_incomplete_tasks[32m 0[2mms[22m[39m
+     [32m✓[39m reads task conditions: has_task_list && !has_task_list[32m 0[2mms[22m[39m
+     [32m✓[39m reads task conditions: content.contains('has_task_list')[32m 0[2mms[22m[39m
+     [32m✓[39m reads task conditions: has_task_list &&[32m 0[2mms[22m[39m
+     [32m✓[39m ranks and deduplicates across kinds and applies exclusions across contexts[32m 0[2mms[22m[39m
+     [32m✓[39m requires a single explicit audience: visibility == "PRIVATE"[32m 0[2mms[22m[39m
+     [32m✓[39m requires a single explicit audience: "PUBLIC" == visibility[32m 0[2mms[22m[39m
+     [32m✓[39m requires a single explicit audience: visibility == "PROTECTED"[32m 0[2mms[22m[39m
+     [32m✓[39m requires a single explicit audience: visibility in ["SPACE",][32m 0[2mms[22m[39m
+     [32m✓[39m requires a single explicit audience: !(visibility != "PRIVATE")[32m 0[2mms[22m[39m
+     [32m✓[39m requires a single explicit audience: visibility == "PRIVATE" || (visibility == "PRIVATE" && has_task_list)[32m 0[2mms[22m[39m
+     [32m✓[39m requires a single explicit audience: visibility in ["PRIVATE", "PUBLIC"] && visibility != "PUBLIC"[32m 0[2mms[22m[39m
+     [32m✓[39m requires a single explicit audience: visibility == "PRIVATE" || visibility == "PUBLIC"[32m 0[2mms[22m[39m
+     [32m✓[39m requires a single explicit audience: visibility == "PUBLIC" || content.contains("x")[32m 0[2mms[22m[39m
+     [32m✓[39m requires a single explicit audience: visibility != "PRIVATE"[32m 0[2mms[22m[39m
+     [32m✓[39m requires a single explicit audience: visibility == "private"[32m 0[2mms[22m[39m
+     [32m✓[39m requires a single explicit audience: visibility == "UNKNOWN"[32m 0[2mms[22m[39m
+     [32m✓[39m requires a single explicit audience: visibility == "PRIVATE" && visibility == "PUBLIC"[32m 0[2mms[22m[39m
+     [32m✓[39m requires a single explicit audience: content.contains('visibility == "PUBLIC"')[32m 0[2mms[22m[39m
+     [32m✓[39m requires a single explicit audience: visibility == "PUBLIC" &&[32m 0[2mms[22m[39m
+     [32m✓[39m requires a single explicit audience: visibility != "PRIVATE" && visibility != "SPACE" && visibility != "PROTECTED"[32m 0[2mms[22m[39m
+     [32m✓[39m respects conflicts and chooses the strongest agreeing source[32m 0[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/memo-suggestions.test.ts[2m > [22mtag suggestion extraction[2m > [22mextracts explicit tags conservatively: r"work && // literal" in tags || !R'other' in tags
+[31m[1mAssertionError[22m: expected [ 'work && // literal' ] to deeply equal [ 'work && // literal', 'other' ][39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  [[22m
+[2m    "work && // literal",[22m
+[32m-   "other",[39m
+[2m  ][22m
+
+[36m [2m❯[22m tests/memo-suggestions.test.ts:[2m36:53[22m[39m
+    [90m 34|[39m     [[32m"tag in []"[39m[33m,[39m []][33m,[39m
+    [90m 35|[39m   ])("extracts explicit tags conservatively: %s", (source, expected) =…
+    [90m 36|[39m     [34mexpect[39m([34mextractTagConditions[39m(source)[33m.[39mcandidates)[33m.[39m[34mtoEqual[39m(expected)[33m;[39m
+    [90m   |[39m                                                     [31m^[39m
+    [90m 37|[39m   })[33m;[39m
+    [90m 38|[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m62 passed[39m[22m[90m (63)[39m
+[2m   Start at [22m 17:16:05
+[2m   Duration [22m 2.60s[2m (transform 529ms, setup 317ms, import 1.21s, tests 38ms, environment 845ms)[22m
+

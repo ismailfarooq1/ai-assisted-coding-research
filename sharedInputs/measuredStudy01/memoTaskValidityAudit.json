@@ -1,0 +1,23 @@
+{
+  "recordedAt": "2026-11-08T22:32:12.624007+00:00",
+  "classification": "Post-execution task/evaluator-validity sensitivity audit, discovered from registered regression failures; primary scores remain unchanged.",
+  "reason": "The task requires exact users/<user>/views/<view> names and returning other collections unchanged. Pristine sidebar-row-state mocks users/1/memoViews/abc and expects the extracted abc. Actual proto/API builders use users/{user}/views/{view}. Restoring that fixture conflicts with the requested strict helper contract even if a candidate updates relevant fixtures.",
+  "sourceEvidence": {
+    "proto": {
+      "path": "proto/api/user_service.proto",
+      "sha256": "19f99502cadb41bccc8652ad4fbbd153c71d4402ceedb6c5aef8b88abe236ec7",
+      "excerpt": "pattern: \"users/{user}/views/{view}\""
+    },
+    "server": {
+      "path": "server/api/user_service_memo_views.go",
+      "sha256": "057e02b1b427f5d6c3e354c0a595e9f6a89a9b0293cfc8d2ae6d1aa9e151eedd",
+      "excerpt": "return fmt.Sprintf(\"%s/views/%s\", BuildUserName(username), memoViewID)"
+    }
+  },
+  "originalFixtureSha256": "27d9dd0d8ffebafb7784fb719e86a68f2d8417781b9279e5c2036dc0b4c4903f",
+  "correctedFixtureSha256": "e9f3fd4435811094d601eaa2c263640c71f4b3fa9554b4512d3dddf1a5d2dbca",
+  "runnerSha256": "cae1a091f901b2c358007dbfd44932709e689004e9177e2ea32c42ecf39525c5",
+  "fixtureChange": "Only replace the single mock resource name. All test logic/assertions stay byte-for-byte otherwise unchanged.",
+  "candidates": "Baseline plus all four memoViewNames candidates; no selection by result. No application patch edits or new coding calls.",
+  "scope": "Targeted UI fixture sensitivity only, not a repeat of the entire regression suite or replacement primary endpoint. Genuine formatter or candidate-test failures remain failures."
+}

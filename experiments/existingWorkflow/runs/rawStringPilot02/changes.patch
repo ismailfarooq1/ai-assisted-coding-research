@@ -1,0 +1,47 @@
+diff --git a/web/src/lib/suggestion-expression.ts b/web/src/lib/suggestion-expression.ts
+index a83df86..0af5b81 100644
+--- a/web/src/lib/suggestion-expression.ts
++++ b/web/src/lib/suggestion-expression.ts
+@@ -16,9 +16,10 @@ const STRING_ESCAPES: Record<string, string> = { a: "\x07", b: "\b", f: "\f", n:
+ const BRACKET_PAIRS: Record<string, string> = { "(": ")", "[": "]", "{": "}" };
+ // Sticky: lastIndex is set before every exec.
+ const LEXER =
+-  /\s+|\/\/[^\n]*|"(?:\\[^\r\n]|[^"\\\r\n])*"|'(?:\\[^\r\n]|[^'\\\r\n])*'|[a-zA-Z_]\w*|\d+(?:\.\d+)?|&&|\|\||==|!=|<=|>=|[()[\]{},.!<>+*/%?:-]/gy;
++  /\s+|\/\/[^\n]*|[rR](?:"[^"\r\n]*"|'[^'\r\n]*')|"(?:\\[^\r\n]|[^"\\\r\n])*"|'(?:\\[^\r\n]|[^'\\\r\n])*'|[a-zA-Z_]\w*|\d+(?:\.\d+)?|&&|\|\||==|!=|<=|>=|[()[\]{},.!<>+*/%?:-]/gy;
+ 
+ function decodeString(text: string): string {
++  if (/^[rR]/.test(text)) return text.slice(2, -1);
+   return text.slice(1, -1).replace(/\\(u[\da-fA-F]{4}|U[\da-fA-F]{8}|x[\da-fA-F]{2}|[0-7]{3}|.)/g, (_, escaped: string) => {
+     if (/^[uUx]/.test(escaped)) return String.fromCodePoint(Number.parseInt(escaped.slice(1), 16));
+     if (/^[0-7]{3}$/.test(escaped)) return String.fromCodePoint(Number.parseInt(escaped, 8));
+@@ -43,7 +44,7 @@ function parseExpression(source: string): SuggestionExpression {
+     const text = match[0];
+     end = LEXER.lastIndex;
+     if (/^\s|^\/\//.test(text)) continue;
+-    tokens.push({ text, value: /^["']/.test(text) ? decodeString(text) : undefined });
++    tokens.push({ text, value: /^(?:[rR])?["']/.test(text) ? decodeString(text) : undefined });
+   }
+   let position = 0;
+   const take = (text: string) => {
+diff --git a/web/tests/memo-suggestions.test.ts b/web/tests/memo-suggestions.test.ts
+index b900e22..ab9161f 100644
+--- a/web/tests/memo-suggestions.test.ts
++++ b/web/tests/memo-suggestions.test.ts
+@@ -11,6 +11,9 @@ describe("tag suggestion extraction", () => {
+     ['has_task_list && "work" in tags && content.contains("release")', ["work"]],
+     ['"work" in tags // ignore this: && !("work" in tags)', ["work"]],
+     ['"\\u5de5\\u4f5c" in tags', ["工作"]],
++    ['r"\\u5de5\\n\\q" in tags', ["\\u5de5\\n\\q"]],
++    ["R'work/project' in tags", ["work/project"]],
++    ["r\"work && // literal\" in tags || !R'other' in tags", ["work && // literal", "other"]],
+     ["'it\\'s' in tags", ["it's"]],
+     ['!("archived" in tags)', []],
+     ['!("archived" in tags || "private" in tags)', []],
+@@ -26,6 +29,7 @@ describe("tag suggestion extraction", () => {
+     ['"work" in tags || content.contains("x"', []],
+     ['"work" in tags && x[)', []],
+     ['"work" in tags && @', []],
++    ['r"work', []],
+     ['tag in ["work", variable]', []],
+     ["tag in []", []],
+   ])("extracts explicit tags conservatively: %s", (source, expected) => {

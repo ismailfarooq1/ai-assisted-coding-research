@@ -1,0 +1,64 @@
+{
+  "exitCode": 0,
+  "timedOut": false,
+  "processWallSeconds": 39.82012576800116,
+  "cpuUsageSeconds": 6.207557,
+  "cpuStatDelta": {
+    "usage_usec": 6207557,
+    "user_usec": 2969017,
+    "system_usec": 3238539,
+    "nr_periods": 393,
+    "nr_throttled": 0,
+    "throttled_usec": 0
+  },
+  "initialMemoryBytes": 7147520,
+  "sampledPeakMemoryBytes": 188682240,
+  "memorySamples": 385,
+  "samplingIntervalSeconds": 0.1,
+  "memoryDefinition": "Observed maximum memory.current, including container cache/kernel; not exact peak or process RSS. Startup before wrapper is excluded.",
+  "cpuDefinition": "Container cgroup CPU delta during stage including local descendants and metering; remote inference compute unobserved.",
+  "rolloutUsageObservations": [
+    {
+      "input_tokens": 13554,
+      "cached_input_tokens": 0,
+      "output_tokens": 165,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 13719
+    },
+    {
+      "input_tokens": 27333,
+      "cached_input_tokens": 13312,
+      "output_tokens": 393,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 27726
+    },
+    {
+      "input_tokens": 47564,
+      "cached_input_tokens": 26880,
+      "output_tokens": 842,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 48406
+    },
+    {
+      "input_tokens": 68404,
+      "cached_input_tokens": 46976,
+      "output_tokens": 1225,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 69629
+    },
+    {
+      "input_tokens": 89651,
+      "cached_input_tokens": 67584,
+      "output_tokens": 1517,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 91168
+    },
+    {
+      "input_tokens": 111439,
+      "cached_input_tokens": 88704,
+      "output_tokens": 1650,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 113089
+    }
+  ]
+}

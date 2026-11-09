@@ -1,0 +1,11 @@
+{
+  "checks": {
+    "normalExit": true,
+    "cpuObserved": true,
+    "memoryObserved": true,
+    "timeoutRetained": true,
+    "notHumanOrModelUsage": true
+  },
+  "passed": true,
+  "classification": "Shared harness calibration, no model calls or human observations"
+}

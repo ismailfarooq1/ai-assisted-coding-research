@@ -1,0 +1,201 @@
+{
+  "recordedAt": "2026-11-08T21:54:50.647526+00:00",
+  "guideSha256": "5b91f0afa9aa5872fb9922ba6b57314d0b3bc24a0107c72320bd436ae17790b3",
+  "audited": 12,
+  "fullTextObserved": 12,
+  "rows": [
+    {
+      "item": {
+        "task": "colorAlpha",
+        "attempt": 1,
+        "method": "B"
+      },
+      "originalStrictSuccessfulCommandFlag": false,
+      "fullGuideTextDelivered": true,
+      "evidence": [
+        {
+          "command": "/bin/bash -lc \"cat .projectContext/contextGuide.md && printf '\\\\n--- guidance files ---\\\\n' && find .. -name AGENTS.md -print\"",
+          "compoundCommandExitCode": 1,
+          "fullGuideTextPresent": true
+        }
+      ]
+    },
+    {
+      "item": {
+        "task": "colorAlpha",
+        "attempt": 2,
+        "method": "B"
+      },
+      "originalStrictSuccessfulCommandFlag": true,
+      "fullGuideTextDelivered": true,
+      "evidence": [
+        {
+          "command": "/bin/bash -lc 'cat .projectContext/contextGuide.md'",
+          "compoundCommandExitCode": 0,
+          "fullGuideTextPresent": true
+        }
+      ]
+    },
+    {
+      "item": {
+        "task": "legacyReleaseTag",
+        "attempt": 1,
+        "method": "B"
+      },
+      "originalStrictSuccessfulCommandFlag": true,
+      "fullGuideTextDelivered": true,
+      "evidence": [
+        {
+          "command": "/bin/bash -lc 'cat .projectContext/contextGuide.md'",
+          "compoundCommandExitCode": 0,
+          "fullGuideTextPresent": true
+        }
+      ]
+    },
+    {
+      "item": {
+        "task": "legacyReleaseTag",
+        "attempt": 2,
+        "method": "B"
+      },
+      "originalStrictSuccessfulCommandFlag": true,
+      "fullGuideTextDelivered": true,
+      "evidence": [
+        {
+          "command": "/bin/bash -lc 'cat .projectContext/contextGuide.md'",
+          "compoundCommandExitCode": 0,
+          "fullGuideTextPresent": true
+        }
+      ]
+    },
+    {
+      "item": {
+        "task": "memoViewNames",
+        "attempt": 1,
+        "method": "B"
+      },
+      "originalStrictSuccessfulCommandFlag": true,
+      "fullGuideTextDelivered": true,
+      "evidence": [
+        {
+          "command": "/bin/bash -lc \"cat .projectContext/contextGuide.md && rg --files -g 'AGENTS.md' -g 'memo-views.ts' -g '*memo*view*' web\"",
+          "compoundCommandExitCode": 0,
+          "fullGuideTextPresent": true
+        }
+      ]
+    },
+    {
+      "item": {
+        "task": "memoViewNames",
+        "attempt": 2,
+        "method": "B"
+      },
+      "originalStrictSuccessfulCommandFlag": false,
+      "fullGuideTextDelivered": true,
+      "evidence": [
+        {
+          "command": "/bin/bash -lc \"cat .projectContext/contextGuide.md && printf '\\\\n--- native instructions ---\\\\n' && find .. -name AGENTS.md -print\"",
+          "compoundCommandExitCode": 1,
+          "fullGuideTextPresent": true
+        }
+      ]
+    },
+    {
+      "item": {
+        "task": "retryMetadata",
+        "attempt": 1,
+        "method": "B"
+      },
+      "originalStrictSuccessfulCommandFlag": true,
+      "fullGuideTextDelivered": true,
+      "evidence": [
+        {
+          "command": "/bin/bash -lc 'cat .projectContext/contextGuide.md'",
+          "compoundCommandExitCode": 0,
+          "fullGuideTextPresent": true
+        }
+      ]
+    },
+    {
+      "item": {
+        "task": "retryMetadata",
+        "attempt": 2,
+        "method": "B"
+      },
+      "originalStrictSuccessfulCommandFlag": true,
+      "fullGuideTextDelivered": true,
+      "evidence": [
+        {
+          "command": "/bin/bash -lc 'cat .projectContext/contextGuide.md'",
+          "compoundCommandExitCode": 0,
+          "fullGuideTextPresent": true
+        }
+      ]
+    },
+    {
+      "item": {
+        "task": "safeTagCounts",
+        "attempt": 1,
+        "method": "B"
+      },
+      "originalStrictSuccessfulCommandFlag": true,
+      "fullGuideTextDelivered": true,
+      "evidence": [
+        {
+          "command": "/bin/bash -lc 'cat .projectContext/contextGuide.md'",
+          "compoundCommandExitCode": 0,
+          "fullGuideTextPresent": true
+        }
+      ]
+    },
+    {
+      "item": {
+        "task": "safeTagCounts",
+        "attempt": 2,
+        "method": "B"
+      },
+      "originalStrictSuccessfulCommandFlag": true,
+      "fullGuideTextDelivered": true,
+      "evidence": [
+        {
+          "command": "/bin/bash -lc 'cat .projectContext/contextGuide.md'",
+          "compoundCommandExitCode": 0,
+          "fullGuideTextPresent": true
+        }
+      ]
+    },
+    {
+      "item": {
+        "task": "unicodeSpaceTitles",
+        "attempt": 1,
+        "method": "B"
+      },
+      "originalStrictSuccessfulCommandFlag": true,
+      "fullGuideTextDelivered": true,
+      "evidence": [
+        {
+          "command": "/bin/bash -lc 'cat .projectContext/contextGuide.md'",
+          "compoundCommandExitCode": 0,
+          "fullGuideTextPresent": true
+        }
+      ]
+    },
+    {
+      "item": {
+        "task": "unicodeSpaceTitles",
+        "attempt": 2,
+        "method": "B"
+      },
+      "originalStrictSuccessfulCommandFlag": true,
+      "fullGuideTextDelivered": true,
+      "evidence": [
+        {
+          "command": "/bin/bash -lc 'cat .projectContext/contextGuide.md'",
+          "compoundCommandExitCode": 0,
+          "fullGuideTextPresent": true
+        }
+      ]
+    }
+  ],
+  "note": "The diagnostic originally required overall command exit 0. Two cat-guide && find-parent-directory commands delivered the entire guide before find returned 1. Raw execution flags are preserved; no primary scores or coding inputs changed."
+}

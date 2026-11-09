@@ -1,0 +1,2 @@
+$ tsc --noEmit --skipLibCheck && biome check src tests
+Checked 674 files in 872ms. No fixes applied.

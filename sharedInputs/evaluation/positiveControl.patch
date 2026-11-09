@@ -1,0 +1,20 @@
+--- a/web/src/lib/suggestion-expression.ts
++++ b/web/src/lib/suggestion-expression.ts
+@@ -16,7 +16,7 @@
+ const BRACKET_PAIRS: Record<string, string> = { "(": ")", "[": "]", "{": "}" };
+ // Sticky: lastIndex is set before every exec.
+ const LEXER =
+-  /\s+|\/\/[^\n]*|"(?:\\[^\r\n]|[^"\\\r\n])*"|'(?:\\[^\r\n]|[^'\\\r\n])*'|[a-zA-Z_]\w*|\d+(?:\.\d+)?|&&|\|\||==|!=|<=|>=|[()[\]{},.!<>+*/%?:-]/gy;
++  /\s+|\/\/[^\n]*|[rR]"[^"\r\n]*"|[rR]'[^'\r\n]*'|"(?:\\[^\r\n]|[^"\\\r\n])*"|'(?:\\[^\r\n]|[^'\\\r\n])*'|[a-zA-Z_]\w*|\d+(?:\.\d+)?|&&|\|\||==|!=|<=|>=|[()[\]{},.!<>+*/%?:-]/gy;
+ 
+ function decodeString(text: string): string {
+   return text.slice(1, -1).replace(/\\(u[\da-fA-F]{4}|U[\da-fA-F]{8}|x[\da-fA-F]{2}|[0-7]{3}|.)/g, (_, escaped: string) => {
+@@ -43,7 +43,7 @@
+     const text = match[0];
+     end = LEXER.lastIndex;
+     if (/^\s|^\/\//.test(text)) continue;
+-    tokens.push({ text, value: /^["']/.test(text) ? decodeString(text) : undefined });
++    tokens.push({ text, value: /^[rR]["']/.test(text) ? text.slice(2, -1) : /^["']/.test(text) ? decodeString(text) : undefined });
+   }
+   let position = 0;
+   const take = (text: string) => {

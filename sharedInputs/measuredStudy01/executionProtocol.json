@@ -1,0 +1,16 @@
+{
+  "sealedAt": "2026-11-08T21:04:43.524138+00:00",
+  "designSha256": "9d36abcdee22119f2db03fe038b5faa3bdfbf0673537b5cec08ccb599df9f6c5",
+  "amendmentSha256": "a2e278ad349d2a2bb13812a765e2badc1e0bfa9def57caaae16848b6a970d1ca",
+  "packHashes": {
+    "experiments/preparedContext/strategy/measuredStudy01/contextPack/sourceMap.json": "5b589eaa0b5a1a92ba4e2d9dba3521bea44e85f7bc574275ffd6504974764fbf",
+    "experiments/preparedContext/strategy/measuredStudy01/contextPack/contextGuide.md": "5b91f0afa9aa5872fb9922ba6b57314d0b3bc24a0107c72320bd436ae17790b3",
+    "experiments/preparedContext/strategy/measuredStudy01/contextPack/claims.json": "42e445329ebeeea07b5fc7d12bdbd9d00a60ec34396bbacdc5ab17692cd1d9f2"
+  },
+  "reviewType": "automated",
+  "reviewPath": "reports/measuredStudy01/automatedReview/preparationB/review.json",
+  "reviewSha256": "c98823c35e521decf2061a194e382724d661a849326e2f99be32f8243397512a",
+  "codingRuns": 24,
+  "completedHumanReview": false,
+  "humanEffortComparisonAvailable": false
+}

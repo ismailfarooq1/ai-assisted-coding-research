@@ -1,0 +1,43 @@
+diff --git a/web/src/lib/memo-views.ts b/web/src/lib/memo-views.ts
+index 435c3e4..dea3354 100644
+--- a/web/src/lib/memo-views.ts
++++ b/web/src/lib/memo-views.ts
+@@ -5,7 +5,9 @@ export type MemoScope = "home" | "explore" | "archived";
+ 
+ export const getMemoViewId = (name: string): string => {
+   const parts = name.split("/");
+-  return parts.length === 4 ? parts[3] : name;
++  return parts.length === 4 && parts[0] === "users" && parts[1] !== "" && parts[2] === "views" && parts[3] !== ""
++    ? parts[3]
++    : name;
+ };
+ 
+ const cleanPathname = (value: string): string => {
+diff --git a/web/tests/memo-views.test.ts b/web/tests/memo-views.test.ts
+index b56dae4..b01b787 100644
+--- a/web/tests/memo-views.test.ts
++++ b/web/tests/memo-views.test.ts
+@@ -54,6 +54,23 @@ describe("memo views", () => {
+     expect(getMemoViewId("users/steven/views/work")).toBe("work");
+   });
+ 
++  it("leaves malformed saved view names unchanged", () => {
++    for (const name of [
++      "steven/views/work",
++      "users/steven/other/work",
++      "users//views/work",
++      "users/steven/views/",
++      "users/steven/views/work/extra",
++      "work",
++    ]) {
++      expect(getMemoViewId(name)).toBe(name);
++    }
++  });
++
++  it("allows arbitrary nonempty user and view components", () => {
++    expect(getMemoViewId("users/user name/views/view?name")).toBe("view?name");
++  });
++
+   it("composes a saved task view with search, tags, creator, and visibility", () => {
+     expect(
+       buildMemoFilter({

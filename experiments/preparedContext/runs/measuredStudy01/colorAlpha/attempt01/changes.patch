@@ -1,0 +1,60 @@
+diff --git a/web/src/lib/color.ts b/web/src/lib/color.ts
+index 4219700..a215a1e 100644
+--- a/web/src/lib/color.ts
++++ b/web/src/lib/color.ts
+@@ -1,8 +1,9 @@
+ /**
+  * Converts a google.type.Color (r/g/b as 0–1 floats) to a CSS hex string (#rrggbb).
++ * When alpha is provided, appends its 8-bit hex value.
+  * Returns undefined when no color is provided.
+  */
+-export const colorToHex = (color?: { red?: number; green?: number; blue?: number }): string | undefined => {
++export const colorToHex = (color?: { red?: number; green?: number; blue?: number }, alpha?: number): string | undefined => {
+   if (!color) return undefined;
+   const clamp = (val: number | undefined): number => {
+     const n = val ?? 0;
+@@ -17,5 +18,10 @@ export const colorToHex = (color?: { red?: number; green?: number; blue?: number
+   const b = Math.round(clamp(color.blue) * 255)
+     .toString(16)
+     .padStart(2, "0");
+-  return `#${r}${g}${b}`;
++  if (alpha === undefined) return `#${r}${g}${b}`;
++  const normalizedAlpha = Number.isFinite(alpha) ? Math.max(0, Math.min(1, alpha)) : 1;
++  const a = Math.round(normalizedAlpha * 255)
++    .toString(16)
++    .padStart(2, "0");
++  return `#${r}${g}${b}${a}`;
+ };
+diff --git a/web/tests/color.test.ts b/web/tests/color.test.ts
+new file mode 100644
+index 0000000..be4a34f
+--- /dev/null
++++ b/web/tests/color.test.ts
+@@ -0,0 +1,27 @@
++import { describe, expect, test } from "vitest";
++import { colorToHex } from "@/lib/color";
++
++describe("colorToHex", () => {
++  test("keeps six-digit RGB output when alpha is omitted or undefined", () => {
++    expect(colorToHex({ red: 1, green: 0.5, blue: 0 })).toBe("#ff8000");
++    expect(colorToHex({ red: 1, green: 0.5, blue: 0 }, undefined)).toBe("#ff8000");
++  });
++
++  test.each([
++    [1, "#ff8000ff"],
++    [0, "#ff800000"],
++    [0.5, "#ff800080"],
++    [-1, "#ff800000"],
++    [2, "#ff8000ff"],
++    [Number.NaN, "#ff8000ff"],
++    [Number.POSITIVE_INFINITY, "#ff8000ff"],
++    [Number.NEGATIVE_INFINITY, "#ff8000ff"],
++  ])("converts alpha %s", (alpha, expected) => {
++    expect(colorToHex({ red: 1, green: 0.5, blue: 0 }, alpha)).toBe(expected);
++  });
++
++  test("preserves RGB clamping, rounding, and missing-color behavior", () => {
++    expect(colorToHex({ red: 2, green: 0.5, blue: Number.NaN })).toBe("#ff8000");
++    expect(colorToHex(undefined, 0.5)).toBeUndefined();
++  });
++});

@@ -1,0 +1,37 @@
+{
+  "item": {
+    "task": "memoViewNames",
+    "attempt": 2,
+    "method": "B"
+  },
+  "passed": true,
+  "tests": 8,
+  "stage": {
+    "hostWallSeconds": 7.32213587500155,
+    "dockerExitCode": 0,
+    "finishedAt": "2026-11-08T23:04:56.037100+00:00",
+    "resources": {
+      "exitCode": 0,
+      "timedOut": false,
+      "processWallSeconds": 6.655137587000354,
+      "cpuUsageSeconds": 5.073175,
+      "cpuStatDelta": {
+        "usage_usec": 5073175,
+        "user_usec": 3296723,
+        "system_usec": 1776452,
+        "nr_periods": 67,
+        "nr_throttled": 1,
+        "throttled_usec": 10647
+      },
+      "initialMemoryBytes": 7139328,
+      "sampledPeakMemoryBytes": 572014592,
+      "memorySamples": 67,
+      "samplingIntervalSeconds": 0.1,
+      "memoryDefinition": "Observed maximum memory.current, including container cache/kernel; not exact peak or process RSS. Startup before wrapper is excluded.",
+      "cpuDefinition": "Container cgroup CPU delta during stage including local descendants and metering; remote inference compute unobserved.",
+      "rolloutUsageObservations": []
+    }
+  },
+  "definitionSha256": "d4ab8f82f02adc456c3d987449370597409b0a1fa2e2bbaf8911e8ac7950c1ee",
+  "classification": "Supplemental fixture sensitivity; original primary regression and formatting verdicts retained"
+}

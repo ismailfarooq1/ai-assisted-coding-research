@@ -1,0 +1,45 @@
+{
+  "gates": {
+    "lint": 0,
+    "candidateTests": 1,
+    "acceptance": 0,
+    "restorePristineTests": 0,
+    "regression": 0,
+    "build": 0
+  },
+  "automatedGatesPass": false,
+  "verifiedCompletion": false,
+  "humanAdjudicationRequired": [],
+  "evaluationUnresolved": false,
+  "candidateArtifactsUnchanged": true,
+  "bContextExposureObserved": true,
+  "evaluationStage": {
+    "hostWallSeconds": 274.3688795827329,
+    "dockerExitCode": 0,
+    "finishedAt": "2026-11-08T22:22:47.762497+00:00",
+    "resources": {
+      "exitCode": 0,
+      "timedOut": false,
+      "processWallSeconds": 273.3833678730007,
+      "cpuUsageSeconds": 349.774842,
+      "cpuStatDelta": {
+        "usage_usec": 349774842,
+        "user_usec": 278887425,
+        "system_usec": 70887418,
+        "nr_periods": 2727,
+        "nr_throttled": 26,
+        "throttled_usec": 440824
+      },
+      "initialMemoryBytes": 7061504,
+      "sampledPeakMemoryBytes": 1705746432,
+      "memorySamples": 2711,
+      "samplingIntervalSeconds": 0.1,
+      "memoryDefinition": "Observed maximum memory.current, including container cache/kernel; not exact peak or process RSS. Startup before wrapper is excluded.",
+      "cpuDefinition": "Container cgroup CPU delta during stage including local descendants and metering; remote inference compute unobserved.",
+      "rolloutUsageObservations": []
+    }
+  },
+  "evaluationRevision": "common infrastructure recovery",
+  "infrastructureAmendmentSha256": "9ef188779f3ebd9948941cef914436b970098489147aec0eb6a320a768cceada",
+  "initialEvaluationRetained": false
+}

@@ -1,0 +1,39 @@
+{
+  "recordedAt": "2026-11-08T17:13:16.023894+00:00",
+  "scope": "Shared infrastructure preparation, separate from A/B execution metrics.",
+  "dockerStarted": true,
+  "runtime": "Node 24 frontend image; pnpm 11.0.1; Codex CLI 0.167.0; image ID frozen in pilotProtocol.json.",
+  "nativeFrontendBaseline": {
+    "lint": "passed",
+    "testFilesPassed": 192,
+    "testsPassed": 1616,
+    "productionBuild": "passed"
+  },
+  "focusedEvaluator": {
+    "unchangedBaselineAcceptancePassed": 0,
+    "acceptanceChecks": 10,
+    "unchangedBaselineRegressionPassed": 13,
+    "regressionChecks": 13,
+    "positiveControlPassed": 23,
+    "runtimeValidated": true
+  },
+  "authPreflightUsage": [
+    {
+      "input_tokens": 10525,
+      "cached_input_tokens": 8960,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 5,
+      "reasoning_output_tokens": 0
+    }
+  ],
+  "unmeasured": {
+    "completePreparationTokens": null,
+    "activeHumanMinutes": null,
+    "totalSetupElapsedSeconds": null
+  },
+  "limitations": [
+    "Backend/Go/database tests not validated by this frontend image.",
+    "Image dependencies were moved to the execution path after an initial pnpm layout error; the failure log is retained.",
+    "Launch attempt 01 failed for both methods before model events because stdin was not forwarded; attempt 02 repeats both after correcting and validating input forwarding."
+  ]
+}

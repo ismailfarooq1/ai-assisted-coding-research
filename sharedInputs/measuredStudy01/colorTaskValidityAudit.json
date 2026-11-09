@@ -1,0 +1,14 @@
+{
+  "recordedAt": "2026-11-08T22:21:36.108159+00:00",
+  "classification": "Post-execution task-validity audit, discovered after seeing failed registered color acceptances; not a predeclared primary endpoint.",
+  "reason": "The frozen task says add optional alpha to colorToHex but never specifies property versus second argument. Both preserve existing calls and can satisfy the described behavior. The registered oracle assumes object.alpha without stating that API in the task.",
+  "registeredScoresPreserved": true,
+  "codingCallsAdded": 0,
+  "candidates": "All four colorAlpha candidates, including any passing registered tests; no selection by method or result.",
+  "audit": "Require all stated behavior through one consistently applied interface, either object.alpha or second argument. Do not choose an interface per test case.",
+  "inference": "Report registered oracle scores and this audit separately. Do not interpret an unstated API choice as evidence of method inferiority. Show the five unambiguous tasks separately as a labeled sensitivity subset.",
+  "taskSha256": "dd9dc4284ca6ed9a86cc20f584e0b5cdf4dadd980723aa0df57c93bafb5d1dc0",
+  "registeredOracleSha256": "9fe88a73d74d4f9270f00388f60cc0bc9151383131f4b82306e8432712f73b69",
+  "supplementalOracleSha256": "257eb90a1230800ac979eef6d1f46069f6ab117e792de9fc9b113b0aca1d8d75",
+  "runnerSha256": "0677de32162219876417ef82651e47e4d628023ac44e350c8c622877ff900449"
+}

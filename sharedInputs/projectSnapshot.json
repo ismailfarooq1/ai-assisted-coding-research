@@ -10,5 +10,9 @@
   ],
   "sourceCopiesVerified": true,
   "applicationEnvironmentValidated": false,
-  "experimentsExecuted": false
+  "experimentsExecuted": true,
+  "frontendPilotEnvironmentValidated": true,
+  "lastPilotId": "rawStringPilot02",
+  "validationScope": "Frontend lint, pristine native frontend tests, production build and focused raw-string evaluation. Backend/Go/database environment remains unvalidated.",
+  "methodCExecuted": false
 }

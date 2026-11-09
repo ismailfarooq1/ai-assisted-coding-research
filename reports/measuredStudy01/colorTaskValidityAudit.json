@@ -1,0 +1,164 @@
+{
+  "definition": {
+    "recordedAt": "2026-11-08T22:21:36.108159+00:00",
+    "classification": "Post-execution task-validity audit, discovered after seeing failed registered color acceptances; not a predeclared primary endpoint.",
+    "reason": "The frozen task says add optional alpha to colorToHex but never specifies property versus second argument. Both preserve existing calls and can satisfy the described behavior. The registered oracle assumes object.alpha without stating that API in the task.",
+    "registeredScoresPreserved": true,
+    "codingCallsAdded": 0,
+    "candidates": "All four colorAlpha candidates, including any passing registered tests; no selection by method or result.",
+    "audit": "Require all stated behavior through one consistently applied interface, either object.alpha or second argument. Do not choose an interface per test case.",
+    "inference": "Report registered oracle scores and this audit separately. Do not interpret an unstated API choice as evidence of method inferiority. Show the five unambiguous tasks separately as a labeled sensitivity subset.",
+    "taskSha256": "dd9dc4284ca6ed9a86cc20f584e0b5cdf4dadd980723aa0df57c93bafb5d1dc0",
+    "registeredOracleSha256": "9fe88a73d74d4f9270f00388f60cc0bc9151383131f4b82306e8432712f73b69",
+    "supplementalOracleSha256": "257eb90a1230800ac979eef6d1f46069f6ab117e792de9fc9b113b0aca1d8d75",
+    "runnerSha256": "0677de32162219876417ef82651e47e4d628023ac44e350c8c622877ff900449"
+  },
+  "rows": [
+    {
+      "item": {
+        "task": "colorAlpha",
+        "attempt": 2,
+        "method": "B"
+      },
+      "passed": true,
+      "stage": {
+        "hostWallSeconds": 6.390617958270013,
+        "dockerExitCode": 0,
+        "finishedAt": "2026-11-08T23:04:24.743879+00:00",
+        "resources": {
+          "exitCode": 0,
+          "timedOut": false,
+          "processWallSeconds": 5.2558165440023,
+          "cpuUsageSeconds": 2.91838,
+          "cpuStatDelta": {
+            "usage_usec": 2918380,
+            "user_usec": 1615226,
+            "system_usec": 1303155,
+            "nr_periods": 52,
+            "nr_throttled": 0,
+            "throttled_usec": 0
+          },
+          "initialMemoryBytes": 7045120,
+          "sampledPeakMemoryBytes": 371261440,
+          "memorySamples": 53,
+          "samplingIntervalSeconds": 0.1,
+          "memoryDefinition": "Observed maximum memory.current, including container cache/kernel; not exact peak or process RSS. Startup before wrapper is excluded.",
+          "cpuDefinition": "Container cgroup CPU delta during stage including local descendants and metering; remote inference compute unobserved.",
+          "rolloutUsageObservations": []
+        }
+      },
+      "definitionSha256": "580ba2d2635754560ffc80a805e485abe792bbd79a43cea8d074354044dd99d3",
+      "classification": "Post-execution interface-validity sensitivity audit; registered primary result unchanged"
+    },
+    {
+      "item": {
+        "task": "colorAlpha",
+        "attempt": 2,
+        "method": "A"
+      },
+      "passed": true,
+      "stage": {
+        "hostWallSeconds": 5.647740458138287,
+        "dockerExitCode": 0,
+        "finishedAt": "2026-11-08T23:04:30.393434+00:00",
+        "resources": {
+          "exitCode": 0,
+          "timedOut": false,
+          "processWallSeconds": 4.859055251999962,
+          "cpuUsageSeconds": 2.895706,
+          "cpuStatDelta": {
+            "usage_usec": 2895706,
+            "user_usec": 1831941,
+            "system_usec": 1063765,
+            "nr_periods": 49,
+            "nr_throttled": 1,
+            "throttled_usec": 2666
+          },
+          "initialMemoryBytes": 7008256,
+          "sampledPeakMemoryBytes": 367890432,
+          "memorySamples": 49,
+          "samplingIntervalSeconds": 0.1,
+          "memoryDefinition": "Observed maximum memory.current, including container cache/kernel; not exact peak or process RSS. Startup before wrapper is excluded.",
+          "cpuDefinition": "Container cgroup CPU delta during stage including local descendants and metering; remote inference compute unobserved.",
+          "rolloutUsageObservations": []
+        }
+      },
+      "definitionSha256": "580ba2d2635754560ffc80a805e485abe792bbd79a43cea8d074354044dd99d3",
+      "classification": "Post-execution interface-validity sensitivity audit; registered primary result unchanged"
+    },
+    {
+      "item": {
+        "task": "colorAlpha",
+        "attempt": 1,
+        "method": "A"
+      },
+      "passed": true,
+      "stage": {
+        "hostWallSeconds": 5.227222832851112,
+        "dockerExitCode": 0,
+        "finishedAt": "2026-11-08T23:04:35.622040+00:00",
+        "resources": {
+          "exitCode": 0,
+          "timedOut": false,
+          "processWallSeconds": 4.6321223770028155,
+          "cpuUsageSeconds": 2.693883,
+          "cpuStatDelta": {
+            "usage_usec": 2693883,
+            "user_usec": 1756879,
+            "system_usec": 937005,
+            "nr_periods": 46,
+            "nr_throttled": 0,
+            "throttled_usec": 0
+          },
+          "initialMemoryBytes": 7102464,
+          "sampledPeakMemoryBytes": 363216896,
+          "memorySamples": 47,
+          "samplingIntervalSeconds": 0.1,
+          "memoryDefinition": "Observed maximum memory.current, including container cache/kernel; not exact peak or process RSS. Startup before wrapper is excluded.",
+          "cpuDefinition": "Container cgroup CPU delta during stage including local descendants and metering; remote inference compute unobserved.",
+          "rolloutUsageObservations": []
+        }
+      },
+      "definitionSha256": "580ba2d2635754560ffc80a805e485abe792bbd79a43cea8d074354044dd99d3",
+      "classification": "Post-execution interface-validity sensitivity audit; registered primary result unchanged"
+    },
+    {
+      "item": {
+        "task": "colorAlpha",
+        "attempt": 1,
+        "method": "B"
+      },
+      "passed": true,
+      "stage": {
+        "hostWallSeconds": 5.6370944166556,
+        "dockerExitCode": 0,
+        "finishedAt": "2026-11-08T23:04:41.260739+00:00",
+        "resources": {
+          "exitCode": 0,
+          "timedOut": false,
+          "processWallSeconds": 4.961061752001115,
+          "cpuUsageSeconds": 2.980623,
+          "cpuStatDelta": {
+            "usage_usec": 2980623,
+            "user_usec": 1890451,
+            "system_usec": 1090172,
+            "nr_periods": 49,
+            "nr_throttled": 0,
+            "throttled_usec": 0
+          },
+          "initialMemoryBytes": 7041024,
+          "sampledPeakMemoryBytes": 385630208,
+          "memorySamples": 50,
+          "samplingIntervalSeconds": 0.1,
+          "memoryDefinition": "Observed maximum memory.current, including container cache/kernel; not exact peak or process RSS. Startup before wrapper is excluded.",
+          "cpuDefinition": "Container cgroup CPU delta during stage including local descendants and metering; remote inference compute unobserved.",
+          "rolloutUsageObservations": []
+        }
+      },
+      "definitionSha256": "580ba2d2635754560ffc80a805e485abe792bbd79a43cea8d074354044dd99d3",
+      "classification": "Post-execution interface-validity sensitivity audit; registered primary result unchanged"
+    }
+  ],
+  "passed": 4,
+  "audited": 4
+}

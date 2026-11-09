@@ -1,0 +1,13 @@
+{
+  "earlierStudyFilesChecked": 4193,
+  "earlierStudyFilesChanged": [],
+  "incidentalFinderMetadataChangesExcluded": [
+    "experiments/.DS_Store",
+    "experiments/preparedContext/.DS_Store",
+    "experiments/preparedContext/runs/.DS_Store",
+    "reports/.DS_Store"
+  ],
+  "patchAppliesToFrozenSnapshot": true,
+  "patchReconstructsSealedHashes": true,
+  "promptByteIdentical": true
+}

@@ -1,0 +1,23 @@
+$ tsc --noEmit --skipLibCheck && biome check src tests
+src/lib/memo-views.ts format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Formatter would have printed the following content:
+  
+     6  6 │   export const getMemoViewId = (name: string): string => {
+     7  7 │     const parts = name.split("/");
+     8    │ - ··return·parts.length·===·4·&&·parts[0]·===·"users"·&&·parts[1]·!==·""·&&·parts[2]·===·"views"·&&·parts[3]·!==·""
+     9    │ - ····?·parts[3]
+    10    │ - ····:·name;
+        8 │ + ··return·parts.length·===·4·&&·parts[0]·===·"users"·&&·parts[1]·!==·""·&&·parts[2]·===·"views"·&&·parts[3]·!==·""·?·parts[3]·:·name;
+    11  9 │   };
+    12 10 │   
+  
+
+Checked 673 files in 738ms. No fixes applied.
+Found 1 error.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while running checks.
+  
+
+ ELIFECYCLE  Command failed with exit code 1.

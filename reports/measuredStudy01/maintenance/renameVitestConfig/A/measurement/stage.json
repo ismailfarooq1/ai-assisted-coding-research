@@ -1,0 +1,84 @@
+{
+  "dockerExitCode": 0,
+  "hostWallSeconds": 27.27443579211831,
+  "finishedAt": "2026-11-08T23:08:29.522585+00:00",
+  "resources": {
+    "exitCode": 0,
+    "timedOut": false,
+    "processWallSeconds": 22.861774719000096,
+    "cpuUsageSeconds": 5.447858,
+    "cpuStatDelta": {
+      "usage_usec": 5447858,
+      "user_usec": 2301522,
+      "system_usec": 3146336,
+      "nr_periods": 225,
+      "nr_throttled": 2,
+      "throttled_usec": 137626
+    },
+    "initialMemoryBytes": 7073792,
+    "sampledPeakMemoryBytes": 170897408,
+    "memorySamples": 223,
+    "samplingIntervalSeconds": 0.1,
+    "memoryDefinition": "Observed maximum memory.current, including container cache/kernel; not exact peak or process RSS. Startup before wrapper is excluded.",
+    "cpuDefinition": "Container cgroup CPU delta during stage including local descendants and metering; remote inference compute unobserved.",
+    "rolloutUsageObservations": [
+      {
+        "input_tokens": 13516,
+        "cached_input_tokens": 0,
+        "output_tokens": 144,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 13660
+      },
+      {
+        "input_tokens": 27395,
+        "cached_input_tokens": 13312,
+        "output_tokens": 238,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 27633
+      },
+      {
+        "input_tokens": 42670,
+        "cached_input_tokens": 27008,
+        "output_tokens": 466,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 43136
+      },
+      {
+        "input_tokens": 58197,
+        "cached_input_tokens": 42112,
+        "output_tokens": 527,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 58724
+      },
+      {
+        "input_tokens": 74302,
+        "cached_input_tokens": 57472,
+        "output_tokens": 608,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 74910
+      }
+    ]
+  },
+  "usage": {
+    "completedTurns": 1,
+    "inputTokens": 74302,
+    "outputTokens": 608,
+    "cachedInputTokens": 57472,
+    "cacheWriteInputTokens": 0,
+    "reasoningOutputTokens": 0,
+    "totalTokens": 74910,
+    "failedTurnEvents": 0,
+    "note": "Input includes cached input; output includes reported reasoning. Subsets are not added twice. Incomplete/failed turns may have unreported usage.",
+    "sessionCumulativeUsage": {
+      "input_tokens": 74302,
+      "cached_input_tokens": 57472,
+      "output_tokens": 608,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 74910
+    },
+    "coverage": "completed-turn-reported",
+    "source": "CLI completed-turn events; cumulative session metadata fallback for incomplete turns",
+    "crossCheckMatches": true
+  },
+  "providerInfrastructureFailure": false
+}

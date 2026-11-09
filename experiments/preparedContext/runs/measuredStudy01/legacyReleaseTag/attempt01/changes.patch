@@ -1,0 +1,45 @@
+diff --git a/web/src/lib/release-version.ts b/web/src/lib/release-version.ts
+index 22fbda9..0f1294e 100644
+--- a/web/src/lib/release-version.ts
++++ b/web/src/lib/release-version.ts
+@@ -1,6 +1,6 @@
+ // Release links accept calendar releases YY.MM.N[-rc.K] and historical 0.x releases.
+ const isReleaseVersion = (version: string): boolean =>
+-  /^(?:[1-9]\d\.(?:0[1-9]|1[0-2])\.(?:0|[1-9]\d*)|0\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*))(?:-rc\.[1-9]\d*)?$/.test(version);
++  /^(?:[1-9]\d\.(?:0[1-9]|1[0-2])\.(?:0|[1-9]\d*)|v?0\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*))(?:-rc\.[1-9]\d*)?$/.test(version);
+ 
+ export const getReleaseTag = (version: string): string | undefined => {
+   if (!isReleaseVersion(version)) return undefined;
+diff --git a/web/tests/release-version.test.ts b/web/tests/release-version.test.ts
+index c2446c3..f734636 100644
+--- a/web/tests/release-version.test.ts
++++ b/web/tests/release-version.test.ts
+@@ -11,12 +11,17 @@ describe("release version links", () => {
+     "27.01.0",
+     "0.31.0",
+     "0.31.0-rc.2",
++    "v0.31.0",
++    "v0.31.0-rc.2",
+   ])("links release %s", (version) => expect(getReleaseTag(version)).toBe(version.startsWith("0.") ? `v${version}` : version));
+ 
+   it.each([
+     "dev",
+     "manual-abcdef0",
+     "v26.09.0",
++    "V0.31.0",
++    "vv0.31.0",
++    "v26.09.0",
+     "26.09",
+     "26.09-rc.1",
+     "26.9.0",
+@@ -27,5 +32,10 @@ describe("release version links", () => {
+     "26.09.0-dev.abc1234",
+     "26.09.0extra",
+     "0.31.0oops",
++    "v0.31.00",
++    "v0.31.0-rc.0",
++    "v0.31.0-rc.01",
++    " v0.31.0",
++    "v0.31.0 ",
+   ])("does not link non-release %s", (version) => expect(getReleaseTag(version)).toBeUndefined());
+ });

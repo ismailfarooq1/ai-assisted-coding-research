@@ -1,0 +1,144 @@
+{
+  "item": {
+    "task": "memoViewNames",
+    "attempt": 2,
+    "method": "B"
+  },
+  "stage": {
+    "dockerExitCode": 0,
+    "hostWallSeconds": 54.68305633403361,
+    "finishedAt": "2026-11-08T21:17:54.650740+00:00",
+    "resources": {
+      "exitCode": 0,
+      "timedOut": false,
+      "processWallSeconds": 51.00748981600009,
+      "cpuUsageSeconds": 28.969685,
+      "cpuStatDelta": {
+        "usage_usec": 28969685,
+        "user_usec": 19359651,
+        "system_usec": 9610034,
+        "nr_periods": 507,
+        "nr_throttled": 6,
+        "throttled_usec": 231957
+      },
+      "initialMemoryBytes": 7065600,
+      "sampledPeakMemoryBytes": 840781824,
+      "memorySamples": 504,
+      "samplingIntervalSeconds": 0.1,
+      "memoryDefinition": "Observed maximum memory.current, including container cache/kernel; not exact peak or process RSS. Startup before wrapper is excluded.",
+      "cpuDefinition": "Container cgroup CPU delta during stage including local descendants and metering; remote inference compute unobserved.",
+      "rolloutUsageObservations": [
+        {
+          "input_tokens": 13618,
+          "cached_input_tokens": 0,
+          "output_tokens": 109,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 13727
+        },
+        {
+          "input_tokens": 28223,
+          "cached_input_tokens": 13440,
+          "output_tokens": 214,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 28437
+        },
+        {
+          "input_tokens": 46807,
+          "cached_input_tokens": 27904,
+          "output_tokens": 328,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 47135
+        },
+        {
+          "input_tokens": 67000,
+          "cached_input_tokens": 46336,
+          "output_tokens": 705,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 67705
+        },
+        {
+          "input_tokens": 87594,
+          "cached_input_tokens": 66304,
+          "output_tokens": 839,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 88433
+        },
+        {
+          "input_tokens": 108959,
+          "cached_input_tokens": 86656,
+          "output_tokens": 884,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 109843
+        },
+        {
+          "input_tokens": 130392,
+          "cached_input_tokens": 107904,
+          "output_tokens": 959,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 131351
+        },
+        {
+          "input_tokens": 151923,
+          "cached_input_tokens": 107904,
+          "output_tokens": 1004,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 152927
+        },
+        {
+          "input_tokens": 173522,
+          "cached_input_tokens": 129152,
+          "output_tokens": 1053,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 174575
+        },
+        {
+          "input_tokens": 195208,
+          "cached_input_tokens": 150528,
+          "output_tokens": 1125,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 196333
+        }
+      ]
+    },
+    "usage": {
+      "completedTurns": 1,
+      "inputTokens": 195208,
+      "outputTokens": 1125,
+      "cachedInputTokens": 150528,
+      "cacheWriteInputTokens": 0,
+      "reasoningOutputTokens": 0,
+      "totalTokens": 196333,
+      "failedTurnEvents": 0,
+      "note": "Input includes cached input; output includes reported reasoning. Subsets are not added twice. Incomplete/failed turns may have unreported usage.",
+      "sessionCumulativeUsage": {
+        "input_tokens": 195208,
+        "cached_input_tokens": 150528,
+        "output_tokens": 1125,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 196333
+      },
+      "coverage": "completed-turn-reported",
+      "source": "CLI completed-turn events; cumulative session metadata fallback for incomplete turns",
+      "crossCheckMatches": true
+    },
+    "providerInfrastructureFailure": false
+  },
+  "changes": {
+    "files": [
+      "web/src/lib/memo-views.ts",
+      "web/tests/memo-views.test.ts"
+    ],
+    "permitted": true,
+    "headUnchanged": true,
+    "testFilesChanged": [
+      "web/tests/memo-views.test.ts"
+    ],
+    "fileHashes": {
+      "web/src/lib/memo-views.ts": "2cc23c7b840f8c810ff1adc6e1c3b36dae0552908cf9a7419883cfcb7a1b3d5f",
+      "web/tests/memo-views.test.ts": "f4653a810ebd2bfde515d5c9a75c150d9ab31dcc7f9c2dd01d6734b0fd131742"
+    },
+    "patchSha256": "f1dd051df4225ee21ba4805b1dbb3cb6387cb808a0a613a33776b26a4fe9046a"
+  },
+  "executionProtocolSha256": "fcf0a9ad30869458d1cc9af6d5706a6c7fbf4b0961296f67a5f92ea78c499298",
+  "fullGuideExposureObserved": false
+}

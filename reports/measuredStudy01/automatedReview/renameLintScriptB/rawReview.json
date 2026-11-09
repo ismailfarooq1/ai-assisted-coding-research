@@ -1,0 +1,177 @@
+{
+  "judgments": [
+    {
+      "id": "c01",
+      "decision": "supported",
+      "text": "Frontend checks are run from web/: `pnpm check` (TypeScript and Biome checks), `pnpm test` (unit tests; invokes `vitest run`), and `pnpm build`. To run unit tests directly, use `cd web && pnpm test`; Vitest configuration is `web/vitest.config.mts` (jsdom, setup file `./tests/setup.ts`, tests `tests/**/*.test.{ts,tsx}`). Backend guidance includes `go test ./...`, `go test -v ./store/...`, and `golangci-lint run`.",
+      "reason": "The package scripts define check as TypeScript plus Biome, test as vitest run, and build as vite build. The Vitest config supplies the stated environment, setup file, and test glob; AGENTS.md includes the listed backend commands.",
+      "evidence": [
+        {
+          "path": "web/package.json",
+          "excerpt": "\"test\": \"vitest run\",\n    \"check\": \"tsc --noEmit --skipLibCheck && biome check src tests\""
+        },
+        {
+          "path": "web/vitest.config.mts",
+          "excerpt": "environment: \"jsdom\",\n    setupFiles: [\"./tests/setup.ts\"],\n    include: [\"tests/**/*.test.{ts,tsx}\"],"
+        },
+        {
+          "path": "AGENTS.md",
+          "excerpt": "go test ./...                      # Run all Go tests\ngo test -v ./store/...             # Store tests, including DB drivers via TestContainers"
+        }
+      ]
+    },
+    {
+      "id": "c02",
+      "decision": "supported",
+      "text": "Route HTTP transport and thin handlers to `server/` and business rules to `core/`; store and migration behavior belongs in `store/`; markdown parsing/rendering and derived memo payload in `markdown/`; CEL filtering and SQL rendering in `filter/`. Import direction descends cmd → server → core → store → provider/markdown/filter → internal, with package-specific constraints enforced by depguard.",
+      "reason": "AGENTS.md routes these concerns as stated, package doc.go files describe markdown/filter functions, and depguard defines the relevant forbidden imports. The simple chain is an overview; package-specific restrictions apply.",
+      "evidence": [
+        {
+          "path": "AGENTS.md",
+          "excerpt": "| `server/` | The HTTP process: net/http bootstrap, graceful shutdown, every transport | core, store, provider, markdown, filter, internal |"
+        },
+        {
+          "path": "markdown/doc.go",
+          "excerpt": "// Package markdown is the markdown engine: parsing memo content into the AST"
+        },
+        {
+          "path": "filter/doc.go",
+          "excerpt": "// Package filter compiles the CEL filter expressions accepted by the list\n// endpoints into an intermediate representation and renders that IR into SQL"
+        },
+        {
+          "path": ".golangci.yaml",
+          "excerpt": "store-sits-below-core:\n          files:\n            - \"**/store/**\"\n          deny:\n            - pkg: github.com/usememos/memos/core"
+        }
+      ]
+    },
+    {
+      "id": "c03",
+      "decision": "supported",
+      "text": "Frontend code uses `@/` absolute imports, strict TypeScript, and Biome formatting (2 spaces, double quotes, semicolons, 140-character line width). Put server data in React Query hooks under `web/src/hooks/`; keep UI-only state in contexts or component state. Memo display, editing, and composition use `MemoEditor`; reuse Base UI primitives and use Tailwind CSS v4 utilities, `cn()`, and CVA.",
+      "reason": "The supplied guide specifies the frontend conventions; tsconfig enables strict TypeScript and the @ alias, and MemoEditor README documents its role.",
+      "evidence": [
+        {
+          "path": "AGENTS.md",
+          "excerpt": "- Follow Biome formatting: 2-space indent, double quotes, semicolons, 140-character line width."
+        },
+        {
+          "path": "web/tsconfig.json",
+          "excerpt": "\"strict\": true,\n    \"noUnusedLocals\": true"
+        },
+        {
+          "path": "web/src/components/MemoEditor/README.md",
+          "excerpt": "`MemoEditor` is the one way a memo is shown, edited or composed."
+        }
+      ]
+    },
+    {
+      "id": "c04",
+      "decision": "supported",
+      "text": "The web package requires Node.js `>=24` and pins pnpm `11.0.1` in `web/package.json`; CI setup uses Node 24 and installs with `pnpm install --frozen-lockfile`. Go CI setup selects the version declared in `go.mod`; the repository guidance identifies Go 1.27.2. Tool versions belong in the shared setup actions rather than individual workflows.",
+      "reason": "The package manifest sets the Node engine and package manager; setup actions use Node 24, frozen install, and go-version-file. The guide states the Go version and shared-action policy.",
+      "evidence": [
+        {
+          "path": "web/package.json",
+          "excerpt": "\"packageManager\": \"pnpm@11.0.1\",\n  \"engines\": {\n    \"node\": \">=24\""
+        },
+        {
+          "path": ".github/actions/setup-web/action.yml",
+          "excerpt": "node-version: \"24\"\n        cache: pnpm"
+        },
+        {
+          "path": ".github/actions/setup-go/action.yml",
+          "excerpt": "go-version-file: go.mod"
+        },
+        {
+          "path": "AGENTS.md",
+          "excerpt": "Workflows install toolchains through `.github/actions/setup-go` ... and `.github/actions/setup-web` ...; change versions there, not per workflow."
+        }
+      ]
+    },
+    {
+      "id": "c05",
+      "decision": "supported",
+      "text": "Do not hand-edit generated proto outputs: change `.proto` sources and run `cd proto && buf generate`; generated outputs include Go/OpenAPI under `proto/gen/` and TypeScript under `web/src/types/proto/`. Database schema changes require SQLite, MySQL, and PostgreSQL migrations plus each driver's `LATEST.sql`; fresh-install SQL and incremental migrations must stay equivalent.",
+      "reason": "AGENTS.md directly states the generated-proto workflow, output locations, database driver migration requirement, and equivalence requirement.",
+      "evidence": [
+        {
+          "path": "AGENTS.md",
+          "excerpt": "Do not hand-edit generated proto outputs. Change `.proto` files, then run `buf generate`."
+        },
+        {
+          "path": "AGENTS.md",
+          "excerpt": "Generated API outputs: `proto/gen/` for Go/OpenAPI, `web/src/types/proto/` for TypeScript."
+        },
+        {
+          "path": "AGENTS.md",
+          "excerpt": "Schema changes require SQLite, MySQL, and PostgreSQL migrations plus `LATEST.sql` updates.\n- Fresh-install SQL and incremental migrations must stay equivalent."
+        }
+      ]
+    },
+    {
+      "id": "c06",
+      "decision": "supported",
+      "text": "For current behavior, use source code, tests, and package README.md/doc.go files rather than design documents. Design documents remain editable until release; after release their body is frozen and later changes go in a dated `## Amendments` section. If this repository guide conflicts with source files or CI configuration, trust the source/CI and update the guide.",
+      "reason": "Both cited documents state the source-of-truth distinction, lifecycle freeze and dated amendments rule, and guide authority rule.",
+      "evidence": [
+        {
+          "path": "docs/design/README.md",
+          "excerpt": "Source code, tests, and package `README.md` or `doc.go` files describe current\nbehavior; a design document does not have to."
+        },
+        {
+          "path": "docs/design/README.md",
+          "excerpt": "When a later release changes a frozen design, add or extend a dated `## Amendments` section at the end"
+        },
+        {
+          "path": "AGENTS.md",
+          "excerpt": "If a fact here conflicts with source files or CI config, trust the source file and update this guide."
+        }
+      ]
+    },
+    {
+      "id": "c07",
+      "decision": "supported",
+      "text": "The store test README says Docker must be running for MySQL, PostgreSQL, and released-binary upgrade tests. A single-driver test can be selected with `DRIVER=mysql go test -v ./store/test/...`; upgrade tests can be selected with `DRIVER=sqlite go test -v -count=1 -timeout 30m -run 'TestMigration|TestUpgrade|TestFreshInstall' ./store/test/...`.",
+      "reason": "The store test README gives the Docker prerequisite and both command selections verbatim.",
+      "evidence": [
+        {
+          "path": "store/test/README.md",
+          "excerpt": "Docker must be running for MySQL, PostgreSQL, and released-binary upgrade tests."
+        },
+        {
+          "path": "store/test/README.md",
+          "excerpt": "DRIVER=mysql go test -v ./store/test/... # One driver only"
+        },
+        {
+          "path": "store/test/README.md",
+          "excerpt": "DRIVER=sqlite go test -v -count=1 -timeout 30m -run 'TestMigration|TestUpgrade|TestFreshInstall' ./store/test/..."
+        }
+      ]
+    }
+  ],
+  "coverage": {
+    "routing": "yes",
+    "verification": "yes",
+    "toolchain": "yes",
+    "generated-file rules": "yes",
+    "authority": "yes"
+  },
+  "notes": "Reviewed only packet-supplied native source text. No tests or application suites were run and no runtime behavior is asserted. AGENTS.md in the supplied current document already incorporates the pnpm check correction.",
+  "beforeJudgments": {
+    "c01": "stale",
+    "c02": "supported",
+    "c03": "supported",
+    "c04": "supported",
+    "c05": "supported",
+    "c06": "supported",
+    "c07": "supported"
+  },
+  "requiredFacts": {
+    "frontendCheckCommand": "yes",
+    "unitTestCommand": "yes",
+    "vitestConfig": "yes",
+    "nodeEngine": "yes",
+    "pnpm": "yes",
+    "generatedTypeScript": "yes"
+  }
+}

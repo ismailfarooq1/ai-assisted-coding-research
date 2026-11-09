@@ -1,0 +1,130 @@
+#1 [internal] load build definition from frontend.Dockerfile
+#1 sha256:3c057dc4257fedf4c28d9e6b5084e30128f0baa8cd879466dcd7a4744108d915
+#1 transferring dockerfile: 234B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load .dockerignore
+#2 sha256:b7c4edbfebd7ed97402d1d7f03f045df10639a57a63f0a497d55bc7b3f259bf8
+#2 transferring context: 2B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/memos-ab-pilot:20261108
+#3 sha256:179d5980e824c704c964fde6a04af1e6b98ee52b5260475fdf759276c8fa987f
+#3 DONE 0.0s
+
+#4 [1/6] FROM docker.io/library/memos-ab-pilot:20261108
+#4 sha256:9b2acafe4b1d9c176c28fa3763b577fae1c9bc14536866ddd1d1731e1e6dfa19
+#4 CACHED
+
+#6 [internal] load build context
+#6 sha256:58bfaaf53f85f02f44b0e17230e0dc579080c8914ffa9e0d97ace091bcb710c7
+#6 transferring context: 194B done
+#6 DONE 0.0s
+
+#5 [2/6] WORKDIR /project/web
+#5 sha256:664a1ba289b9f9832ce2d855c97d00a797f0c0454a4baf1b924a88268e3c8540
+#5 DONE 0.0s
+
+#7 [3/6] COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+#7 sha256:40b7c7673661f7154361aae0e9fa5aa88231df211454b1d21a9925ef5f65d7f4
+#7 DONE 0.0s
+
+#8 [4/6] COPY patches ./patches
+#8 sha256:af92bec6127d7fcec6df9454f2793867bbd89cbaf8b69d503b385c49daaa3fe1
+#8 DONE 0.0s
+
+#9 [5/6] RUN pnpm install --frozen-lockfile
+#9 sha256:71d76d60bdd7ca8323ad8c431146574db6e88fa0a91173737496c15a3b773806
+#9 1.306 Lockfile is up to date, resolution step is skipped
+#9 1.337 Progress: resolved 1, reused 0, downloaded 0, added 0
+#9 1.392 Packages: +246
+#9 1.392 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#9 2.197 
+#9 2.197    ╭──────────────────────────────────────────╮
+#9 2.197    │                                          │
+#9 2.197    │   Update available! 11.0.1 → 12.18.0.    │
+#9 2.197    │   Changelog: https://pnpm.io/v/12.18.0   │
+#9 2.197    │     To update, run: pnpm add -g pnpm     │
+#9 2.197    │                                          │
+#9 2.197    ╰──────────────────────────────────────────╯
+#9 2.197 
+#9 2.338 Progress: resolved 246, reused 0, downloaded 63, added 63
+#9 3.338 Progress: resolved 246, reused 0, downloaded 143, added 138
+#9 4.337 Progress: resolved 246, reused 0, downloaded 241, added 241
+#9 5.338 Progress: resolved 246, reused 0, downloaded 245, added 245
+#9 5.822 Progress: resolved 246, reused 0, downloaded 246, added 246, done
+#9 6.095 
+#9 6.095 dependencies:
+#9 6.095 + @base-ui/react 1.7.0
+#9 6.095 + @connectrpc/connect 2.1.1
+#9 6.095 + @connectrpc/connect-web 2.1.1
+#9 6.095 + @github/relative-time-element 5.0.0
+#9 6.095 + @maplibre/maplibre-gl-leaflet 0.1.4
+#9 6.095 + @pierre/highlights 0.3.0
+#9 6.095 + @tailwindcss/vite 4.2.4
+#9 6.095 + @tanstack/react-query 5.100.9
+#9 6.095 + @tanstack/react-query-devtools 5.100.9
+#9 6.095 + @usememos/editor 26.11.0
+#9 6.095 + class-variance-authority 0.7.1
+#9 6.095 + clsx 2.1.1
+#9 6.095 + copy-to-clipboard 4.0.2
+#9 6.095 + dayjs 1.11.20
+#9 6.095 + dompurify 3.4.17
+#9 6.095 + exifr 7.1.3
+#9 6.095 + html-to-image 1.11.13
+#9 6.095 + i18next 26.3.6
+#9 6.095 + katex 0.16.45
+#9 6.095 + leaflet 1.9.4
+#9 6.095 + leaflet.markercluster 1.5.3
+#9 6.095 + lodash-es 4.18.1
+#9 6.095 + lucide-react 1.34.0
+#9 6.095 + maplibre-gl 6.8.0
+#9 6.095 + pele 1.13.0
+#9 6.095 + react 19.2.6
+#9 6.095 + react-dom 19.2.6
+#9 6.095 + react-hot-toast 2.6.0
+#9 6.095 + react-i18next 17.0.11
+#9 6.095 + react-leaflet 5.0.0
+#9 6.095 + react-leaflet-cluster 4.1.3
+#9 6.095 + react-router-dom 7.15.0
+#9 6.095 + tailwind-merge 3.5.0
+#9 6.095 + tailwindcss 4.2.4
+#9 6.095 + uuid 11.1.0
+#9 6.095 
+#9 6.095 devDependencies:
+#9 6.095 + @babel/core 7.29.0
+#9 6.095 + @biomejs/biome 2.4.14
+#9 6.095 + @bufbuild/protobuf 2.12.0
+#9 6.095 + @rolldown/plugin-babel 0.2.3
+#9 6.095 + @testing-library/jest-dom 6.9.1
+#9 6.095 + @testing-library/react 16.3.2
+#9 6.095 + @types/babel__core 7.20.5
+#9 6.095 + @types/leaflet 1.9.21
+#9 6.095 + @types/lodash-es 4.17.12
+#9 6.095 + @types/node 24.12.2
+#9 6.095 + @types/react 19.2.14
+#9 6.095 + @types/react-dom 19.2.3
+#9 6.095 + @vitejs/plugin-react 6.0.1
+#9 6.095 + babel-plugin-react-compiler 1.0.0
+#9 6.095 + jsdom 29.1.1
+#9 6.095 + tw-animate-css 1.4.0
+#9 6.095 + typescript 7.0.2
+#9 6.095 + vite 8.0.11
+#9 6.095 + vitest 4.1.5
+#9 6.095 
+#9 6.141 Done in 5.2s using pnpm v11.0.1
+#9 DONE 8.6s
+
+#10 [6/6] WORKDIR /project
+#10 sha256:93d2d5b2999fab60a48204233d795e44e05a278d3fb6de8cb8d1621297eabb35
+#10 DONE 0.1s
+
+#11 exporting to image
+#11 sha256:e8c613e07b0b7ff33893b694f7759a10d42e180f2b4dc349fb57dc6b71dcab00
+#11 exporting layers
+#11 exporting layers 2.6s done
+#11 writing image sha256:09eea9cc9b651793aabace5c6931c518f683e2857f8700c57c397e38e701b355 done
+#11 naming to docker.io/library/memos-ab-frontend:20261108 done
+#11 DONE 2.6s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them

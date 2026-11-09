@@ -1,0 +1,85 @@
+{
+  "exitCode": 0,
+  "timedOut": false,
+  "processWallSeconds": 44.73219960399729,
+  "cpuUsageSeconds": 16.055236,
+  "cpuStatDelta": {
+    "usage_usec": 16055236,
+    "user_usec": 9469125,
+    "system_usec": 6586112,
+    "nr_periods": 439,
+    "nr_throttled": 32,
+    "throttled_usec": 2437997
+  },
+  "initialMemoryBytes": 6995968,
+  "sampledPeakMemoryBytes": 1087709184,
+  "memorySamples": 433,
+  "samplingIntervalSeconds": 0.1,
+  "memoryDefinition": "Observed maximum memory.current, including container cache/kernel; not exact peak or process RSS. Startup before wrapper is excluded.",
+  "cpuDefinition": "Container cgroup CPU delta during stage including local descendants and metering; remote inference compute unobserved.",
+  "rolloutUsageObservations": [
+    {
+      "input_tokens": 13618,
+      "cached_input_tokens": 0,
+      "output_tokens": 112,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 13730
+    },
+    {
+      "input_tokens": 28226,
+      "cached_input_tokens": 13440,
+      "output_tokens": 198,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 28424
+    },
+    {
+      "input_tokens": 45868,
+      "cached_input_tokens": 27904,
+      "output_tokens": 293,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 46161
+    },
+    {
+      "input_tokens": 64647,
+      "cached_input_tokens": 45312,
+      "output_tokens": 343,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 64990
+    },
+    {
+      "input_tokens": 84663,
+      "cached_input_tokens": 63872,
+      "output_tokens": 721,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 85384
+    },
+    {
+      "input_tokens": 105081,
+      "cached_input_tokens": 83712,
+      "output_tokens": 1182,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 106263
+    },
+    {
+      "input_tokens": 125984,
+      "cached_input_tokens": 103936,
+      "output_tokens": 1320,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 127304
+    },
+    {
+      "input_tokens": 147237,
+      "cached_input_tokens": 124672,
+      "output_tokens": 1381,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 148618
+    },
+    {
+      "input_tokens": 168968,
+      "cached_input_tokens": 145792,
+      "output_tokens": 1514,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 170482
+    }
+  ]
+}

@@ -1,0 +1,391 @@
+{
+  "pilotId": "rawStringPilot02",
+  "completedAt": "2026-11-08T17:23:01.102682+00:00",
+  "protocolSha256": "a8922ac1c885192091dc8fb62fe4745c3aedee245d29fc2cd61f5507a4777050",
+  "executions": {
+    "A": {
+      "method": "A",
+      "strategy": "existingWorkflow",
+      "startedAt": "2026-11-08T17:10:45.560347+00:00",
+      "finishedAt": "2026-11-08T17:12:36.481024+00:00",
+      "elapsedSeconds": 110.896,
+      "exitCode": 0,
+      "timedOut": false,
+      "protocolSha256": "a8922ac1c885192091dc8fb62fe4745c3aedee245d29fc2cd61f5507a4777050",
+      "usage": {
+        "completedTurns": 1,
+        "inputTokens": 185769,
+        "outputTokens": 1539,
+        "cachedInputTokens": 137984,
+        "cacheWriteInputTokens": 0,
+        "reasoningOutputTokens": 0,
+        "totalTokens": 187308,
+        "failedTurnEvents": 0,
+        "note": "Input includes cached input; output includes reported reasoning. Subsets are not added twice. Incomplete/failed turns may have unreported usage."
+      },
+      "changes": {
+        "files": [
+          "web/src/lib/suggestion-expression.ts",
+          "web/tests/memo-suggestions.test.ts"
+        ],
+        "permitted": true,
+        "headUnchanged": true,
+        "testFilesChanged": [
+          "web/tests/memo-suggestions.test.ts"
+        ],
+        "fileHashes": {
+          "web/src/lib/suggestion-expression.ts": "0295a4472484bc0a854b162d5aaafaac241c3b3561233d25108351673c642400",
+          "web/tests/memo-suggestions.test.ts": "1c319b35c179e4449937e9c06de4d6f03f64170cccb23ce95190ebc00a1eef8c"
+        },
+        "patchSha256": "b123136dff062623f7e05cb732686e5121a087ea209bec77f4d2949c94633f45"
+      },
+      "contextReadCommands": []
+    },
+    "B": {
+      "method": "B",
+      "strategy": "preparedContext",
+      "startedAt": "2026-11-08T17:12:38.035237+00:00",
+      "finishedAt": "2026-11-08T17:13:57.025231+00:00",
+      "elapsedSeconds": 78.99,
+      "exitCode": 0,
+      "timedOut": false,
+      "protocolSha256": "a8922ac1c885192091dc8fb62fe4745c3aedee245d29fc2cd61f5507a4777050",
+      "usage": {
+        "completedTurns": 1,
+        "inputTokens": 350595,
+        "outputTokens": 1717,
+        "cachedInputTokens": 320768,
+        "cacheWriteInputTokens": 0,
+        "reasoningOutputTokens": 0,
+        "totalTokens": 352312,
+        "failedTurnEvents": 0,
+        "note": "Input includes cached input; output includes reported reasoning. Subsets are not added twice. Incomplete/failed turns may have unreported usage."
+      },
+      "changes": {
+        "files": [
+          "web/src/lib/suggestion-expression.ts",
+          "web/tests/memo-suggestions.test.ts"
+        ],
+        "permitted": true,
+        "headUnchanged": true,
+        "testFilesChanged": [
+          "web/tests/memo-suggestions.test.ts"
+        ],
+        "fileHashes": {
+          "web/src/lib/suggestion-expression.ts": "2e7afd26244a1176b9d53907efe5e0bb16007c0854edb41d8f6630318e11c74e",
+          "web/tests/memo-suggestions.test.ts": "dc97055a067ebc8455e7bc76a0ee2732505ea8e980f8c4b57659ee2753204eb0"
+        },
+        "patchSha256": "62f113d65039c115afe2c70370b6098e1b32740db399fba9f2f9f8862fbcb7e9"
+      },
+      "contextReadCommands": [
+        "/bin/bash -lc 'cat .projectContext/contextGuide.md'"
+      ]
+    }
+  },
+  "evaluations": {
+    "A": {
+      "method": "A",
+      "verifiedCompletion": true,
+      "checks": {
+        "independent": {
+          "exitCode": 0,
+          "passed": true,
+          "elapsedSeconds": 0.694,
+          "details": {
+            "outcomes": [
+              {
+                "id": "rawLowerDouble",
+                "group": "acceptance",
+                "passed": true
+              },
+              {
+                "id": "rawUpperSingle",
+                "group": "acceptance",
+                "passed": true
+              },
+              {
+                "id": "rawLowerSingle",
+                "group": "acceptance",
+                "passed": true
+              },
+              {
+                "id": "rawUpperDouble",
+                "group": "acceptance",
+                "passed": true
+              },
+              {
+                "id": "rawBackslashN",
+                "group": "acceptance",
+                "passed": true
+              },
+              {
+                "id": "rawUnicodeEscape",
+                "group": "acceptance",
+                "passed": true
+              },
+              {
+                "id": "rawUnknownEscape",
+                "group": "acceptance",
+                "passed": true
+              },
+              {
+                "id": "rawOperators",
+                "group": "acceptance",
+                "passed": true
+              },
+              {
+                "id": "mixedStringList",
+                "group": "acceptance",
+                "passed": true
+              },
+              {
+                "id": "rawBooleanStructure",
+                "group": "acceptance",
+                "passed": true
+              },
+              {
+                "id": "normalDouble",
+                "group": "regression",
+                "passed": true
+              },
+              {
+                "id": "normalSingle",
+                "group": "regression",
+                "passed": true
+              },
+              {
+                "id": "normalDecodedUnicode",
+                "group": "regression",
+                "passed": true
+              },
+              {
+                "id": "normalDecodedNewline",
+                "group": "regression",
+                "passed": true
+              },
+              {
+                "id": "unclosedRawDouble",
+                "group": "regression",
+                "passed": true
+              },
+              {
+                "id": "unclosedRawSingle",
+                "group": "regression",
+                "passed": true
+              },
+              {
+                "id": "danglingAnd",
+                "group": "regression",
+                "passed": true
+              },
+              {
+                "id": "unclosedParenthesis",
+                "group": "regression",
+                "passed": true
+              },
+              {
+                "id": "mismatchedBracket",
+                "group": "regression",
+                "passed": true
+              },
+              {
+                "id": "unsupportedToken",
+                "group": "regression",
+                "passed": true
+              },
+              {
+                "id": "normalComment",
+                "group": "regression",
+                "passed": true
+              },
+              {
+                "id": "ordinaryList",
+                "group": "regression",
+                "passed": true
+              },
+              {
+                "id": "nonLiteralList",
+                "group": "regression",
+                "passed": true
+              }
+            ],
+            "passed": true
+          }
+        },
+        "native": {
+          "exitCode": 0,
+          "passed": true,
+          "elapsedSeconds": 287.688,
+          "statuses": {
+            "lint": 0,
+            "test": 0,
+            "build": 0
+          }
+        }
+      },
+      "note": "Native tests restored from pristine snapshot. Agent-authored tests are retained in the patch; their quality is not independently graded."
+    },
+    "B": {
+      "method": "B",
+      "verifiedCompletion": true,
+      "checks": {
+        "independent": {
+          "exitCode": 0,
+          "passed": true,
+          "elapsedSeconds": 0.578,
+          "details": {
+            "outcomes": [
+              {
+                "id": "rawLowerDouble",
+                "group": "acceptance",
+                "passed": true
+              },
+              {
+                "id": "rawUpperSingle",
+                "group": "acceptance",
+                "passed": true
+              },
+              {
+                "id": "rawLowerSingle",
+                "group": "acceptance",
+                "passed": true
+              },
+              {
+                "id": "rawUpperDouble",
+                "group": "acceptance",
+                "passed": true
+              },
+              {
+                "id": "rawBackslashN",
+                "group": "acceptance",
+                "passed": true
+              },
+              {
+                "id": "rawUnicodeEscape",
+                "group": "acceptance",
+                "passed": true
+              },
+              {
+                "id": "rawUnknownEscape",
+                "group": "acceptance",
+                "passed": true
+              },
+              {
+                "id": "rawOperators",
+                "group": "acceptance",
+                "passed": true
+              },
+              {
+                "id": "mixedStringList",
+                "group": "acceptance",
+                "passed": true
+              },
+              {
+                "id": "rawBooleanStructure",
+                "group": "acceptance",
+                "passed": true
+              },
+              {
+                "id": "normalDouble",
+                "group": "regression",
+                "passed": true
+              },
+              {
+                "id": "normalSingle",
+                "group": "regression",
+                "passed": true
+              },
+              {
+                "id": "normalDecodedUnicode",
+                "group": "regression",
+                "passed": true
+              },
+              {
+                "id": "normalDecodedNewline",
+                "group": "regression",
+                "passed": true
+              },
+              {
+                "id": "unclosedRawDouble",
+                "group": "regression",
+                "passed": true
+              },
+              {
+                "id": "unclosedRawSingle",
+                "group": "regression",
+                "passed": true
+              },
+              {
+                "id": "danglingAnd",
+                "group": "regression",
+                "passed": true
+              },
+              {
+                "id": "unclosedParenthesis",
+                "group": "regression",
+                "passed": true
+              },
+              {
+                "id": "mismatchedBracket",
+                "group": "regression",
+                "passed": true
+              },
+              {
+                "id": "unsupportedToken",
+                "group": "regression",
+                "passed": true
+              },
+              {
+                "id": "normalComment",
+                "group": "regression",
+                "passed": true
+              },
+              {
+                "id": "ordinaryList",
+                "group": "regression",
+                "passed": true
+              },
+              {
+                "id": "nonLiteralList",
+                "group": "regression",
+                "passed": true
+              }
+            ],
+            "passed": true
+          }
+        },
+        "native": {
+          "exitCode": 0,
+          "passed": true,
+          "elapsedSeconds": 254.426,
+          "statuses": {
+            "lint": 0,
+            "test": 0,
+            "build": 0
+          }
+        }
+      },
+      "note": "Native tests restored from pristine snapshot. Agent-authored tests are retained in the patch; their quality is not independently graded."
+    }
+  },
+  "conclusion": "Descriptive one-task pilot only. No supported general superiority claim.",
+  "preparationUsage": null,
+  "maintenanceObserved": false,
+  "preservedSourceVerification": {
+    "experiments/existingWorkflow/memos": {
+      "head": "b40d8a7b573774c52b022c8d6537d6baf2129dc0",
+      "tree": "9f86f8a96542b5724d7968c70e7cfed3d4ee06a1",
+      "clean": true
+    },
+    "experiments/preparedContext/memos": {
+      "head": "b40d8a7b573774c52b022c8d6537d6baf2129dc0",
+      "tree": "9f86f8a96542b5724d7968c70e7cfed3d4ee06a1",
+      "clean": true
+    },
+    "experiments/proposedStrategy/memos": {
+      "head": "b40d8a7b573774c52b022c8d6537d6baf2129dc0",
+      "tree": "9f86f8a96542b5724d7968c70e7cfed3d4ee06a1",
+      "clean": true
+    }
+  }
+}

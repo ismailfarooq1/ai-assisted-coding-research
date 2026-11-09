@@ -1,0 +1,274 @@
+{
+  "verifiedAt": "2026-11-08T23:38:49.305523+00:00",
+  "originalFilesPreserved": 4214,
+  "frozenDesignAndReviewAndRecoverySealsValid": true,
+  "codingCalls": 24,
+  "completedTurns": 34,
+  "allUsageCrossChecksMatch": true,
+  "candidateArtifactChecks": [
+    {
+      "item": {
+        "task": "legacyReleaseTag",
+        "attempt": 1,
+        "method": "A"
+      },
+      "verdictSha256": "e47563adfd037f6caa688c5e08790825e97957c6cd38561fa3bc151b0de3ff6e",
+      "executionSha256": "e535848bf3e8b341359b40f0d065ee1394206dd0eca29229af2da7b871c845bb",
+      "candidateChangedFilesMatchRecordedHashes": true
+    },
+    {
+      "item": {
+        "task": "legacyReleaseTag",
+        "attempt": 1,
+        "method": "B"
+      },
+      "verdictSha256": "fae29eb5018a0e2efb9efcdfd6035e974040a1259d41e6158595d82a217c136b",
+      "executionSha256": "ecb18bb7cb1543b3065548c11c302d25504289c1e175588428413bb167b1ed5d",
+      "candidateChangedFilesMatchRecordedHashes": true
+    },
+    {
+      "item": {
+        "task": "colorAlpha",
+        "attempt": 2,
+        "method": "B"
+      },
+      "verdictSha256": "a84907df98cccd59440add0c9ca75e0a03ed95dc5f2aea337cd86cd4b3d52a0e",
+      "executionSha256": "465221fc1cf29d4cd9ce97f882b4507b1222d0637ea97bf727674827f579478f",
+      "candidateChangedFilesMatchRecordedHashes": true
+    },
+    {
+      "item": {
+        "task": "colorAlpha",
+        "attempt": 2,
+        "method": "A"
+      },
+      "verdictSha256": "186c18ee38533823d601e1113c91a3a4f1cea8387eb2b85cde7f718f62cd4deb",
+      "executionSha256": "2c954dfde3b5f524b3c8e1290204692a75c568f2a83df0b051181a0bcf6bdbb3",
+      "candidateChangedFilesMatchRecordedHashes": true
+    },
+    {
+      "item": {
+        "task": "safeTagCounts",
+        "attempt": 2,
+        "method": "B"
+      },
+      "verdictSha256": "f591c1b31d3a949cfbca88a263f9bcfbee8d3a23e73016206685a57bf6c72b6e",
+      "executionSha256": "d9479d4b90466692d71d8e6ef810be27f6de4e9433c65e2fbf0a848ffb3d435c",
+      "candidateChangedFilesMatchRecordedHashes": true
+    },
+    {
+      "item": {
+        "task": "safeTagCounts",
+        "attempt": 2,
+        "method": "A"
+      },
+      "verdictSha256": "80ab0b67708beeca1be61ab66fd6ca5cee0c5694a4debaef7b63a1d9eec9bed3",
+      "executionSha256": "c305347833ff50a4a34b74d3bcbfbaad6c6766bc9f23885bcf21f1c14dbd29b2",
+      "candidateChangedFilesMatchRecordedHashes": true
+    },
+    {
+      "item": {
+        "task": "memoViewNames",
+        "attempt": 2,
+        "method": "B"
+      },
+      "verdictSha256": "a189844ae89db8f2009445c722cf41ca18b273a9126fc60175f7484cb90067ea",
+      "executionSha256": "cc3737c8fad6d17ceec08494871874cae8430e4cccd1b78259e9fe62fb3dd33c",
+      "candidateChangedFilesMatchRecordedHashes": true
+    },
+    {
+      "item": {
+        "task": "memoViewNames",
+        "attempt": 2,
+        "method": "A"
+      },
+      "verdictSha256": "e32da2a7b49dde71fb38432fa7786c3391fce684ececf90124726629a7a686c0",
+      "executionSha256": "17c3c9d1a67b781f044e422f6cdfd4e38090a5800f8eb46bc4031f2de3dcdd9f",
+      "candidateChangedFilesMatchRecordedHashes": true
+    },
+    {
+      "item": {
+        "task": "safeTagCounts",
+        "attempt": 1,
+        "method": "A"
+      },
+      "verdictSha256": "fa07c37a435629b18884289fc385ac9559b84d1d6525ce7a9f1a19b329f627e1",
+      "executionSha256": "82f265f687b23df3fecb9c265a3b6b68f0eb8e74b8446cc170d95c7706085ef1",
+      "candidateChangedFilesMatchRecordedHashes": true
+    },
+    {
+      "item": {
+        "task": "safeTagCounts",
+        "attempt": 1,
+        "method": "B"
+      },
+      "verdictSha256": "2a7f85ef85a244cd6d75fa608019a60c8257d338728f5513319a81b471171ed1",
+      "executionSha256": "45ef344a0a84fd8944984013e4709ff40e6a6745e8aace345f0b7762568e28f5",
+      "candidateChangedFilesMatchRecordedHashes": true
+    },
+    {
+      "item": {
+        "task": "colorAlpha",
+        "attempt": 1,
+        "method": "A"
+      },
+      "verdictSha256": "11ebb7dc8ef22d7c359657b08f5c6f4df234a10df663bcc7ca1c2fe97c45f11f",
+      "executionSha256": "af895a657326572346dbd33aec8211e857c42733d3881dd556b22c180e521294",
+      "candidateChangedFilesMatchRecordedHashes": true
+    },
+    {
+      "item": {
+        "task": "colorAlpha",
+        "attempt": 1,
+        "method": "B"
+      },
+      "verdictSha256": "ecd3d5dede97f14baf11cd0a0403ff4a3baf8fd68e783f0db26363d69401593f",
+      "executionSha256": "9a48031da13130700265d1962d624761132cac5c6fee8352537eac438f5b0271",
+      "candidateChangedFilesMatchRecordedHashes": true
+    },
+    {
+      "item": {
+        "task": "memoViewNames",
+        "attempt": 1,
+        "method": "A"
+      },
+      "verdictSha256": "de63146068a4514ab5301a981ba5b25ca612b9ff5af99c48b207866664612d8c",
+      "executionSha256": "aae1a9561523d3248b3dee21e1fae60e0375abcf03923f14f310e3fa9e88ce93",
+      "candidateChangedFilesMatchRecordedHashes": true
+    },
+    {
+      "item": {
+        "task": "memoViewNames",
+        "attempt": 1,
+        "method": "B"
+      },
+      "verdictSha256": "d93451791feec5648d003f416295f6ec0912f74580dae67ad28818264295ec23",
+      "executionSha256": "ef1bab0860b5fefcfbe3ba571fd1a7002202a17b7bef229d1d9a7a0c2404418d",
+      "candidateChangedFilesMatchRecordedHashes": true
+    },
+    {
+      "item": {
+        "task": "retryMetadata",
+        "attempt": 1,
+        "method": "A"
+      },
+      "verdictSha256": "8aa8c0c0e35e3c5736d378c8a63b6a5c1808fe9ba62e6921d454697da378ce71",
+      "executionSha256": "2f0aafd5be52850eca360e3241b9c4d7d9a24b4769a87b3e97c6a83ac4f6f64a",
+      "candidateChangedFilesMatchRecordedHashes": true
+    },
+    {
+      "item": {
+        "task": "retryMetadata",
+        "attempt": 1,
+        "method": "B"
+      },
+      "verdictSha256": "d5e8844bb041a45c70cceabcb1ebeac79339fa40b61f80a7a3bacea3ac1adde4",
+      "executionSha256": "9e9f0301590225ad58bbb471d90c14c0cb90929c6dec0efdbe530ea851a810db",
+      "candidateChangedFilesMatchRecordedHashes": true
+    },
+    {
+      "item": {
+        "task": "unicodeSpaceTitles",
+        "attempt": 1,
+        "method": "A"
+      },
+      "verdictSha256": "02d3bc3784381a95f27f7824d40e787f7f6d947db9f014be310dcc85cd78812a",
+      "executionSha256": "1d71049e10fed7a955b659a64fae089ac1a53cb3dd827aec7ecb9e57c20a38c5",
+      "candidateChangedFilesMatchRecordedHashes": true
+    },
+    {
+      "item": {
+        "task": "unicodeSpaceTitles",
+        "attempt": 1,
+        "method": "B"
+      },
+      "verdictSha256": "f5525bdfb5ccf5614d27f5cc3f7df212485ec8b11b54e1de0abe4ca2073505d9",
+      "executionSha256": "cc3b8be02ef3cfceeae13406c1b25114c6300e51e0d75d03ccf5f7a83619c2fd",
+      "candidateChangedFilesMatchRecordedHashes": true
+    },
+    {
+      "item": {
+        "task": "legacyReleaseTag",
+        "attempt": 2,
+        "method": "B"
+      },
+      "verdictSha256": "6b4448bd42f1a916d3d465f40e22e0fcbadabda3c279b0568261779d0f3f7725",
+      "executionSha256": "e9d29c4a1a78c8d9b5544d103068609aceb63859ff790d4b9899f556c9f663fe",
+      "candidateChangedFilesMatchRecordedHashes": true
+    },
+    {
+      "item": {
+        "task": "legacyReleaseTag",
+        "attempt": 2,
+        "method": "A"
+      },
+      "verdictSha256": "e7a615831742d7acfae6c5f0cea591e1d14c19311eb6004be6a0cbb114155a3a",
+      "executionSha256": "b6cad9cfcf62222f7a6bc6c6dc969026e13ec2256b8e7bed1fcd02000c8721b4",
+      "candidateChangedFilesMatchRecordedHashes": true
+    },
+    {
+      "item": {
+        "task": "retryMetadata",
+        "attempt": 2,
+        "method": "B"
+      },
+      "verdictSha256": "768b562ecc930dee1439ed07c3e8a8f7b6f05b7922f117a1342eb81927d0a1d5",
+      "executionSha256": "041fe3c8ef4897342cfc3361b0c54ba7784434c024894df243387dee5376652c",
+      "candidateChangedFilesMatchRecordedHashes": true
+    },
+    {
+      "item": {
+        "task": "retryMetadata",
+        "attempt": 2,
+        "method": "A"
+      },
+      "verdictSha256": "03fe29f11fe00c3555a99d432308516cc2c145c2b2672e46eb76a7c73c37ccfc",
+      "executionSha256": "00df06b0595c13b08b07e208c8a172762969193c5464143ae3501e4e8a23d4df",
+      "candidateChangedFilesMatchRecordedHashes": true
+    },
+    {
+      "item": {
+        "task": "unicodeSpaceTitles",
+        "attempt": 2,
+        "method": "B"
+      },
+      "verdictSha256": "cb64e78f91815a6b38cb0d99d1d4d8b58349a162a2313bf6f065dbe9ec29523f",
+      "executionSha256": "dfb6c9f17129fc7b4b7ec99675ee11cc0622ff0b0a0d9ea0d49d814f3e32c7a9",
+      "candidateChangedFilesMatchRecordedHashes": true
+    },
+    {
+      "item": {
+        "task": "unicodeSpaceTitles",
+        "attempt": 2,
+        "method": "A"
+      },
+      "verdictSha256": "79fe4ec812fc0522a5050787bd2702fc2f2cfaf47eec3785d41633947c36a814",
+      "executionSha256": "89cb5423eb3eaace11aae898153e8ca5dc97a7b528f1c8b36450ec7718984394",
+      "candidateChangedFilesMatchRecordedHashes": true
+    }
+  ],
+  "noFabricatedHumanCompletion": true,
+  "relativeLinksChecked": 20,
+  "brokenLinks": [],
+  "applicationSourceSnapshots": {
+    "experiments/existingWorkflow/memos": {
+      "head": "b40d8a7b573774c52b022c8d6537d6baf2129dc0",
+      "tree": "9f86f8a96542b5724d7968c70e7cfed3d4ee06a1",
+      "clean": true
+    },
+    "experiments/preparedContext/memos": {
+      "head": "b40d8a7b573774c52b022c8d6537d6baf2129dc0",
+      "tree": "9f86f8a96542b5724d7968c70e7cfed3d4ee06a1",
+      "clean": true
+    },
+    "experiments/proposedStrategy/memos": {
+      "head": "b40d8a7b573774c52b022c8d6537d6baf2129dc0",
+      "tree": "9f86f8a96542b5724d7968c70e7cfed3d4ee06a1",
+      "clean": true
+    }
+  },
+  "methodCExecuted": false,
+  "meteredAgentRuns": 34,
+  "providerRequestCount": null,
+  "countDefinition": "34 separate Codex exec runs: 24 coding attempts plus 10 preparation/maintenance/review runs. Each run can contain multiple provider inference requests; their individual count is not measured. Token totals cover the CLI-reported cumulative usage."
+}

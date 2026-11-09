@@ -1,0 +1,61 @@
+diff --git a/web/src/lib/tag.ts b/web/src/lib/tag.ts
+index 3a36850..adb8394 100644
+--- a/web/src/lib/tag.ts
++++ b/web/src/lib/tag.ts
+@@ -7,7 +7,10 @@ const compiledPatternCache = new Map<string, RegExp | null>();
+ export const mergeTagCounts = (...sources: Array<Record<string, number> | undefined>): Record<string, number> => {
+   const result = Object.create(null) as Record<string, number>;
+   for (const source of sources) {
+-    for (const [tag, count] of Object.entries(source ?? {})) result[tag] = (result[tag] ?? 0) + count;
++    for (const [tag, count] of Object.entries(source ?? {})) {
++      if (typeof count !== "number" || !Number.isSafeInteger(count) || count < 0) continue;
++      result[tag] = Math.min(Number.MAX_SAFE_INTEGER, (result[tag] ?? 0) + count);
++    }
+   }
+   return result;
+ };
+diff --git a/web/tests/tag.test.ts b/web/tests/tag.test.ts
+index 35a8b9b..7a418c3 100644
+--- a/web/tests/tag.test.ts
++++ b/web/tests/tag.test.ts
+@@ -4,6 +4,40 @@ import { findTagMetadata, mergeTagCounts } from "@/lib/tag";
+ import { UserSetting_TagMetadataSchema, UserSetting_TagsSettingSchema, UserStatsSchema } from "@/types/proto/api/user_service_pb";
+ 
+ describe("exact tag keys", () => {
++  it("merges only nonnegative safe integer counts and saturates sums", () => {
++    const first = Object.fromEntries([
++      ["zero", 0],
++      ["negative", -1],
++      ["fraction", 1.5],
++      ["infinite", Infinity],
++      ["nan", NaN],
++      ["unsafe", Number.MAX_SAFE_INTEGER + 1],
++      ["runtime-string", "4"],
++      ["runtime-null", null],
++      ["saturating", Number.MAX_SAFE_INTEGER - 1],
++    ]) as Record<string, number>;
++    const second = {
++      zero: 0,
++      negative: 2,
++      fraction: 2,
++      infinite: 2,
++      nan: 2,
++      unsafe: 2,
++      "runtime-string": 2,
++      "runtime-null": 2,
++      saturating: 10,
++    };
++
++    const counts = mergeTagCounts(first, undefined, second);
++
++    expect(Object.getPrototypeOf(counts)).toBeNull();
++    expect(counts.zero).toBe(0);
++    expect(counts.saturating).toBe(Number.MAX_SAFE_INTEGER);
++    expect(Object.keys(counts).sort()).toEqual(["saturating", "zero"]);
++    expect(first.negative).toBe(-1);
++    expect(second.saturating).toBe(10);
++  });
++
+   it("aggregates names that collide with Object prototype properties", () => {
+     const source = Object.fromEntries([
+       ["toString", 1],

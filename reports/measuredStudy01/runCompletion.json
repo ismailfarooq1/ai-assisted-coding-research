@@ -1,0 +1,26 @@
+{
+  "completedAt": "2026-11-08T23:41:53.297784+00:00",
+  "status": "complete with disclosed exploratory and evaluator-contract limitations",
+  "codingAttempts": 24,
+  "meteredCodexRuns": 34,
+  "additionalCodingAttempts": 0,
+  "humanReviewComplete": false,
+  "reviewMode": "automated with explicit coordinator adjudications",
+  "companySavingsMeasured": false,
+  "methodCExecuted": false,
+  "registeredCompletions": {
+    "A": 8,
+    "B": 5
+  },
+  "uncontestedSensitivity": {
+    "taskClusters": 4,
+    "attemptsPerMethod": 8,
+    "A": 8,
+    "B": 5
+  },
+  "primaryTaskLevelP": 0.25,
+  "priorFilesPreserved": 4214,
+  "authoritativeReport": "comparison.md",
+  "analysisCommand": "python3 experiments/tools/measuredStudy/finishReport.py",
+  "rawRecordsAndInitialFailuresRetained": true
+}

@@ -1,0 +1,16 @@
+{
+  "files": [
+    "web/src/lib/suggestion-expression.ts",
+    "web/tests/memo-suggestions.test.ts"
+  ],
+  "permitted": true,
+  "headUnchanged": true,
+  "testFilesChanged": [
+    "web/tests/memo-suggestions.test.ts"
+  ],
+  "fileHashes": {
+    "web/src/lib/suggestion-expression.ts": "2e7afd26244a1176b9d53907efe5e0bb16007c0854edb41d8f6630318e11c74e",
+    "web/tests/memo-suggestions.test.ts": "dc97055a067ebc8455e7bc76a0ee2732505ea8e980f8c4b57659ee2753204eb0"
+  },
+  "patchSha256": "62f113d65039c115afe2c70370b6098e1b32740db399fba9f2f9f8862fbcb7e9"
+}

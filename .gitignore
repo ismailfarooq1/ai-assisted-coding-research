@@ -5,6 +5,14 @@ experiments/existingWorkflow/memos/
 experiments/preparedContext/memos/
 experiments/proposedStrategy/memos/
 
+# Per-run application copies and generated dependencies; retain patches and measurements.
+experiments/*/runs/*/project/
+experiments/*/runs/**/project/
+experiments/*/runs/**/evaluationWorkspace/
+reports/measuredStudy01/**/project/
+reports/measuredStudy01/**/sourceWorkspace/
+**/__pycache__/
+
 # Generated LaTeX files
 research/build/
 research/*.aux

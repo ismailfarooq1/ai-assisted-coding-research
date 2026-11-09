@@ -1,0 +1,14 @@
+{
+  "active": false,
+  "activeSeconds": 63.75988962687552,
+  "intervals": [
+    {
+      "activeSeconds": 55.966034167446196,
+      "reasonEnded": "participant"
+    },
+    {
+      "activeSeconds": 7.793855459429324,
+      "reasonEnded": "participant"
+    }
+  ]
+}

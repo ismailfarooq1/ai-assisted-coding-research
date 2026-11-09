@@ -1,0 +1,28 @@
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -52,7 +52,7 @@
+ # Frontend
+ cd web && pnpm install             # Install dependencies
+ cd web && pnpm dev                 # Dev server on :3001, proxying API to :8081
+-cd web && pnpm lint                # Type check + Biome lint
++cd web && pnpm check               # Type check + Biome lint
+ cd web && pnpm test                # Vitest unit tests
+ cd web && pnpm build               # Production build
+ cd web && pnpm release             # Build SPA into server/frontend/dist
+@@ -107,7 +107,7 @@
+ | Store or migration behavior | `store/`, all three DB driver migrations, `LATEST.sql` | `go test -v ./store/...` |
+ | Markdown, filter, or provider logic | `markdown/`, `filter/`, `provider/` | `go test -v -race ./markdown/... ./filter/... ./provider/...` |
+ | Internal package logic | Relevant `internal/` package tests | `go test -v -race ./internal/...` |
+-| Frontend behavior | Components/hooks/contexts under `web/src/` | `cd web && pnpm lint && pnpm test` |
++| Frontend behavior | Components/hooks/contexts under `web/src/` | `cd web && pnpm check && pnpm test` |
+ | Frontend production output | Vite config or release-sensitive UI | `cd web && pnpm build` or `pnpm release` |
+ | Proto API | `.proto` source, generated outputs, `proto/api/CHANGELOG.md` for breaks | `cd proto && buf generate && buf lint` |
+ | Public unauthenticated route | `server/api/acl_config.go` | Targeted server test or manual route check |
+@@ -159,6 +159,6 @@
+   (pnpm from `web/package.json`, Node 24, `pnpm install`); change versions there, not per workflow.
+ - Backend CI: Go 1.27.2, `go mod tidy`, `go fix -diff ./...`, golangci-lint v2.14.0 (including goimports), test groups
+   `store`, `server`, `internal`, `other` (`cmd`, `core`, `markdown`, `filter`, `provider`, `proto`).
+-- Frontend CI: Node 24, pnpm 11.0.1, `pnpm lint`, `pnpm test`, `pnpm build`.
++- Frontend CI: Node 24, pnpm 11.0.1, `pnpm check`, `pnpm test`, `pnpm build`.
+ - Proto CI: `buf lint` and `buf format` check.
+ - Docker: `scripts/Dockerfile`, Alpine 3.21 runtime, non-root user, port 5230, multi-arch amd64/arm64/arm/v7.

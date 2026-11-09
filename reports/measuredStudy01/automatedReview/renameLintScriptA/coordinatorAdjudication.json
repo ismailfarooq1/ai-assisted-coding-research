@@ -1,0 +1,111 @@
+{
+  "recordedAt": "2026-11-08T23:15:02.797580+00:00",
+  "type": "automated coordinator source adjudication",
+  "rawReviewSha256": "05c164b04b2742da818d14363c4b4fe4f57daedbaf6398d81ecae22dac0d9ee7",
+  "supplementarySources": [
+    {
+      "path": "go.mod",
+      "sha256": "9d1fa817ce8a56a13d7a7e37c2a2c901a620dbbd96e3636a3b93d8e778b3ca75",
+      "sourceExcerpts": [
+        "go 1.27.2"
+      ]
+    },
+    {
+      "path": ".github/actions/setup-go/action.yml",
+      "sha256": "6d86761afa7f80b95e12b5ee26148dc5504d1da2a78a956e2d550ec16b469645",
+      "sourceExcerpts": [
+        "        go-version-file: go.mod"
+      ]
+    },
+    {
+      "path": ".github/actions/setup-web/action.yml",
+      "sha256": "f19fa515360e7bc082a96c08a7b8189ee3e755352926b210e98ed80bf1d7402f",
+      "sourceExcerpts": [
+        "        package_json_file: web/package.json",
+        "        node-version: \"24\"",
+        "      run: pnpm install --frozen-lockfile"
+      ]
+    },
+    {
+      "path": ".github/workflows/backend-tests.yml",
+      "sha256": "5606e017de3a5e93ea064b87835e99d93d65ae003ea239b3f7eb270a423e5f83",
+      "sourceExcerpts": [
+        "          go mod tidy",
+        "        run: go fix -diff ./...",
+        "          version: v2.14.0",
+        "        test-group: [store, server, internal, other]",
+        "                ./cmd/... ./core/... ./markdown/... ./filter/... ./provider/... ./proto/..."
+      ]
+    },
+    {
+      "path": ".github/workflows/frontend-tests.yml",
+      "sha256": "99c321a13352ed21db422d858533e3356b4fc2ee7135cdffb83a44fc90004e7b",
+      "sourceExcerpts": [
+        "        run: pnpm check",
+        "        run: pnpm test",
+        "        run: pnpm build"
+      ]
+    },
+    {
+      "path": ".github/workflows/proto-linter.yml",
+      "sha256": "e9125b2eaabf921d445d051b1fc54c2414c411f67a02a2dd0a2c85e2b9596e90",
+      "sourceExcerpts": [
+        "        uses: bufbuild/buf-lint-action@v1",
+        "          if [[ $(buf format -d) ]]; then"
+      ]
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "sha256": "7080de63944890798c2d697ec9479b93bd03825a8305b4145c5998a2f51043c4",
+      "sourceExcerpts": [
+        "          - linux/amd64",
+        "          - linux/arm/v7",
+        "          - linux/arm64"
+      ]
+    },
+    {
+      "path": ".github/workflows/build-canary-image.yml",
+      "sha256": "72aebe7780e0c5279823f7c304d0495be42730bc17228ef20eaacbbb753334c2",
+      "sourceExcerpts": [
+        "          - linux/amd64",
+        "          - linux/arm64"
+      ]
+    },
+    {
+      "path": "scripts/Dockerfile",
+      "sha256": "1fd71111da24a7f0029de3719a52cbea12b82bca04346b6695382601ab9bce61",
+      "sourceExcerpts": [
+        "FROM alpine:3.21 AS monolithic",
+        "    MEMOS_PORT=\"5230\"",
+        "EXPOSE 5230"
+      ]
+    },
+    {
+      "path": "scripts/entrypoint.sh",
+      "sha256": "ea52ddd94c6acea3f5ea165e18a1eddcbed3fc5997504f5d32b54cda99f875a3",
+      "sourceExcerpts": [
+        "MEMOS_UID=${MEMOS_UID:-10001}",
+        "# it, a target of UID 0 (e.g. MEMOS_UID=0, common under rootless Docker) would",
+        "    exec su-exec \"$MEMOS_UID:$MEMOS_GID\" \"$0\" \"$@\""
+      ]
+    },
+    {
+      "path": ".golangci.yaml",
+      "sha256": "bbc3a35d670f3153319f034378a31c8c5ee6b2206027385a618df7ee94853ed4",
+      "sourceExcerpts": [
+        "    - goimports"
+      ]
+    }
+  ],
+  "decisions": {
+    "native3": "supported as configured source guidance, including default runtime privilege drop and release platforms",
+    "beforeNative3": "stale because old pnpm lint script no longer exists",
+    "vitestConfigCoverage": "no: config filename not present in maintained AGENTS.md",
+    "authorityCoverage": "yes: native AGENTS introduction explicitly prioritizes source/CI"
+  },
+  "coordinatorTokens": null,
+  "coordinatorActiveSeconds": null,
+  "backendOrReleaseExecutionPerformed": false,
+  "targetDocumentsChanged": false,
+  "limitation": "Initial reviewer lacked these source files; measured model review alone did not settle the whole broad claim."
+}

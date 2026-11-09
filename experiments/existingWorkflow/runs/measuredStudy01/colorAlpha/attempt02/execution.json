@@ -1,0 +1,129 @@
+{
+  "item": {
+    "task": "colorAlpha",
+    "attempt": 2,
+    "method": "A"
+  },
+  "stage": {
+    "dockerExitCode": 0,
+    "hostWallSeconds": 47.97677499987185,
+    "finishedAt": "2026-11-08T21:14:14.668066+00:00",
+    "resources": {
+      "exitCode": 0,
+      "timedOut": false,
+      "processWallSeconds": 42.96481026999936,
+      "cpuUsageSeconds": 17.208877,
+      "cpuStatDelta": {
+        "usage_usec": 17208877,
+        "user_usec": 11318486,
+        "system_usec": 5890391,
+        "nr_periods": 425,
+        "nr_throttled": 17,
+        "throttled_usec": 220511
+      },
+      "initialMemoryBytes": 7053312,
+      "sampledPeakMemoryBytes": 1027518464,
+      "memorySamples": 421,
+      "samplingIntervalSeconds": 0.1,
+      "memoryDefinition": "Observed maximum memory.current, including container cache/kernel; not exact peak or process RSS. Startup before wrapper is excluded.",
+      "cpuDefinition": "Container cgroup CPU delta during stage including local descendants and metering; remote inference compute unobserved.",
+      "rolloutUsageObservations": [
+        {
+          "input_tokens": 13597,
+          "cached_input_tokens": 0,
+          "output_tokens": 131,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 13728
+        },
+        {
+          "input_tokens": 27584,
+          "cached_input_tokens": 13440,
+          "output_tokens": 191,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 27775
+        },
+        {
+          "input_tokens": 44566,
+          "cached_input_tokens": 27264,
+          "output_tokens": 255,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 44821
+        },
+        {
+          "input_tokens": 65814,
+          "cached_input_tokens": 44032,
+          "output_tokens": 624,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 66438
+        },
+        {
+          "input_tokens": 87455,
+          "cached_input_tokens": 65152,
+          "output_tokens": 1149,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 88604
+        },
+        {
+          "input_tokens": 109645,
+          "cached_input_tokens": 86656,
+          "output_tokens": 1209,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 110854
+        },
+        {
+          "input_tokens": 131967,
+          "cached_input_tokens": 108672,
+          "output_tokens": 1254,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 133221
+        },
+        {
+          "input_tokens": 154450,
+          "cached_input_tokens": 130816,
+          "output_tokens": 1366,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 155816
+        }
+      ]
+    },
+    "usage": {
+      "completedTurns": 1,
+      "inputTokens": 154450,
+      "outputTokens": 1366,
+      "cachedInputTokens": 130816,
+      "cacheWriteInputTokens": 0,
+      "reasoningOutputTokens": 0,
+      "totalTokens": 155816,
+      "failedTurnEvents": 0,
+      "note": "Input includes cached input; output includes reported reasoning. Subsets are not added twice. Incomplete/failed turns may have unreported usage.",
+      "sessionCumulativeUsage": {
+        "input_tokens": 154450,
+        "cached_input_tokens": 130816,
+        "output_tokens": 1366,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 155816
+      },
+      "coverage": "completed-turn-reported",
+      "source": "CLI completed-turn events; cumulative session metadata fallback for incomplete turns",
+      "crossCheckMatches": true
+    },
+    "providerInfrastructureFailure": false
+  },
+  "changes": {
+    "files": [
+      "web/src/lib/color.ts",
+      "web/tests/color.test.ts"
+    ],
+    "permitted": true,
+    "headUnchanged": true,
+    "testFilesChanged": [
+      "web/tests/color.test.ts"
+    ],
+    "fileHashes": {
+      "web/src/lib/color.ts": "7ac72eac26d36721f94aea618eca2820764ce39225584b5f5408015252ae025c",
+      "web/tests/color.test.ts": "729641df6778f7c111a45e111ba7f150e7c1858e553a71d1f206cccbeef64dfd"
+    },
+    "patchSha256": "a5fb68209f9e7494c763e38ec76272ec5f60634a5e5ef906440480b579ae0b1d"
+  },
+  "executionProtocolSha256": "fcf0a9ad30869458d1cc9af6d5706a6c7fbf4b0961296f67a5f92ea78c499298"
+}

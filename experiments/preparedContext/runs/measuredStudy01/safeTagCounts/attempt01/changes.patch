@@ -1,0 +1,58 @@
+diff --git a/web/src/lib/tag.ts b/web/src/lib/tag.ts
+index 3a36850..1050aa4 100644
+--- a/web/src/lib/tag.ts
++++ b/web/src/lib/tag.ts
+@@ -7,7 +7,10 @@ const compiledPatternCache = new Map<string, RegExp | null>();
+ export const mergeTagCounts = (...sources: Array<Record<string, number> | undefined>): Record<string, number> => {
+   const result = Object.create(null) as Record<string, number>;
+   for (const source of sources) {
+-    for (const [tag, count] of Object.entries(source ?? {})) result[tag] = (result[tag] ?? 0) + count;
++    for (const [tag, count] of Object.entries(source ?? {})) {
++      if (!Number.isSafeInteger(count) || count < 0) continue;
++      result[tag] = Math.min(Number.MAX_SAFE_INTEGER, (result[tag] ?? 0) + count);
++    }
+   }
+   return result;
+ };
+diff --git a/web/tests/tag.test.ts b/web/tests/tag.test.ts
+index 35a8b9b..1984647 100644
+--- a/web/tests/tag.test.ts
++++ b/web/tests/tag.test.ts
+@@ -18,6 +18,37 @@ describe("exact tag keys", () => {
+     expect(counts.__proto__).toBe(3);
+   });
+ 
++  it("ignores invalid counts, preserves zero tags, and saturates sums", () => {
++    const source = Object.fromEntries([
++      ["negative", -1],
++      ["fraction", 1.5],
++      ["nan", Number.NaN],
++      ["infinity", Number.POSITIVE_INFINITY],
++      ["unsafe", Number.MAX_SAFE_INTEGER + 1],
++      ["string", "4"],
++      ["zero", 0],
++      ["large", Number.MAX_SAFE_INTEGER],
++    ]) as unknown as Record<string, number>;
++    const counts = mergeTagCounts(source, { large: 1 });
++
++    expect(Object.keys(counts).sort()).toEqual(["large", "zero"]);
++    expect(counts.zero).toBe(0);
++    expect(counts.large).toBe(Number.MAX_SAFE_INTEGER);
++  });
++
++  it("enumerates only own keys and does not mutate inputs", () => {
++    const source = Object.assign(Object.create({ inherited: 5 }), { own: 2 });
++    const counts = mergeTagCounts(source);
++
++    expect(Object.keys(counts)).toEqual(["own"]);
++    expect(counts.own).toBe(2);
++    expect(source.own).toBe(2);
++  });
++
++  it("accepts undefined sources", () => {
++    expect(mergeTagCounts(undefined, { zero: 0 }, undefined)).toEqual({ zero: 0 });
++  });
++
+   it("preserves exact prototype-shaped tag keys through protobuf maps", () => {
+     const source = Object.fromEntries([
+       ["normal", 1],

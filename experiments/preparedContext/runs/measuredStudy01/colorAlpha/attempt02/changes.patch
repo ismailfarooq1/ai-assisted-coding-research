@@ -1,0 +1,51 @@
+diff --git a/web/src/lib/color.ts b/web/src/lib/color.ts
+index 4219700..aaced47 100644
+--- a/web/src/lib/color.ts
++++ b/web/src/lib/color.ts
+@@ -1,8 +1,8 @@
+ /**
+- * Converts a google.type.Color (r/g/b as 0–1 floats) to a CSS hex string (#rrggbb).
++ * Converts a google.type.Color (r/g/b as 0–1 floats) to a CSS hex string (#rrggbb or #rrggbbaa).
+  * Returns undefined when no color is provided.
+  */
+-export const colorToHex = (color?: { red?: number; green?: number; blue?: number }): string | undefined => {
++export const colorToHex = (color?: { red?: number; green?: number; blue?: number }, alpha?: number): string | undefined => {
+   if (!color) return undefined;
+   const clamp = (val: number | undefined): number => {
+     const n = val ?? 0;
+@@ -17,5 +17,7 @@ export const colorToHex = (color?: { red?: number; green?: number; blue?: number
+   const b = Math.round(clamp(color.blue) * 255)
+     .toString(16)
+     .padStart(2, "0");
+-  return `#${r}${g}${b}`;
++  if (alpha === undefined) return `#${r}${g}${b}`;
++  const a = Number.isFinite(alpha) ? Math.round(Math.max(0, Math.min(1, alpha)) * 255) : 255;
++  return `#${r}${g}${b}${a.toString(16).padStart(2, "0")}`;
+ };
+diff --git a/web/tests/color.test.ts b/web/tests/color.test.ts
+new file mode 100644
+index 0000000..9e74e38
+--- /dev/null
++++ b/web/tests/color.test.ts
+@@ -0,0 +1,21 @@
++import { describe, expect, it } from "vitest";
++import { colorToHex } from "@/lib/color";
++
++describe("colorToHex", () => {
++  it("keeps RGB output when alpha is omitted or undefined", () => {
++    expect(colorToHex({ red: 1, green: 0.5, blue: 0 })).toBe("#ff8000");
++    expect(colorToHex({ red: 1 }, undefined)).toBe("#ff0000");
++  });
++
++  it("appends rounded, clamped lowercase alpha bytes when alpha is provided", () => {
++    expect(colorToHex({ red: 1, green: 0.5, blue: 0 }, 1)).toBe("#ff8000ff");
++    expect(colorToHex({ red: 0, green: 0, blue: 0 }, 0.5)).toBe("#00000080");
++    expect(colorToHex({ red: 0, green: 0, blue: 0 }, -1)).toBe("#00000000");
++    expect(colorToHex({ red: 0, green: 0, blue: 0 }, 2)).toBe("#000000ff");
++    expect(colorToHex({ red: 0, green: 0, blue: 0 }, Number.NaN)).toBe("#000000ff");
++  });
++
++  it("preserves missing-color behavior", () => {
++    expect(colorToHex(undefined, 0.5)).toBeUndefined();
++  });
++});

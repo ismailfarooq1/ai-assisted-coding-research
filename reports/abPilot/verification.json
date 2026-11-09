@@ -1,0 +1,19 @@
+{
+  "verifiedAt": "2026-11-08T17:26:16.573929+00:00",
+  "checks": {
+    "frozenInputsUnchanged": true,
+    "protocolHashMatches": true,
+    "registeredCompletionBothPassed": true,
+    "APristineTestCounts": true,
+    "AFocusedChecks": true,
+    "ASealedSourceHashes": true,
+    "BPristineTestCounts": true,
+    "BFocusedChecks": true,
+    "BSealedSourceHashes": true,
+    "reportLocalLinksValid": true,
+    "researchAndMethodCUnchanged": true,
+    "reportTableColumnCountsValid": true
+  },
+  "missingLinks": [],
+  "note": "Validation of retained records; no coding attempt rerun or artifact repair."
+}

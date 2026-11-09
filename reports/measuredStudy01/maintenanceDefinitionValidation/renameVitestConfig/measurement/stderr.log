@@ -1,0 +1,1 @@
+$ vitest run --config vitest.project.config.mts tests/release-version.test.ts

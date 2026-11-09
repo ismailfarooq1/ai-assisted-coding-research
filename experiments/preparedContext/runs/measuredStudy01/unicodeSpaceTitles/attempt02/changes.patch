@@ -1,0 +1,62 @@
+diff --git a/web/src/lib/space-display.ts b/web/src/lib/space-display.ts
+index c2a15a5..1f59490 100644
+--- a/web/src/lib/space-display.ts
++++ b/web/src/lib/space-display.ts
+@@ -4,15 +4,16 @@ const LONG_CUSTOM_UID_LENGTH = 18;
+ export const extractSpaceUidFromName = (name: string): string => name.split("/").at(-1) ?? "";
+ 
+ export const getDuplicateSpaceTitles = (spaces: readonly { title: string }[]): ReadonlySet<string> => {
+-  const seen = new Set<string>();
+-  const duplicates = new Set<string>();
++  const counts = new Map<string, number>();
+ 
+   for (const space of spaces) {
+-    if (seen.has(space.title)) {
+-      duplicates.add(space.title);
+-    } else {
+-      seen.add(space.title);
+-    }
++    const normalizedTitle = space.title.normalize("NFC");
++    counts.set(normalizedTitle, (counts.get(normalizedTitle) ?? 0) + 1);
++  }
++
++  const duplicates = new Set<string>();
++  for (const space of spaces) {
++    if ((counts.get(space.title.normalize("NFC")) ?? 0) > 1) duplicates.add(space.title);
+   }
+ 
+   return duplicates;
+diff --git a/web/tests/space-display.test.ts b/web/tests/space-display.test.ts
+index ad559f5..b96df57 100644
+--- a/web/tests/space-display.test.ts
++++ b/web/tests/space-display.test.ts
+@@ -13,9 +13,28 @@ describe("Space display identity", () => {
+     expect(formatSpaceUidForDisplay("spaces/customer-support-development")).toBe("customer…opment");
+   });
+ 
+-  it("marks only titles that match exactly", () => {
++  it("marks original spellings in duplicate NFC groups once and in first occurrence order", () => {
+     const duplicates = getDuplicateSpaceTitles([{ title: "Product" }, { title: "Research" }, { title: "Product" }, { title: "product" }]);
+ 
+     expect([...duplicates]).toEqual(["Product"]);
+   });
++
++  it("matches canonically equivalent titles without trimming or case folding", () => {
++    const composed = "Caf\u00e9";
++    const decomposed = "Cafe\u0301";
++    const spaces = [
++      { title: decomposed },
++      { title: " Cafe\u0301" },
++      { title: composed },
++      { title: "cafe\u0301" },
++      { title: "Solo" },
++      { title: "Solo" },
++    ];
++    const originalTitles = spaces.map(({ title }) => title);
++
++    const duplicates = getDuplicateSpaceTitles(spaces);
++
++    expect([...duplicates]).toEqual([decomposed, composed, "Solo"]);
++    expect(spaces.map(({ title }) => title)).toEqual(originalTitles);
++  });
+ });

@@ -1,0 +1,16 @@
+{
+  "files": [
+    "web/src/lib/tag.ts",
+    "web/tests/tag.test.ts"
+  ],
+  "permitted": true,
+  "headUnchanged": true,
+  "testFilesChanged": [
+    "web/tests/tag.test.ts"
+  ],
+  "fileHashes": {
+    "web/src/lib/tag.ts": "e6f8ca8048a2573b2094158e864c703d36dc266121d00d02e6722bb5c14e012c",
+    "web/tests/tag.test.ts": "ef1818fae84e928f37152a6d77cebc01a5a9254393c49b04f551f635c41b3cc2"
+  },
+  "patchSha256": "09387fbecfba53fe4fd9f1ed0acc76e0543aa6f3a8354c7a604c010ac3c3dc47"
+}

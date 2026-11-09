@@ -1,0 +1,69 @@
+diff --git a/web/src/lib/space-display.ts b/web/src/lib/space-display.ts
+index c2a15a5..7cfd240 100644
+--- a/web/src/lib/space-display.ts
++++ b/web/src/lib/space-display.ts
+@@ -4,15 +4,20 @@ const LONG_CUSTOM_UID_LENGTH = 18;
+ export const extractSpaceUidFromName = (name: string): string => name.split("/").at(-1) ?? "";
+ 
+ export const getDuplicateSpaceTitles = (spaces: readonly { title: string }[]): ReadonlySet<string> => {
+-  const seen = new Set<string>();
++  const titlesByNormalizedTitle = new Map<string, Set<string>>();
+   const duplicates = new Set<string>();
+ 
+   for (const space of spaces) {
+-    if (seen.has(space.title)) {
+-      duplicates.add(space.title);
+-    } else {
+-      seen.add(space.title);
++    const normalizedTitle = space.title.normalize("NFC");
++    let originalTitles = titlesByNormalizedTitle.get(normalizedTitle);
++    if (!originalTitles) {
++      originalTitles = new Set<string>();
++      titlesByNormalizedTitle.set(normalizedTitle, originalTitles);
+     }
++
++    for (const originalTitle of originalTitles) duplicates.add(originalTitle);
++    if (originalTitles.size > 0) duplicates.add(space.title);
++    originalTitles.add(space.title);
+   }
+ 
+   return duplicates;
+diff --git a/web/tests/space-display.test.ts b/web/tests/space-display.test.ts
+index ad559f5..4481bfc 100644
+--- a/web/tests/space-display.test.ts
++++ b/web/tests/space-display.test.ts
+@@ -13,9 +13,33 @@ describe("Space display identity", () => {
+     expect(formatSpaceUidForDisplay("spaces/customer-support-development")).toBe("customer…opment");
+   });
+ 
+-  it("marks only titles that match exactly", () => {
++  it("marks original spellings of NFC-equivalent duplicate titles once in first-seen order", () => {
+     const duplicates = getDuplicateSpaceTitles([{ title: "Product" }, { title: "Research" }, { title: "Product" }, { title: "product" }]);
+ 
+     expect([...duplicates]).toEqual(["Product"]);
+   });
++
++  it("groups titles by NFC without trimming or case-folding", () => {
++    const composed = "Caf\u00e9";
++    const decomposed = "Cafe\u0301";
++    const duplicates = getDuplicateSpaceTitles([
++      { title: composed },
++      { title: "Product" },
++      { title: decomposed },
++      { title: composed },
++      { title: " product " },
++      { title: "PRODUCT" },
++    ]);
++
++    expect([...duplicates]).toEqual([composed, decomposed]);
++  });
++
++  it("does not mutate the input", () => {
++    const spaces = [{ title: "Cafe\u0301" }, { title: "Caf\u00e9" }];
++    const originalTitles = spaces.map(({ title }) => title);
++
++    getDuplicateSpaceTitles(spaces);
++
++    expect(spaces.map(({ title }) => title)).toEqual(originalTitles);
++  });
+ });

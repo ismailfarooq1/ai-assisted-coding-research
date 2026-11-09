@@ -1,0 +1,32 @@
+{
+  "recordedAt": "2026-11-08T23:22:43.041525+00:00",
+  "rawEventLogSha256": "3c17655055aff8b0b65e0101abb76fce8f65b0f2575fb29c9c2c07132fc1916d",
+  "recoveredFinalMessageSha256": "42d42dfc126f5ada24b417cf7dc980ea112335a29278c0b4384d32a24f670eb9",
+  "actorOutputFileProduced": false,
+  "action": "Recover model-produced JSON from final-message log, correct literal evidence spans, and retain pre-review claim wording.",
+  "evidenceCorrections": [
+    {
+      "claim": "c02",
+      "path": "AGENTS.md",
+      "originalExcerpt": "server/ | The HTTP process: net/http bootstrap, graceful shutdown, every transport",
+      "exactSourceExcerpt": "| `server/` | The HTTP process: net/http bootstrap, graceful shutdown, every transport | core, store, provider, markdown, filter, internal |",
+      "sourceSha256": "5f6b002a44d0f658527404dfd54a38ae04445cd40f6b1d0188e315881e8aa7f6"
+    },
+    {
+      "claim": "c06",
+      "path": "docs/design/README.md",
+      "originalExcerpt": "Source code, tests, and package `README.md` or `doc.go` files describe current behavior; a design document does not have to.",
+      "exactSourceExcerpt": "Source code, tests, and package `README.md` or `doc.go` files describe current\nbehavior; a design document does not have to.",
+      "sourceSha256": "f24194e0d286bed61b0723a8832578f05eefd3708ebcfbe90d2e15492d5c438d"
+    }
+  ],
+  "cosmeticRewriteDiscarded": [
+    {
+      "id": "c01",
+      "difference": "Reviewer added backticks around web/. Retain the author text because factual content is unchanged."
+    }
+  ],
+  "coordinatorTokens": null,
+  "coordinatorActiveSeconds": null,
+  "humanReviewPerformed": false
+}

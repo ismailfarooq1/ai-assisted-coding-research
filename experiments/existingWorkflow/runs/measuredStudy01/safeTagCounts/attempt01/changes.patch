@@ -1,0 +1,48 @@
+diff --git a/web/src/lib/tag.ts b/web/src/lib/tag.ts
+index 3a36850..adb8394 100644
+--- a/web/src/lib/tag.ts
++++ b/web/src/lib/tag.ts
+@@ -7,7 +7,10 @@ const compiledPatternCache = new Map<string, RegExp | null>();
+ export const mergeTagCounts = (...sources: Array<Record<string, number> | undefined>): Record<string, number> => {
+   const result = Object.create(null) as Record<string, number>;
+   for (const source of sources) {
+-    for (const [tag, count] of Object.entries(source ?? {})) result[tag] = (result[tag] ?? 0) + count;
++    for (const [tag, count] of Object.entries(source ?? {})) {
++      if (typeof count !== "number" || !Number.isSafeInteger(count) || count < 0) continue;
++      result[tag] = Math.min(Number.MAX_SAFE_INTEGER, (result[tag] ?? 0) + count);
++    }
+   }
+   return result;
+ };
+diff --git a/web/tests/tag.test.ts b/web/tests/tag.test.ts
+index 35a8b9b..02bc0d1 100644
+--- a/web/tests/tag.test.ts
++++ b/web/tests/tag.test.ts
+@@ -4,6 +4,27 @@ import { findTagMetadata, mergeTagCounts } from "@/lib/tag";
+ import { UserSetting_TagMetadataSchema, UserSetting_TagsSettingSchema, UserStatsSchema } from "@/types/proto/api/user_service_pb";
+ 
+ describe("exact tag keys", () => {
++  it("ignores invalid counts and saturates valid sums", () => {
++    const source = Object.assign(Object.create({ inherited: 9 }), {
++      negative: -1,
++      fraction: 1.5,
++      infinity: Infinity,
++      nan: NaN,
++      unsafe: Number.MAX_SAFE_INTEGER + 1,
++      runtimeString: "2",
++      runtimeNull: null,
++      zero: 0,
++      saturated: Number.MAX_SAFE_INTEGER,
++    }) as Record<string, number>;
++    const original = { ...source };
++    const counts = mergeTagCounts(undefined, source, { saturated: 1, zero: 0 });
++
++    expect(Object.getPrototypeOf(counts)).toBeNull();
++    expect(counts).toEqual(Object.assign(Object.create(null), { zero: 0, saturated: Number.MAX_SAFE_INTEGER }));
++    expect(Object.hasOwn(counts, "inherited")).toBe(false);
++    expect(source).toEqual(original);
++  });
++
+   it("aggregates names that collide with Object prototype properties", () => {
+     const source = Object.fromEntries([
+       ["toString", 1],

@@ -1,0 +1,12 @@
+{
+  "verifiedAt": "2026-11-08T23:32:23.231757+00:00",
+  "trackedMeasurementStreams": 36,
+  "modelStreams": 34,
+  "sharedNonModelCalibrationStreams": 2,
+  "allTrackedHashesUnchanged": true,
+  "noNewModelStreams": true,
+  "note": "Two maintenance-fixture calibration streams have no model prompt or usage. They are not model calls.",
+  "beforeManifestPath": "reports/measuredStudy01/measurementEventStreamsBeforeCompletion.json",
+  "beforeManifestSha256": "c7f9a9c82ed35a44821787d8c6fc5c232f31e7dfb4cb8eb6e69a20a042d52afc",
+  "countDefinition": "Model event streams correspond to separate Codex runs, not individual provider API requests."
+}

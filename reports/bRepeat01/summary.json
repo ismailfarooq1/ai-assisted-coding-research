@@ -1,0 +1,260 @@
+{
+  "runId": "bRepeat01",
+  "completedAt": "2026-11-08T17:46:23.204567+00:00",
+  "protocolSha256": "250b916985c371541e87020a36275c77565b3c55c8df6f5cd938e96790258670",
+  "execution": {
+    "method": "B",
+    "strategy": "preparedContext",
+    "startedAt": "2026-11-08T17:39:31.825623+00:00",
+    "finishedAt": "2026-11-08T17:41:22.683184+00:00",
+    "elapsedSeconds": 110.869,
+    "exitCode": 0,
+    "timedOut": false,
+    "protocolSha256": "250b916985c371541e87020a36275c77565b3c55c8df6f5cd938e96790258670",
+    "usage": {
+      "completedTurns": 1,
+      "inputTokens": 347529,
+      "outputTokens": 1639,
+      "cachedInputTokens": 308608,
+      "cacheWriteInputTokens": 0,
+      "reasoningOutputTokens": 0,
+      "totalTokens": 349168,
+      "failedTurnEvents": 0,
+      "note": "Input includes cached input; output includes reported reasoning. Subsets are not added twice. Incomplete/failed turns may have unreported usage."
+    },
+    "changes": {
+      "files": [
+        "web/src/lib/suggestion-expression.ts",
+        "web/tests/memo-suggestions.test.ts"
+      ],
+      "permitted": true,
+      "headUnchanged": true,
+      "testFilesChanged": [
+        "web/tests/memo-suggestions.test.ts"
+      ],
+      "fileHashes": {
+        "web/src/lib/suggestion-expression.ts": "6ed98b85331a3db17d178707d9fe1839e48a883f1e1cc0ec943cfc46195e6fd4",
+        "web/tests/memo-suggestions.test.ts": "ac13b2c60130e59e074006b0b80fcd804e3c08946ef917d00b46a5e8b3905fc9"
+      },
+      "patchSha256": "0f0bc90de4da1b34c0c70138544531cc85956e27a6035f0cef10a054cbb012c7"
+    },
+    "contextReadCommands": [
+      "/bin/bash -lc \"cat .projectContext/contextGuide.md && printf '\\\\n--- local instruction files ---\\\\n' && find web -name AGENTS.md -o -name README.md | sort\""
+    ]
+  },
+  "evaluation": {
+    "method": "B",
+    "verifiedCompletion": true,
+    "checks": {
+      "independent": {
+        "exitCode": 0,
+        "passed": true,
+        "elapsedSeconds": 0.748,
+        "details": {
+          "outcomes": [
+            {
+              "id": "rawLowerDouble",
+              "group": "acceptance",
+              "passed": true
+            },
+            {
+              "id": "rawUpperSingle",
+              "group": "acceptance",
+              "passed": true
+            },
+            {
+              "id": "rawLowerSingle",
+              "group": "acceptance",
+              "passed": true
+            },
+            {
+              "id": "rawUpperDouble",
+              "group": "acceptance",
+              "passed": true
+            },
+            {
+              "id": "rawBackslashN",
+              "group": "acceptance",
+              "passed": true
+            },
+            {
+              "id": "rawUnicodeEscape",
+              "group": "acceptance",
+              "passed": true
+            },
+            {
+              "id": "rawUnknownEscape",
+              "group": "acceptance",
+              "passed": true
+            },
+            {
+              "id": "rawOperators",
+              "group": "acceptance",
+              "passed": true
+            },
+            {
+              "id": "mixedStringList",
+              "group": "acceptance",
+              "passed": true
+            },
+            {
+              "id": "rawBooleanStructure",
+              "group": "acceptance",
+              "passed": true
+            },
+            {
+              "id": "normalDouble",
+              "group": "regression",
+              "passed": true
+            },
+            {
+              "id": "normalSingle",
+              "group": "regression",
+              "passed": true
+            },
+            {
+              "id": "normalDecodedUnicode",
+              "group": "regression",
+              "passed": true
+            },
+            {
+              "id": "normalDecodedNewline",
+              "group": "regression",
+              "passed": true
+            },
+            {
+              "id": "unclosedRawDouble",
+              "group": "regression",
+              "passed": true
+            },
+            {
+              "id": "unclosedRawSingle",
+              "group": "regression",
+              "passed": true
+            },
+            {
+              "id": "danglingAnd",
+              "group": "regression",
+              "passed": true
+            },
+            {
+              "id": "unclosedParenthesis",
+              "group": "regression",
+              "passed": true
+            },
+            {
+              "id": "mismatchedBracket",
+              "group": "regression",
+              "passed": true
+            },
+            {
+              "id": "unsupportedToken",
+              "group": "regression",
+              "passed": true
+            },
+            {
+              "id": "normalComment",
+              "group": "regression",
+              "passed": true
+            },
+            {
+              "id": "ordinaryList",
+              "group": "regression",
+              "passed": true
+            },
+            {
+              "id": "nonLiteralList",
+              "group": "regression",
+              "passed": true
+            }
+          ],
+          "passed": true
+        }
+      },
+      "native": {
+        "exitCode": 0,
+        "passed": true,
+        "elapsedSeconds": 287.331,
+        "statuses": {
+          "lint": 0,
+          "test": 0,
+          "build": 0
+        }
+      }
+    },
+    "note": "Native tests restored from pristine snapshot. Agent-authored tests are retained in the patch; their quality is not independently graded."
+  },
+  "candidateTestAudit": {
+    "passed": true,
+    "exitCode": 0,
+    "elapsedSeconds": 11.56,
+    "testFiles": [
+      "web/tests/memo-suggestions.test.ts"
+    ],
+    "summary": "65 passed (65)",
+    "classification": "Candidate-added/changed-test validation specified before this repetition"
+  },
+  "fullGuideExposureObserved": true,
+  "sealedArtifactsUnchanged": true,
+  "originalBRecordsUnchanged": true,
+  "candidateFullyValidated": true,
+  "methodBCompletedAsSpecified": true,
+  "previousBExecution": {
+    "method": "B",
+    "strategy": "preparedContext",
+    "startedAt": "2026-11-08T17:12:38.035237+00:00",
+    "finishedAt": "2026-11-08T17:13:57.025231+00:00",
+    "elapsedSeconds": 78.99,
+    "exitCode": 0,
+    "timedOut": false,
+    "protocolSha256": "a8922ac1c885192091dc8fb62fe4745c3aedee245d29fc2cd61f5507a4777050",
+    "usage": {
+      "completedTurns": 1,
+      "inputTokens": 350595,
+      "outputTokens": 1717,
+      "cachedInputTokens": 320768,
+      "cacheWriteInputTokens": 0,
+      "reasoningOutputTokens": 0,
+      "totalTokens": 352312,
+      "failedTurnEvents": 0,
+      "note": "Input includes cached input; output includes reported reasoning. Subsets are not added twice. Incomplete/failed turns may have unreported usage."
+    },
+    "changes": {
+      "files": [
+        "web/src/lib/suggestion-expression.ts",
+        "web/tests/memo-suggestions.test.ts"
+      ],
+      "permitted": true,
+      "headUnchanged": true,
+      "testFilesChanged": [
+        "web/tests/memo-suggestions.test.ts"
+      ],
+      "fileHashes": {
+        "web/src/lib/suggestion-expression.ts": "2e7afd26244a1176b9d53907efe5e0bb16007c0854edb41d8f6630318e11c74e",
+        "web/tests/memo-suggestions.test.ts": "dc97055a067ebc8455e7bc76a0ee2732505ea8e980f8c4b57659ee2753204eb0"
+      },
+      "patchSha256": "62f113d65039c115afe2c70370b6098e1b32740db399fba9f2f9f8862fbcb7e9"
+    },
+    "contextReadCommands": [
+      "/bin/bash -lc 'cat .projectContext/contextGuide.md'"
+    ]
+  },
+  "snapshotVerification": {
+    "experiments/existingWorkflow/memos": {
+      "head": "b40d8a7b573774c52b022c8d6537d6baf2129dc0",
+      "tree": "9f86f8a96542b5724d7968c70e7cfed3d4ee06a1",
+      "clean": true
+    },
+    "experiments/preparedContext/memos": {
+      "head": "b40d8a7b573774c52b022c8d6537d6baf2129dc0",
+      "tree": "9f86f8a96542b5724d7968c70e7cfed3d4ee06a1",
+      "clean": true
+    },
+    "experiments/proposedStrategy/memos": {
+      "head": "b40d8a7b573774c52b022c8d6537d6baf2129dc0",
+      "tree": "9f86f8a96542b5724d7968c70e7cfed3d4ee06a1",
+      "clean": true
+    }
+  },
+  "interpretation": "Both attempts used the same prepared context. Differences describe repeated execution, not an effect of adding or reusing context."
+}

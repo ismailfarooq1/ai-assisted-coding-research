@@ -1,0 +1,139 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.5 [39m[90m/project/web[39m
+
+ [31m❯[39m tests/release-version.test.ts [2m([22m[2m31 tests[22m[2m | [22m[31m5 failed[39m[2m)[22m[32m 10[2mms[22m[39m
+     [32m✓[39m links release 26.09.0[32m 1[2mms[22m[39m
+     [32m✓[39m links release 26.09.1[32m 0[2mms[22m[39m
+     [32m✓[39m links release 26.09.10[32m 0[2mms[22m[39m
+     [32m✓[39m links release 26.09.0-rc.1[32m 0[2mms[22m[39m
+     [32m✓[39m links release 26.09.1-rc.2[32m 0[2mms[22m[39m
+     [32m✓[39m links release 27.01.0[32m 0[2mms[22m[39m
+     [32m✓[39m links release 0.31.0[32m 0[2mms[22m[39m
+     [32m✓[39m links release 0.31.0-rc.2[32m 0[2mms[22m[39m
+     [32m✓[39m links release v0.31.0[32m 0[2mms[22m[39m
+     [32m✓[39m links release v0.31.0-rc.2[32m 0[2mms[22m[39m
+     [32m✓[39m does not link non-release dev[32m 0[2mms[22m[39m
+     [32m✓[39m does not link non-release manual-abcdef0[32m 0[2mms[22m[39m
+     [32m✓[39m does not link non-release v26.09.0[32m 0[2mms[22m[39m
+     [32m✓[39m does not link non-release V0.31.0[32m 0[2mms[22m[39m
+[31m     [31m×[31m does not link non-release vv0.31.0[39m[32m 4[2mms[22m[39m
+     [32m✓[39m does not link non-release v26.09.0[32m 0[2mms[22m[39m
+[31m     [31m×[31m does not link non-release v0.31.00[39m[32m 0[2mms[22m[39m
+[31m     [31m×[31m does not link non-release v0.31.0-rc.0[39m[32m 0[2mms[22m[39m
+[31m     [31m×[31m does not link non-release v0.31.0-rc.01[39m[32m 0[2mms[22m[39m
+     [32m✓[39m does not link non-release  v0.31.0[32m 0[2mms[22m[39m
+[31m     [31m×[31m does not link non-release v0.31.0 [39m[32m 0[2mms[22m[39m
+     [32m✓[39m does not link non-release 26.09[32m 0[2mms[22m[39m
+     [32m✓[39m does not link non-release 26.09-rc.1[32m 0[2mms[22m[39m
+     [32m✓[39m does not link non-release 26.9.0[32m 0[2mms[22m[39m
+     [32m✓[39m does not link non-release 26.00.0[32m 0[2mms[22m[39m
+     [32m✓[39m does not link non-release 26.13.0[32m 0[2mms[22m[39m
+     [32m✓[39m does not link non-release 26.09.01[32m 0[2mms[22m[39m
+     [32m✓[39m does not link non-release 26.09.0-rc.0[32m 0[2mms[22m[39m
+     [32m✓[39m does not link non-release 26.09.0-dev.abc1234[32m 0[2mms[22m[39m
+     [32m✓[39m does not link non-release 26.09.0extra[32m 0[2mms[22m[39m
+     [32m✓[39m does not link non-release 0.31.0oops[32m 0[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 5 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/release-version.test.ts[2m > [22mrelease version links[2m > [22mdoes not link non-release vv0.31.0
+[31m[1mAssertionError[22m: expected 'vv0.31.0' to be undefined[39m
+
+[32m- Expected:[39m
+undefined
+
+[31m+ Received:[39m
+"vv0.31.0"
+
+[36m [2m❯[22m tests/release-version.test.ts:[2m40:82[22m[39m
+    [90m 38|[39m     [32m"26.09.0extra"[39m[33m,[39m
+    [90m 39|[39m     [32m"0.31.0oops"[39m[33m,[39m
+    [90m 40|[39m   ])("does not link non-release %s", (version) => expect(getReleaseTag…
+    [90m   |[39m                                                                                  [31m^[39m
+    [90m 41|[39m })[33m;[39m
+    [90m 42|[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/release-version.test.ts[2m > [22mrelease version links[2m > [22mdoes not link non-release v0.31.00
+[31m[1mAssertionError[22m: expected 'v0.31.00' to be undefined[39m
+
+[32m- Expected:[39m
+undefined
+
+[31m+ Received:[39m
+"v0.31.00"
+
+[36m [2m❯[22m tests/release-version.test.ts:[2m40:82[22m[39m
+    [90m 38|[39m     [32m"26.09.0extra"[39m[33m,[39m
+    [90m 39|[39m     [32m"0.31.0oops"[39m[33m,[39m
+    [90m 40|[39m   ])("does not link non-release %s", (version) => expect(getReleaseTag…
+    [90m   |[39m                                                                                  [31m^[39m
+    [90m 41|[39m })[33m;[39m
+    [90m 42|[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/release-version.test.ts[2m > [22mrelease version links[2m > [22mdoes not link non-release v0.31.0-rc.0
+[31m[1mAssertionError[22m: expected 'v0.31.0-rc.0' to be undefined[39m
+
+[32m- Expected:[39m
+undefined
+
+[31m+ Received:[39m
+"v0.31.0-rc.0"
+
+[36m [2m❯[22m tests/release-version.test.ts:[2m40:82[22m[39m
+    [90m 38|[39m     [32m"26.09.0extra"[39m[33m,[39m
+    [90m 39|[39m     [32m"0.31.0oops"[39m[33m,[39m
+    [90m 40|[39m   ])("does not link non-release %s", (version) => expect(getReleaseTag…
+    [90m   |[39m                                                                                  [31m^[39m
+    [90m 41|[39m })[33m;[39m
+    [90m 42|[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/release-version.test.ts[2m > [22mrelease version links[2m > [22mdoes not link non-release v0.31.0-rc.01
+[31m[1mAssertionError[22m: expected 'v0.31.0-rc.01' to be undefined[39m
+
+[32m- Expected:[39m
+undefined
+
+[31m+ Received:[39m
+"v0.31.0-rc.01"
+
+[36m [2m❯[22m tests/release-version.test.ts:[2m40:82[22m[39m
+    [90m 38|[39m     [32m"26.09.0extra"[39m[33m,[39m
+    [90m 39|[39m     [32m"0.31.0oops"[39m[33m,[39m
+    [90m 40|[39m   ])("does not link non-release %s", (version) => expect(getReleaseTag…
+    [90m   |[39m                                                                                  [31m^[39m
+    [90m 41|[39m })[33m;[39m
+    [90m 42|[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/release-version.test.ts[2m > [22mrelease version links[2m > [22mdoes not link non-release v0.31.0 
+[31m[1mAssertionError[22m: expected 'v0.31.0 ' to be undefined[39m
+
+[32m- Expected:[39m
+undefined
+
+[31m+ Received:[39m
+"v0.31.0 "
+
+[36m [2m❯[22m tests/release-version.test.ts:[2m40:82[22m[39m
+    [90m 38|[39m     [32m"26.09.0extra"[39m[33m,[39m
+    [90m 39|[39m     [32m"0.31.0oops"[39m[33m,[39m
+    [90m 40|[39m   ])("does not link non-release %s", (version) => expect(getReleaseTag…
+    [90m   |[39m                                                                                  [31m^[39m
+    [90m 41|[39m })[33m;[39m
+    [90m 42|[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m5 failed[39m[22m[2m | [22m[1m[32m26 passed[39m[22m[90m (31)[39m
+[2m   Start at [22m 22:49:53
+[2m   Duration [22m 1.14s[2m (transform 52ms, setup 160ms, import 48ms, tests 10ms, environment 760ms)[22m
+

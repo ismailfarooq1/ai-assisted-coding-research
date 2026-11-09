@@ -1,0 +1,2 @@
+2026-11-08T23:07:38.951091Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /project/contextPack/claims.json:
+      "text": "Frontend checks are run from web/: `pnpm lint`, `pnpm test` (unit tests; invokes `vitest run`), and `pnpm build`. To run unit tests directly, use `cd web && pnpm test`; Vitest configuration is `web/vitest.config.mts` (jsdom, setup file `./tests/setup.ts`, tests `tests/**/*.test.{ts,tsx}`). Backend guidance includes `go test ./...`, `go test -v ./store/...`, and `golangci-lint run.",

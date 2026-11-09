@@ -1,0 +1,42 @@
+{
+  "recordedAt": "2026-11-08T23:17:32.724835+00:00",
+  "rawReviewSha256": "1766098c460abe47d6893dd38c75d4236b3715fb27827f67611f4bba75b25c94",
+  "corrections": [
+    {
+      "claim": "c01",
+      "original": {
+        "path": "web/package.json",
+        "excerpt": "\"test\": \"vitest run\",\n    \"check\": \"tsc --noEmit --skipLibCheck && biome check src tests\""
+      },
+      "exactSourceEvidence": [
+        {
+          "path": "web/package.json",
+          "excerpt": "\"test\": \"vitest run\","
+        },
+        {
+          "path": "web/package.json",
+          "excerpt": "\"check\": \"tsc --noEmit --skipLibCheck && biome check src tests\""
+        }
+      ],
+      "sourceSha256": "ce828cc3766c795165253cc3b91a0151cb56130617ffce35e0aa6e3df4c39ff6"
+    },
+    {
+      "claim": "c04",
+      "original": {
+        "path": "AGENTS.md",
+        "excerpt": "Workflows install toolchains through `.github/actions/setup-go` ... and `.github/actions/setup-web` ...; change versions there, not per workflow."
+      },
+      "exactSourceEvidence": [
+        {
+          "path": "AGENTS.md",
+          "excerpt": "- Workflows install toolchains through `.github/actions/setup-go` (Go version from `go.mod`) and `.github/actions/setup-web`\n  (pnpm from `web/package.json`, Node 24, `pnpm install`); change versions there, not per workflow."
+        }
+      ],
+      "sourceSha256": "37470d7ec27ec454118fcc740746e0ca861888a5e4324fd6bc037f8205b6d9cc"
+    }
+  ],
+  "decision": "All seven factual claims are supported. Correct concatenated/ellipsized evidence into exact source spans; no change to claims or native guidance.",
+  "coordinatorTokens": null,
+  "coordinatorActiveSeconds": null,
+  "humanReviewPerformed": false
+}

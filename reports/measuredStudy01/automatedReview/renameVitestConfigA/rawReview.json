@@ -1,0 +1,90 @@
+{
+  "judgments": [
+    {
+      "id": "native1",
+      "decision": "supported",
+      "text": "# Frontend\ncd web && pnpm install             # Install dependencies\ncd web && pnpm dev                 # Dev server on :3001, proxying API to :8081\ncd web && pnpm lint                # Type check + Biome lint\ncd web && pnpm test                # Vitest unit tests (uses vitest.project.config.mts)\ncd web && pnpm build               # Production build\ncd web && pnpm release             # Build SPA into server/frontend/dist",
+      "reason": "The package scripts define these commands and descriptions; the native project test script names the current Vitest config file.",
+      "evidence": [
+        {
+          "path": "web/package.json",
+          "excerpt": "\"test\": \"vitest run --config vitest.project.config.mts\""
+        },
+        {
+          "path": "web/package.json",
+          "excerpt": "\"lint\": \"tsc --noEmit --skipLibCheck && biome check src tests\""
+        },
+        {
+          "path": "AGENTS.md",
+          "excerpt": "cd web && pnpm dev                 # Dev server on :3001, proxying API to :8081"
+        }
+      ]
+    },
+    {
+      "id": "native2",
+      "decision": "supported",
+      "text": "## Verification Policy\n\n- Run the narrowest relevant checks while iterating.\n- Before finishing, run the checks that match the changed surface from \"Change Routing\".\n- For docs-only changes, `git diff --check` is sufficient unless the docs include runnable examples that should be tested.\n- If a required check cannot run locally, report the reason and the exact command that remains.",
+      "reason": "This is repository workflow guidance; it matches the current source guidance and contains no assertion contradicted by the configuration change.",
+      "evidence": [
+        {
+          "path": "AGENTS.md",
+          "excerpt": "For docs-only changes, `git diff --check` is sufficient unless the docs include runnable examples that should be tested."
+        }
+      ]
+    },
+    {
+      "id": "native3",
+      "decision": "supported",
+      "text": "- Workflows install toolchains through `.github/actions/setup-go` (Go version from `go.mod`) and `.github/actions/setup-web`\n  (pnpm from `web/package.json`, Node 24, `pnpm install`); change versions there, not per workflow.\n- Backend CI: Go 1.27.2, `go mod tidy`, `go fix -diff ./...`, golangci-lint v2.14.0 (including goimports), test groups\n  `store`, `server`, `internal`, `other` (`cmd`, `core`, `markdown`, `filter`, `provider`, `proto`).\n- Frontend CI: Node 24, pnpm 11.0.1, `pnpm lint`, `pnpm test`, `pnpm build`.\n- Proto CI: `buf lint` and `buf format` check.\n- Docker: `scripts/Dockerfile`, Alpine 3.21 runtime, non-root user, port 5230, multi-arch amd64/arm64/arm/v7.",
+      "reason": "No supplied native source contradicts the retained CI claims. The frontend package metadata specifically confirms Node >=24 and pnpm 11.0.1.",
+      "evidence": [
+        {
+          "path": "web/package.json",
+          "excerpt": "\"packageManager\": \"pnpm@11.0.1\",\n  \"engines\": {\n    \"node\": \">=24\""
+        },
+        {
+          "path": "AGENTS.md",
+          "excerpt": "Frontend CI: Node 24, pnpm 11.0.1, `pnpm lint`, `pnpm test`, `pnpm build`."
+        }
+      ]
+    },
+    {
+      "id": "native4",
+      "decision": "supported",
+      "text": "## Database And Proto Rules\n\n- Schema changes require SQLite, MySQL, and PostgreSQL migrations plus `LATEST.sql` updates.\n- Fresh-install SQL and incremental migrations must stay equivalent.\n- Proto field changes must preserve compatibility unless the task explicitly allows a breaking API change. Record every\n  allowed break in `proto/api/CHANGELOG.md`; compatibility is checked during review.\n- Regenerate after proto edits and include both Go/OpenAPI and TypeScript generated outputs.",
+      "reason": "The claim concerns repository maintenance rules and is not affected by the supplied controlled frontend config rename. Generated TypeScript location and no-hand-edit rule are corroborated elsewhere in the cited document.",
+      "evidence": [
+        {
+          "path": "AGENTS.md",
+          "excerpt": "Keep generated proto TypeScript under `web/src/types/proto/` out of manual edits and Biome rewrites."
+        },
+        {
+          "path": "AGENTS.md",
+          "excerpt": "Regenerate after proto edits and include both Go/OpenAPI and TypeScript generated outputs."
+        }
+      ]
+    }
+  ],
+  "coverage": {
+    "routing": "yes",
+    "verification": "yes",
+    "toolchain": "yes",
+    "generated-file rules": "yes",
+    "authority": "unresolved"
+  },
+  "notes": "The supplied native material includes package metadata, TypeScript configuration, the renamed Vitest config, and the editable AGENTS.md. It does not include workflow files or repository authority metadata sufficient to independently verify CI workflow details or the authority topic. No application suites or runtime behavior were executed.",
+  "beforeJudgments": {
+    "native1": "stale",
+    "native2": "supported",
+    "native3": "supported",
+    "native4": "supported"
+  },
+  "requiredFacts": {
+    "frontendCheckCommand": "yes",
+    "unitTestCommand": "yes",
+    "vitestConfig": "yes",
+    "nodeEngine": "yes",
+    "pnpm": "yes",
+    "generatedTypeScript": "yes"
+  }
+}

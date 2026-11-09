@@ -1,0 +1,31 @@
+{"finishedStage": "experiments/existingWorkflow/runs/measuredStudy01/legacyReleaseTag/attempt01/measurement", "seconds": 347.32, "processExit": 0}
+{"finishedStage": "experiments/preparedContext/runs/measuredStudy01/legacyReleaseTag/attempt01/measurement", "seconds": 98.76, "processExit": 0}
+{"finishedStage": "experiments/preparedContext/runs/measuredStudy01/colorAlpha/attempt02/measurement", "seconds": 51.41, "processExit": 0}
+{"finishedStage": "experiments/existingWorkflow/runs/measuredStudy01/colorAlpha/attempt02/measurement", "seconds": 47.98, "processExit": 0}
+{"finishedStage": "experiments/preparedContext/runs/measuredStudy01/safeTagCounts/attempt02/measurement", "seconds": 96.75, "processExit": 0}
+{"finishedStage": "experiments/existingWorkflow/runs/measuredStudy01/safeTagCounts/attempt02/measurement", "seconds": 63.79, "processExit": 0}
+{"finishedStage": "experiments/preparedContext/runs/measuredStudy01/memoViewNames/attempt02/measurement", "seconds": 54.68, "processExit": 0}
+{"finishedStage": "experiments/existingWorkflow/runs/measuredStudy01/memoViewNames/attempt02/measurement", "seconds": 117.3, "processExit": 0}
+{"finishedStage": "experiments/existingWorkflow/runs/measuredStudy01/safeTagCounts/attempt01/measurement", "seconds": 33.34, "processExit": 0}
+{"finishedStage": "experiments/preparedContext/runs/measuredStudy01/safeTagCounts/attempt01/measurement", "seconds": 78.17, "processExit": 0}
+{"finishedStage": "experiments/existingWorkflow/runs/measuredStudy01/colorAlpha/attempt01/measurement", "seconds": 255.58, "processExit": 0}
+{"finishedStage": "experiments/preparedContext/runs/measuredStudy01/colorAlpha/attempt01/measurement", "seconds": 48.78, "processExit": 0}
+{"finishedStage": "experiments/existingWorkflow/runs/measuredStudy01/memoViewNames/attempt01/measurement", "seconds": 33.12, "processExit": 0}
+{"finishedStage": "experiments/preparedContext/runs/measuredStudy01/memoViewNames/attempt01/measurement", "seconds": 283.56, "processExit": 0}
+{"finishedStage": "experiments/existingWorkflow/runs/measuredStudy01/retryMetadata/attempt01/measurement", "seconds": 279.58, "processExit": 0}
+{"finishedStage": "experiments/preparedContext/runs/measuredStudy01/retryMetadata/attempt01/measurement", "seconds": 123.66, "processExit": 0}
+{"finishedStage": "experiments/existingWorkflow/runs/measuredStudy01/unicodeSpaceTitles/attempt01/measurement", "seconds": 102.0, "processExit": 0}
+{"finishedStage": "experiments/preparedContext/runs/measuredStudy01/unicodeSpaceTitles/attempt01/measurement", "seconds": 134.44, "processExit": 0}
+{"finishedStage": "experiments/preparedContext/runs/measuredStudy01/legacyReleaseTag/attempt02/measurement", "seconds": 64.35, "processExit": 0}
+{"finishedStage": "experiments/existingWorkflow/runs/measuredStudy01/legacyReleaseTag/attempt02/measurement", "seconds": 87.13, "processExit": 0}
+{"finishedStage": "experiments/preparedContext/runs/measuredStudy01/retryMetadata/attempt02/measurement", "seconds": 70.08, "processExit": 0}
+{"finishedStage": "experiments/existingWorkflow/runs/measuredStudy01/retryMetadata/attempt02/measurement", "seconds": 65.85, "processExit": 0}
+{"finishedStage": "experiments/preparedContext/runs/measuredStudy01/unicodeSpaceTitles/attempt02/measurement", "seconds": 101.35, "processExit": 0}
+{"finishedStage": "experiments/existingWorkflow/runs/measuredStudy01/unicodeSpaceTitles/attempt02/measurement", "seconds": 195.69, "processExit": 0}
+{"recordedCodingRuns": 24, "report": "reports/measuredStudy01/comparison.md"}
+{"finishedStage": "experiments/preparedContext/runs/measuredStudy01/legacyReleaseTag/attempt01/independentEvaluation", "seconds": 463.91, "processExit": 0}
+{"evaluationFinished": {"task": "legacyReleaseTag", "attempt": 1, "method": "B"}}
+{"finishedStage": "experiments/existingWorkflow/runs/measuredStudy01/legacyReleaseTag/attempt01/independentEvaluation", "seconds": 470.01, "processExit": 0}
+{"evaluationFinished": {"task": "legacyReleaseTag", "attempt": 1, "method": "A"}}
+/opt/homebrew/Cellar/python@3.14/3.14.2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:396: UserWarning: resource_tracker: There appear to be 5 leaked semaphore objects to clean up at shutdown: {'/mp-b9c3lkos', '/mp-3c2030us', '/mp-2379p3xg', '/mp-cu0_fcqt', '/mp-1_kawcoe'}
+  warnings.warn(

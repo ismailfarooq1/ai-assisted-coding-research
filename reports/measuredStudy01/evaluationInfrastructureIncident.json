@@ -1,0 +1,13 @@
+{
+  "recordedAt": "2026-11-08T22:04:34.068207+00:00",
+  "symptom": "TypeScript-Go compiler fatal newosproc at 242 OS threads under pids-limit 256; both first candidates pass other gates.",
+  "classification": "Evaluator infrastructure failure; failed lint cannot be interpreted as candidate type-check failure.",
+  "coordinatorPidsPaused": [
+    86596,
+    427,
+    428
+  ],
+  "alreadyRunningEvaluations": "Allowed to finish and retain resource/log records; no coding actor is rerun.",
+  "originalCodingRunsPreserved": 24,
+  "next": "Calibrate common offline evaluator on Linux-local source copies and record a prospective infrastructure amendment for all candidates."
+}

@@ -1,0 +1,214 @@
+{
+  "definition": {
+    "recordedAt": "2026-11-08T22:32:12.624007+00:00",
+    "classification": "Post-execution task/evaluator-validity sensitivity audit, discovered from registered regression failures; primary scores remain unchanged.",
+    "reason": "The task requires exact users/<user>/views/<view> names and returning other collections unchanged. Pristine sidebar-row-state mocks users/1/memoViews/abc and expects the extracted abc. Actual proto/API builders use users/{user}/views/{view}. Restoring that fixture conflicts with the requested strict helper contract even if a candidate updates relevant fixtures.",
+    "sourceEvidence": {
+      "proto": {
+        "path": "proto/api/user_service.proto",
+        "sha256": "19f99502cadb41bccc8652ad4fbbd153c71d4402ceedb6c5aef8b88abe236ec7",
+        "excerpt": "pattern: \"users/{user}/views/{view}\""
+      },
+      "server": {
+        "path": "server/api/user_service_memo_views.go",
+        "sha256": "057e02b1b427f5d6c3e354c0a595e9f6a89a9b0293cfc8d2ae6d1aa9e151eedd",
+        "excerpt": "return fmt.Sprintf(\"%s/views/%s\", BuildUserName(username), memoViewID)"
+      }
+    },
+    "originalFixtureSha256": "27d9dd0d8ffebafb7784fb719e86a68f2d8417781b9279e5c2036dc0b4c4903f",
+    "correctedFixtureSha256": "e9f3fd4435811094d601eaa2c263640c71f4b3fa9554b4512d3dddf1a5d2dbca",
+    "runnerSha256": "cae1a091f901b2c358007dbfd44932709e689004e9177e2ea32c42ecf39525c5",
+    "fixtureChange": "Only replace the single mock resource name. All test logic/assertions stay byte-for-byte otherwise unchanged.",
+    "candidates": "Baseline plus all four memoViewNames candidates; no selection by result. No application patch edits or new coding calls.",
+    "scope": "Targeted UI fixture sensitivity only, not a repeat of the entire regression suite or replacement primary endpoint. Genuine formatter or candidate-test failures remain failures."
+  },
+  "rows": [
+    {
+      "item": {
+        "method": "baseline",
+        "task": "memoViewNames",
+        "attempt": 0
+      },
+      "passed": true,
+      "tests": 8,
+      "stage": {
+        "hostWallSeconds": 7.166424375027418,
+        "dockerExitCode": 0,
+        "finishedAt": "2026-11-08T23:04:48.713442+00:00",
+        "resources": {
+          "exitCode": 0,
+          "timedOut": false,
+          "processWallSeconds": 6.446018919999915,
+          "cpuUsageSeconds": 4.871913,
+          "cpuStatDelta": {
+            "usage_usec": 4871913,
+            "user_usec": 3196194,
+            "system_usec": 1675719,
+            "nr_periods": 64,
+            "nr_throttled": 1,
+            "throttled_usec": 32626
+          },
+          "initialMemoryBytes": 7041024,
+          "sampledPeakMemoryBytes": 569372672,
+          "memorySamples": 65,
+          "samplingIntervalSeconds": 0.1,
+          "memoryDefinition": "Observed maximum memory.current, including container cache/kernel; not exact peak or process RSS. Startup before wrapper is excluded.",
+          "cpuDefinition": "Container cgroup CPU delta during stage including local descendants and metering; remote inference compute unobserved.",
+          "rolloutUsageObservations": []
+        }
+      },
+      "definitionSha256": "d4ab8f82f02adc456c3d987449370597409b0a1fa2e2bbaf8911e8ac7950c1ee",
+      "classification": "Supplemental fixture sensitivity; original primary regression and formatting verdicts retained"
+    },
+    {
+      "item": {
+        "task": "memoViewNames",
+        "attempt": 2,
+        "method": "B"
+      },
+      "passed": true,
+      "tests": 8,
+      "stage": {
+        "hostWallSeconds": 7.32213587500155,
+        "dockerExitCode": 0,
+        "finishedAt": "2026-11-08T23:04:56.037100+00:00",
+        "resources": {
+          "exitCode": 0,
+          "timedOut": false,
+          "processWallSeconds": 6.655137587000354,
+          "cpuUsageSeconds": 5.073175,
+          "cpuStatDelta": {
+            "usage_usec": 5073175,
+            "user_usec": 3296723,
+            "system_usec": 1776452,
+            "nr_periods": 67,
+            "nr_throttled": 1,
+            "throttled_usec": 10647
+          },
+          "initialMemoryBytes": 7139328,
+          "sampledPeakMemoryBytes": 572014592,
+          "memorySamples": 67,
+          "samplingIntervalSeconds": 0.1,
+          "memoryDefinition": "Observed maximum memory.current, including container cache/kernel; not exact peak or process RSS. Startup before wrapper is excluded.",
+          "cpuDefinition": "Container cgroup CPU delta during stage including local descendants and metering; remote inference compute unobserved.",
+          "rolloutUsageObservations": []
+        }
+      },
+      "definitionSha256": "d4ab8f82f02adc456c3d987449370597409b0a1fa2e2bbaf8911e8ac7950c1ee",
+      "classification": "Supplemental fixture sensitivity; original primary regression and formatting verdicts retained"
+    },
+    {
+      "item": {
+        "task": "memoViewNames",
+        "attempt": 2,
+        "method": "A"
+      },
+      "passed": true,
+      "tests": 8,
+      "stage": {
+        "hostWallSeconds": 6.953933290205896,
+        "dockerExitCode": 0,
+        "finishedAt": "2026-11-08T23:05:02.992866+00:00",
+        "resources": {
+          "exitCode": 0,
+          "timedOut": false,
+          "processWallSeconds": 6.326072086998465,
+          "cpuUsageSeconds": 4.763958,
+          "cpuStatDelta": {
+            "usage_usec": 4763958,
+            "user_usec": 3365266,
+            "system_usec": 1398693,
+            "nr_periods": 64,
+            "nr_throttled": 1,
+            "throttled_usec": 15329
+          },
+          "initialMemoryBytes": 7032832,
+          "sampledPeakMemoryBytes": 573886464,
+          "memorySamples": 63,
+          "samplingIntervalSeconds": 0.1,
+          "memoryDefinition": "Observed maximum memory.current, including container cache/kernel; not exact peak or process RSS. Startup before wrapper is excluded.",
+          "cpuDefinition": "Container cgroup CPU delta during stage including local descendants and metering; remote inference compute unobserved.",
+          "rolloutUsageObservations": []
+        }
+      },
+      "definitionSha256": "d4ab8f82f02adc456c3d987449370597409b0a1fa2e2bbaf8911e8ac7950c1ee",
+      "classification": "Supplemental fixture sensitivity; original primary regression and formatting verdicts retained"
+    },
+    {
+      "item": {
+        "task": "memoViewNames",
+        "attempt": 1,
+        "method": "A"
+      },
+      "passed": true,
+      "tests": 8,
+      "stage": {
+        "hostWallSeconds": 7.55337820854038,
+        "dockerExitCode": 0,
+        "finishedAt": "2026-11-08T23:05:10.547792+00:00",
+        "resources": {
+          "exitCode": 0,
+          "timedOut": false,
+          "processWallSeconds": 6.613549959998636,
+          "cpuUsageSeconds": 4.748495,
+          "cpuStatDelta": {
+            "usage_usec": 4748495,
+            "user_usec": 3102090,
+            "system_usec": 1646406,
+            "nr_periods": 66,
+            "nr_throttled": 1,
+            "throttled_usec": 35413
+          },
+          "initialMemoryBytes": 7049216,
+          "sampledPeakMemoryBytes": 580755456,
+          "memorySamples": 66,
+          "samplingIntervalSeconds": 0.1,
+          "memoryDefinition": "Observed maximum memory.current, including container cache/kernel; not exact peak or process RSS. Startup before wrapper is excluded.",
+          "cpuDefinition": "Container cgroup CPU delta during stage including local descendants and metering; remote inference compute unobserved.",
+          "rolloutUsageObservations": []
+        }
+      },
+      "definitionSha256": "d4ab8f82f02adc456c3d987449370597409b0a1fa2e2bbaf8911e8ac7950c1ee",
+      "classification": "Supplemental fixture sensitivity; original primary regression and formatting verdicts retained"
+    },
+    {
+      "item": {
+        "task": "memoViewNames",
+        "attempt": 1,
+        "method": "B"
+      },
+      "passed": true,
+      "tests": 8,
+      "stage": {
+        "hostWallSeconds": 7.3699164586141706,
+        "dockerExitCode": 0,
+        "finishedAt": "2026-11-08T23:05:17.919674+00:00",
+        "resources": {
+          "exitCode": 0,
+          "timedOut": false,
+          "processWallSeconds": 6.5701873779980815,
+          "cpuUsageSeconds": 5.362602,
+          "cpuStatDelta": {
+            "usage_usec": 5362602,
+            "user_usec": 3525374,
+            "system_usec": 1837229,
+            "nr_periods": 65,
+            "nr_throttled": 2,
+            "throttled_usec": 37226
+          },
+          "initialMemoryBytes": 7131136,
+          "sampledPeakMemoryBytes": 576290816,
+          "memorySamples": 66,
+          "samplingIntervalSeconds": 0.1,
+          "memoryDefinition": "Observed maximum memory.current, including container cache/kernel; not exact peak or process RSS. Startup before wrapper is excluded.",
+          "cpuDefinition": "Container cgroup CPU delta during stage including local descendants and metering; remote inference compute unobserved.",
+          "rolloutUsageObservations": []
+        }
+      },
+      "definitionSha256": "d4ab8f82f02adc456c3d987449370597409b0a1fa2e2bbaf8911e8ac7950c1ee",
+      "classification": "Supplemental fixture sensitivity; original primary regression and formatting verdicts retained"
+    }
+  ],
+  "passed": 5,
+  "audited": 5
+}

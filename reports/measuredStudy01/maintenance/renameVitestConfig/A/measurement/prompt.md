@@ -1,0 +1,2 @@
+Perform documentation maintenance after this controlled project change: The Vitest configuration was renamed to web/vitest.project.config.mts; test, test:watch and test:coverage scripts now explicitly select it.
+Inspect actual configuration and native guidance. Update only AGENTS.md. Preserve unrelated guidance. Do not change code, dependencies, workflows, Git history, other files, authentication or network sources. Do not delegate. Do not run full test/build suites; verify documentation against actual supplied configuration. 

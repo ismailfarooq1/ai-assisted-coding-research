@@ -1,0 +1,113 @@
+{
+  "recordedAt": "2026-11-08T23:27:14.000916+00:00",
+  "classification": "Coordinator source consistency audit after controlled edits/reviews; not expert human review or natural-change frequency estimate",
+  "rows": [
+    {
+      "episode": "renameLintScript",
+      "method": "A",
+      "actorScopePermitted": true,
+      "changedByActor": [
+        "AGENTS.md"
+      ],
+      "editingWallSeconds": 26.578690917231143,
+      "beforeAffectedNativeInstructionMentions": 3,
+      "beforeAffectedAdditionalClaimMentions": 0,
+      "remainingObsoleteCommandMentions": 0,
+      "remainingObsoleteConfigPathMentions": 0,
+      "coverage": {
+        "frontendCheckCommand": true,
+        "unitTestCommand": true,
+        "vitestConfigFilename": false,
+        "node24Toolchain": true,
+        "pnpm11_0_1": true,
+        "generatedTypeScriptRule": true
+      },
+      "coveredFacts": 5,
+      "totalFacts": 6,
+      "sourceMapAllHashesMatch": null,
+      "claimSourcePathsValid": null,
+      "nodeCoverageDefinition": "Documented Node 24 toolchain satisfies the >=24 project baseline; no claim that the exact engine range is fully documented."
+    },
+    {
+      "episode": "renameLintScript",
+      "method": "B",
+      "actorScopePermitted": true,
+      "changedByActor": [
+        "AGENTS.md",
+        "contextPack/claims.json"
+      ],
+      "editingWallSeconds": 31.637080125510693,
+      "beforeAffectedNativeInstructionMentions": 3,
+      "beforeAffectedAdditionalClaimMentions": 1,
+      "remainingObsoleteCommandMentions": 0,
+      "remainingObsoleteConfigPathMentions": 0,
+      "coverage": {
+        "frontendCheckCommand": true,
+        "unitTestCommand": true,
+        "vitestConfigFilename": true,
+        "node24Toolchain": true,
+        "pnpm11_0_1": true,
+        "generatedTypeScriptRule": true
+      },
+      "coveredFacts": 6,
+      "totalFacts": 6,
+      "sourceMapAllHashesMatch": true,
+      "claimSourcePathsValid": true,
+      "nodeCoverageDefinition": "Documented Node 24 toolchain satisfies the >=24 project baseline; no claim that the exact engine range is fully documented."
+    },
+    {
+      "episode": "renameVitestConfig",
+      "method": "A",
+      "actorScopePermitted": true,
+      "changedByActor": [
+        "AGENTS.md"
+      ],
+      "editingWallSeconds": 27.27443579211831,
+      "beforeAffectedNativeInstructionMentions": 0,
+      "beforeAffectedAdditionalClaimMentions": 0,
+      "remainingObsoleteCommandMentions": 0,
+      "remainingObsoleteConfigPathMentions": 0,
+      "coverage": {
+        "frontendCheckCommand": true,
+        "unitTestCommand": true,
+        "vitestConfigFilename": true,
+        "node24Toolchain": true,
+        "pnpm11_0_1": true,
+        "generatedTypeScriptRule": true
+      },
+      "coveredFacts": 6,
+      "totalFacts": 6,
+      "sourceMapAllHashesMatch": null,
+      "claimSourcePathsValid": null,
+      "nodeCoverageDefinition": "Documented Node 24 toolchain satisfies the >=24 project baseline; no claim that the exact engine range is fully documented."
+    },
+    {
+      "episode": "renameVitestConfig",
+      "method": "B",
+      "actorScopePermitted": true,
+      "changedByActor": [
+        "AGENTS.md",
+        "contextPack/claims.json"
+      ],
+      "editingWallSeconds": 43.947536416351795,
+      "beforeAffectedNativeInstructionMentions": 0,
+      "beforeAffectedAdditionalClaimMentions": 1,
+      "remainingObsoleteCommandMentions": 0,
+      "remainingObsoleteConfigPathMentions": 0,
+      "coverage": {
+        "frontendCheckCommand": true,
+        "unitTestCommand": true,
+        "vitestConfigFilename": true,
+        "node24Toolchain": true,
+        "pnpm11_0_1": true,
+        "generatedTypeScriptRule": true
+      },
+      "coveredFacts": 6,
+      "totalFacts": 6,
+      "sourceMapAllHashesMatch": true,
+      "claimSourcePathsValid": true,
+      "nodeCoverageDefinition": "Documented Node 24 toolchain satisfies the >=24 project baseline; no claim that the exact engine range is fully documented."
+    }
+  ],
+  "note": "Mentions count explicit obsolete instructions or config filenames in maintained native guidance plus additional claim text. Citation/source-map paths are audited separately. Do not compare differently sized AI review items as atomic claim-error rates. Changes were supplied to maintenance actors; discovery/detection effort was not measured. Coordinator effort is unavailable."
+}

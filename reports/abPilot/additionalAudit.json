@@ -1,0 +1,20 @@
+{
+  "recordedAt": "2026-11-08T17:16:31.868044+00:00",
+  "classification": "Post-execution supplementary quality audit, outside frozen primary score",
+  "methods": {
+    "A": {
+      "exitCode": 1,
+      "passed": false,
+      "summary": "1 failed | 62 passed (63)",
+      "log": "experiments/existingWorkflow/runs/rawStringPilot02/candidateTestAudit.log"
+    },
+    "B": {
+      "exitCode": 0,
+      "passed": true,
+      "summary": "66 passed (66)",
+      "log": "experiments/preparedContext/runs/rawStringPilot02/candidateTestAudit.log"
+    }
+  },
+  "finding": "A introduced an incorrect negated-tag test expectation and its candidate test file fails. B candidate tests pass. Preserve primary results separately; neither patch was repaired.",
+  "interpretation": "This exposes a gap in the primary pilot gate: pristine regression checks do not validate newly introduced tests."
+}

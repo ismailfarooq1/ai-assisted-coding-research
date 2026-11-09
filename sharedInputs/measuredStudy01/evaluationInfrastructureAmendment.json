@@ -1,0 +1,23 @@
+{
+  "recordedAt": "2026-11-08T22:07:49.096278+00:00",
+  "reason": "Initial evaluator TypeScript-Go runtime crashed with newosproc at the 256-thread/process cgroup cap; successful behavioral gates do not resolve lint. This is shared evaluator infrastructure, not candidate code failure.",
+  "codingInputsAndRunsUnchanged": true,
+  "all24CodingRunsSealed": true,
+  "sourcePolicy": "Read-only candidates copied to Linux-local /project before running identical check commands.",
+  "cpuLimit": 2,
+  "memoryLimit": "4g",
+  "pidLimit": 1024,
+  "compilerEnvironment": {
+    "GOMAXPROCS": "2"
+  },
+  "network": "none",
+  "credentialsMounted": false,
+  "evaluationConcurrency": 2,
+  "timeoutSeconds": 900,
+  "scoringCriteriaChanged": false,
+  "selection": "Every one of the 24 candidates receives the common repaired evaluator, irrespective of method or prior status.",
+  "retention": "Original initial evaluation JSON/logs/resources retained. Repaired verdicts use evaluationRecovered.json and independentEvaluationRecovered; no coding-agent replay or candidate repair.",
+  "calibrationResourceSha256": "0780d63c44286608eb6ee4bdfc549516b782af4e36332935e537a52394210748",
+  "implementationSha256": "cae27a349bdb1ce8efc4fc275e52d7155844c18335c30fa184f94f4314c3b6ae",
+  "executionProtocolSha256": "fcf0a9ad30869458d1cc9af6d5706a6c7fbf4b0961296f67a5f92ea78c499298"
+}

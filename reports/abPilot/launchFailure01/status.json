@@ -1,0 +1,13 @@
+{
+  "classification": "infrastructureLaunchFailure",
+  "reason": "Docker stdin forwarding flag missing; both CLIs rejected absent task input before any model event.",
+  "methods": [
+    "A",
+    "B"
+  ],
+  "attemptId": "rawStringPilot01",
+  "codingTaskVerdict": null,
+  "evaluation": "Cancelled: unchanged artifacts from failed launches are not coding-agent results.",
+  "usage": "No model events; provider usage unavailable.",
+  "recovery": "Both conditions repeated together under a new frozen protocol and attempt ID; old inputs and records retained."
+}

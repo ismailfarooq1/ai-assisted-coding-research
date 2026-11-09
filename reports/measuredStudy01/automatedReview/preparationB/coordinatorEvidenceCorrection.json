@@ -1,0 +1,45 @@
+{
+  "recordedAt": "2026-11-08T21:04:43.476720+00:00",
+  "rawReviewSha256": "443c712356a7df2442a8f2f216b41c4838b7ae9e3aac8e9d3cb6fcf0fa37be16",
+  "corrections": [
+    {
+      "claim": "c02",
+      "path": "AGENTS.md",
+      "reviewerParaphrase": "Import direction points downward only: `cmd` \u2192 `server` \u2192 `core` \u2192 `store` \u2192 {`provider`, `markdown`, `filter`} \u2192 `internal`.",
+      "exactSourceExcerpt": "- Imports point downward only: `cmd` \u2192 `server` \u2192 `core` \u2192 `store` \u2192 {`provider`, `markdown`, `filter`} \u2192 `internal`.",
+      "sourceSha256": "325b45cc9768f94f28333f1f6c5f80ca3707833cd826e7e0a06aaf88a41310d2"
+    },
+    {
+      "claim": "c02",
+      "path": "markdown/doc.go",
+      "reviewerParaphrase": "markdown is the markdown engine: parsing memo content into the AST ... rendering, and the derived memo payload",
+      "exactSourceExcerpt": "// Package markdown is the markdown engine: parsing memo content into the AST\n// in markdown/ast, the memos-specific syntax in markdown/extensions and\n// markdown/parser (tags, mentions, math, GFM extras), rendering, and the\n// derived memo payload (tags, properties, snippet).\n//\n// Layering: markdown may import proto/gen and internal. It must not import\n// store, core, or server.",
+      "sourceSha256": "b900e2c8499d5e28f720cd6148ee7b70955038f065d86d34b5cd60fcbef3d07e"
+    },
+    {
+      "claim": "c02",
+      "path": "filter/doc.go",
+      "reviewerParaphrase": "filter compiles the CEL filter expressions ... and renders that IR into SQL",
+      "exactSourceExcerpt": "// Package filter compiles the CEL filter expressions accepted by the list\n// endpoints into an intermediate representation and renders that IR into SQL\n// for each database driver. The schema of filterable memo and user fields\n// lives here.\n//\n// Layering: filter imports only third-party packages and internal. It must not\n// import store, core, or server; the SQL drivers import filter, not the other\n// way round.",
+      "sourceSha256": "8b55278cb6263bade3ca97c4e3f4b56b1290788333e7f2ee1d703a24d30773f6"
+    },
+    {
+      "claim": "c05",
+      "path": "AGENTS.md",
+      "reviewerParaphrase": "Schema changes require SQLite, MySQL, and PostgreSQL migrations plus `LATEST.sql` updates. Fresh-install SQL and incremental migrations must stay equivalent.",
+      "exactSourceExcerpt": "- Schema changes require SQLite, MySQL, and PostgreSQL migrations plus `LATEST.sql` updates.\n- Fresh-install SQL and incremental migrations must stay equivalent.",
+      "sourceSha256": "325b45cc9768f94f28333f1f6c5f80ca3707833cd826e7e0a06aaf88a41310d2"
+    },
+    {
+      "claim": "c06",
+      "path": "docs/design/README.md",
+      "reviewerParaphrase": "Source code, tests, and package `README.md` or `doc.go` files describe current behavior; a design document does not have to.",
+      "exactSourceExcerpt": "Source code, tests, and package `README.md` or `doc.go` files describe current\nbehavior; a design document does not have to.",
+      "sourceSha256": "f24194e0d286bed61b0723a8832578f05eefd3708ebcfbe90d2e15492d5c438d"
+    }
+  ],
+  "decision": "All seven claims supported after examining the supplied native files. Five evidence fragments were paraphrased/ellipsized or omitted source line breaks; replace with exact source spans. Claim text and decisions unchanged.",
+  "coordinatorUsage": null,
+  "coordinatorActiveSeconds": null,
+  "note": "Automated and coordinator source review, not completed human participant review."
+}

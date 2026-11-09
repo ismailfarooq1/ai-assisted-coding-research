@@ -1,0 +1,62 @@
+{
+  "gates": {
+    "lint": 1,
+    "candidateTests": 0,
+    "acceptance": 0,
+    "restorePristineTests": 0,
+    "regression": 1,
+    "build": 0
+  },
+  "automatedGatesPass": false,
+  "verifiedCompletion": false,
+  "humanAdjudicationRequired": [],
+  "evaluationUnresolved": false,
+  "candidateArtifactsUnchanged": true,
+  "bContextExposureObserved": null,
+  "evaluationStage": {
+    "hostWallSeconds": 270.7347938325256,
+    "dockerExitCode": 0,
+    "finishedAt": "2026-11-08T22:40:52.079901+00:00",
+    "resources": {
+      "exitCode": 0,
+      "timedOut": false,
+      "processWallSeconds": 269.58909991399923,
+      "cpuUsageSeconds": 345.141655,
+      "cpuStatDelta": {
+        "usage_usec": 345141655,
+        "user_usec": 276593174,
+        "system_usec": 68548481,
+        "nr_periods": 2684,
+        "nr_throttled": 26,
+        "throttled_usec": 249287
+      },
+      "initialMemoryBytes": 7053312,
+      "sampledPeakMemoryBytes": 1684738048,
+      "memorySamples": 2674,
+      "samplingIntervalSeconds": 0.1,
+      "memoryDefinition": "Observed maximum memory.current, including container cache/kernel; not exact peak or process RSS. Startup before wrapper is excluded.",
+      "cpuDefinition": "Container cgroup CPU delta during stage including local descendants and metering; remote inference compute unobserved.",
+      "rolloutUsageObservations": []
+    }
+  },
+  "evaluationRevision": "common infrastructure recovery",
+  "infrastructureAmendmentSha256": "9ef188779f3ebd9948941cef914436b970098489147aec0eb6a320a768cceada",
+  "initialEvaluationRetained": false,
+  "adjudication": {
+    "completedAt": "2026-11-08T22:44:23.785823+00:00",
+    "type": "automated coordinator source audit",
+    "humanReviewPerformed": false,
+    "originalEvaluationSha256": "6218d6c26931412e6169c55f6405e35fecdb154d963e052df61efb99f20e9242",
+    "originalFlags": [
+      "web/tests/memo-views.test.ts: removed or rewritten upstream test assertion"
+    ],
+    "originalVerdict": null,
+    "resolvedAs": "Benign test-title change and added cases. Every original assertion is retained; no skipped/focused tests or removed coverage. Nonzero registered gates still determine failure.",
+    "removedNonHeaderDiffLines": [
+      "  it(\"extracts the saved view ID\", () => {"
+    ],
+    "allOriginalAssertionLinesPreserved": true,
+    "baselineTestSha256": "91ccfeeafb8aa1446c824076ca22efa0cfddc436136596f7e14dca3093962be4",
+    "candidateTestSha256": "bebdc943ccbad6661bf064e769400ff26d63255c1c2c506e8e1b50b3cf74b664"
+  }
+}

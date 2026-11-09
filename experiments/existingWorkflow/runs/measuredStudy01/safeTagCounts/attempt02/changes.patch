@@ -1,0 +1,58 @@
+diff --git a/web/src/lib/tag.ts b/web/src/lib/tag.ts
+index 3a36850..1050aa4 100644
+--- a/web/src/lib/tag.ts
++++ b/web/src/lib/tag.ts
+@@ -7,7 +7,10 @@ const compiledPatternCache = new Map<string, RegExp | null>();
+ export const mergeTagCounts = (...sources: Array<Record<string, number> | undefined>): Record<string, number> => {
+   const result = Object.create(null) as Record<string, number>;
+   for (const source of sources) {
+-    for (const [tag, count] of Object.entries(source ?? {})) result[tag] = (result[tag] ?? 0) + count;
++    for (const [tag, count] of Object.entries(source ?? {})) {
++      if (!Number.isSafeInteger(count) || count < 0) continue;
++      result[tag] = Math.min(Number.MAX_SAFE_INTEGER, (result[tag] ?? 0) + count);
++    }
+   }
+   return result;
+ };
+diff --git a/web/tests/tag.test.ts b/web/tests/tag.test.ts
+index 35a8b9b..d1051f7 100644
+--- a/web/tests/tag.test.ts
++++ b/web/tests/tag.test.ts
+@@ -4,6 +4,37 @@ import { findTagMetadata, mergeTagCounts } from "@/lib/tag";
+ import { UserSetting_TagMetadataSchema, UserSetting_TagsSettingSchema, UserStatsSchema } from "@/types/proto/api/user_service_pb";
+ 
+ describe("exact tag keys", () => {
++  it("ignores invalid counts, retains zero counts, and saturates sums", () => {
++    const source = Object.fromEntries([
++      ["negative", -1],
++      ["fraction", 1.5],
++      ["infinity", Number.POSITIVE_INFINITY],
++      ["nan", Number.NaN],
++      ["unsafe", Number.MAX_SAFE_INTEGER + 1],
++      ["runtime-string", "2"],
++      ["zero", 0],
++      ["saturated", Number.MAX_SAFE_INTEGER],
++    ]) as Record<string, number>;
++    const original = Object.fromEntries(Object.entries(source));
++
++    const counts = mergeTagCounts(source, { saturated: 1, zero: 0 });
++
++    expect(counts).toEqual(
++      Object.assign(Object.create(null), {
++        zero: 0,
++        saturated: Number.MAX_SAFE_INTEGER,
++      }),
++    );
++    expect(source).toEqual(original);
++  });
++
++  it("keeps only own enumerable source keys", () => {
++    const source = Object.create({ inherited: 4 }) as Record<string, number>;
++    source.own = 2;
++
++    expect(mergeTagCounts(source)).toEqual(Object.assign(Object.create(null), { own: 2 }));
++  });
++
+   it("aggregates names that collide with Object prototype properties", () => {
+     const source = Object.fromEntries([
+       ["toString", 1],

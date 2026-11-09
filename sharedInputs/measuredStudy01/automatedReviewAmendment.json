@@ -1,0 +1,15 @@
+{
+  "recordedAt": "2026-11-08T21:02:22.510734+00:00",
+  "authority": "User: Decide for yourself",
+  "originalDesignSha256": "9d36abcdee22119f2db03fe038b5faa3bdfbf0673537b5cec08ccb599df9f6c5",
+  "change": "Replace unfinished participant factual review with metered, source-grounded automated review for preparation and maintenance. Coordinator resolves review findings; no human completion is fabricated.",
+  "preserved": "Frozen task set, acceptance controls, model/configuration, common limits, schedule, all 24 planned coding attempts and prior raw records.",
+  "humanEffort": "Retain observed partial participant intervals separately; completed expert human review and associated human-effort comparison remain unavailable.",
+  "reviewLimit": "One fresh automated review per preparation or maintenance packet; unresolved facts stop approval, without silently retrying or inventing evidence.",
+  "evaluationConcurrency": 2,
+  "evaluationNote": "Only offline independent evaluation may overlap after all coding attempts are sealed. Coding stays sequential. Evaluation time is separate research overhead.",
+  "inputHashes": {
+    "experiments/tools/measuredStudy/automatedStudy.py": "7ccb17769011d54766a7c4c8548bb0c69dac473a8ea20c459065f64afa7376f5"
+  },
+  "inference": "Exploratory automated workflow comparison with partial human participation; not an experiment establishing human maintenance savings."
+}

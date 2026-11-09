@@ -1,0 +1,71 @@
+{
+  "claims": [
+    {
+      "id": "c01",
+      "topic": "verification",
+      "text": "Frontend checks are run from web/: `pnpm lint`, `pnpm test` (unit tests; invokes `vitest run --config vitest.project.config.mts`), and `pnpm build`. To run unit tests directly, use `cd web && pnpm test`; `test`, `test:watch`, and `test:coverage` explicitly select `vitest.project.config.mts`, which uses jsdom, setup file `./tests/setup.ts`, and tests `tests/**/*.test.{ts,tsx}`. Backend guidance includes `go test ./...`, `go test -v ./store/...`, and `golangci-lint run`.",
+      "sources": [
+        "AGENTS.md",
+        "web/package.json",
+        "web/vitest.project.config.mts"
+      ]
+    },
+    {
+      "id": "c02",
+      "topic": "code routing and layering",
+      "text": "Route HTTP transport and thin handlers to `server/` and business rules to `core/`; store and migration behavior belongs in `store/`; markdown parsing/rendering and derived memo payload in `markdown/`; CEL filtering and SQL rendering in `filter/`. Import direction descends cmd \u2192 server \u2192 core \u2192 store \u2192 provider/markdown/filter \u2192 internal, with package-specific constraints enforced by depguard.",
+      "sources": [
+        "AGENTS.md",
+        "markdown/doc.go",
+        "filter/doc.go",
+        ".golangci.yaml"
+      ]
+    },
+    {
+      "id": "c03",
+      "topic": "frontend conventions",
+      "text": "Frontend code uses `@/` absolute imports, strict TypeScript, and Biome formatting (2 spaces, double quotes, semicolons, 140-character line width). Put server data in React Query hooks under `web/src/hooks/`; keep UI-only state in contexts or component state. Memo display, editing, and composition use `MemoEditor`; reuse Base UI primitives and use Tailwind CSS v4 utilities, `cn()`, and CVA.",
+      "sources": [
+        "AGENTS.md",
+        "web/tsconfig.json",
+        "web/src/components/MemoEditor/README.md"
+      ]
+    },
+    {
+      "id": "c04",
+      "topic": "toolchain",
+      "text": "The web package requires Node.js `>=24` and pins pnpm `11.0.1` in `web/package.json`; CI setup uses Node 24 and installs with `pnpm install --frozen-lockfile`. Go CI setup selects the version declared in `go.mod`; the repository guidance identifies Go 1.27.2. Tool versions belong in the shared setup actions rather than individual workflows.",
+      "sources": [
+        "web/package.json",
+        ".github/actions/setup-web/action.yml",
+        ".github/actions/setup-go/action.yml",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "id": "c05",
+      "topic": "generated files and schema changes",
+      "text": "Do not hand-edit generated proto outputs: change `.proto` sources and run `cd proto && buf generate`; generated outputs include Go/OpenAPI under `proto/gen/` and TypeScript under `web/src/types/proto/`. Database schema changes require SQLite, MySQL, and PostgreSQL migrations plus each driver's `LATEST.sql`; fresh-install SQL and incremental migrations must stay equivalent.",
+      "sources": [
+        "AGENTS.md"
+      ]
+    },
+    {
+      "id": "c06",
+      "topic": "documentation authority",
+      "text": "For current behavior, use source code, tests, and package README.md/doc.go files rather than design documents. Design documents remain editable until release; after release their body is frozen and later changes go in a dated `## Amendments` section. If this repository guide conflicts with source files or CI configuration, trust the source/CI and update the guide.",
+      "sources": [
+        "docs/design/README.md",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "id": "c07",
+      "topic": "store test prerequisites",
+      "text": "The store test README says Docker must be running for MySQL, PostgreSQL, and released-binary upgrade tests. A single-driver test can be selected with `DRIVER=mysql go test -v ./store/test/...`; upgrade tests can be selected with `DRIVER=sqlite go test -v -count=1 -timeout 30m -run 'TestMigration|TestUpgrade|TestFreshInstall' ./store/test/...`.",
+      "sources": [
+        "store/test/README.md"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -53,7 +53,7 @@
+ cd web && pnpm install             # Install dependencies
+ cd web && pnpm dev                 # Dev server on :3001, proxying API to :8081
+ cd web && pnpm lint                # Type check + Biome lint
+-cd web && pnpm test                # Vitest unit tests
++cd web && pnpm test                # Vitest unit tests (uses vitest.project.config.mts)
+ cd web && pnpm build               # Production build
+ cd web && pnpm release             # Build SPA into server/frontend/dist
+ 
+@@ -107,7 +107,7 @@
+ | Store or migration behavior | `store/`, all three DB driver migrations, `LATEST.sql` | `go test -v ./store/...` |
+ | Markdown, filter, or provider logic | `markdown/`, `filter/`, `provider/` | `go test -v -race ./markdown/... ./filter/... ./provider/...` |
+ | Internal package logic | Relevant `internal/` package tests | `go test -v -race ./internal/...` |
+-| Frontend behavior | Components/hooks/contexts under `web/src/` | `cd web && pnpm lint && pnpm test` |
++| Frontend behavior | Components/hooks/contexts under `web/src/` | `cd web && pnpm lint && pnpm test` (Vitest uses `vitest.project.config.mts`) |
+ | Frontend production output | Vite config or release-sensitive UI | `cd web && pnpm build` or `pnpm release` |
+ | Proto API | `.proto` source, generated outputs, `proto/api/CHANGELOG.md` for breaks | `cd proto && buf generate && buf lint` |
+ | Public unauthenticated route | `server/api/acl_config.go` | Targeted server test or manual route check |

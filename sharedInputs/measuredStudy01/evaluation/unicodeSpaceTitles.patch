@@ -1,0 +1,22 @@
+--- a/web/src/lib/space-display.ts
++++ b/web/src/lib/space-display.ts
+@@ -4,16 +4,10 @@
+ export const extractSpaceUidFromName = (name: string): string => name.split("/").at(-1) ?? "";
+ 
+ export const getDuplicateSpaceTitles = (spaces: readonly { title: string }[]): ReadonlySet<string> => {
+-  const seen = new Set<string>();
++  const counts = new Map<string, number>();
++  for (const { title } of spaces) counts.set(title.normalize("NFC"), (counts.get(title.normalize("NFC")) ?? 0) + 1);
+   const duplicates = new Set<string>();
+-
+-  for (const space of spaces) {
+-    if (seen.has(space.title)) {
+-      duplicates.add(space.title);
+-    } else {
+-      seen.add(space.title);
+-    }
+-  }
++  for (const { title } of spaces) if ((counts.get(title.normalize("NFC")) ?? 0) > 1) duplicates.add(title);
+ 
+   return duplicates;
+ };

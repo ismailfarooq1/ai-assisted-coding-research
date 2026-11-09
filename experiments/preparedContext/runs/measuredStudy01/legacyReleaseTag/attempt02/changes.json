@@ -1,0 +1,16 @@
+{
+  "files": [
+    "web/src/lib/release-version.ts",
+    "web/tests/release-version.test.ts"
+  ],
+  "permitted": true,
+  "headUnchanged": true,
+  "testFilesChanged": [
+    "web/tests/release-version.test.ts"
+  ],
+  "fileHashes": {
+    "web/src/lib/release-version.ts": "5d2760a631dc655a304c5760bb5e894d9409dc9ceb419d97ebf8168e73fddfe1",
+    "web/tests/release-version.test.ts": "cb2952ac459be7c899bfead89fb11dee2a05b7197cabe74df7bfe4f4a804bc7b"
+  },
+  "patchSha256": "db4c85ea90feaea110d8ce02a141aacbe02ed39acf98b16df44be97128394284"
+}

@@ -1,0 +1,21 @@
+{
+  "exitCode": 0,
+  "timedOut": false,
+  "processWallSeconds": 6.446018919999915,
+  "cpuUsageSeconds": 4.871913,
+  "cpuStatDelta": {
+    "usage_usec": 4871913,
+    "user_usec": 3196194,
+    "system_usec": 1675719,
+    "nr_periods": 64,
+    "nr_throttled": 1,
+    "throttled_usec": 32626
+  },
+  "initialMemoryBytes": 7041024,
+  "sampledPeakMemoryBytes": 569372672,
+  "memorySamples": 65,
+  "samplingIntervalSeconds": 0.1,
+  "memoryDefinition": "Observed maximum memory.current, including container cache/kernel; not exact peak or process RSS. Startup before wrapper is excluded.",
+  "cpuDefinition": "Container cgroup CPU delta during stage including local descendants and metering; remote inference compute unobserved.",
+  "rolloutUsageObservations": []
+}

@@ -1,0 +1,16 @@
+{
+  "files": [
+    "web/src/lib/space-display.ts",
+    "web/tests/space-display.test.ts"
+  ],
+  "permitted": true,
+  "headUnchanged": true,
+  "testFilesChanged": [
+    "web/tests/space-display.test.ts"
+  ],
+  "fileHashes": {
+    "web/src/lib/space-display.ts": "7bb77c27da5fdbbe7fa67dafe8ee52a271145f1c69537c1919ab9f27a0233bbe",
+    "web/tests/space-display.test.ts": "52934a7c716f397813f1fcc1a16c1d790b229623e6efdcf851058ea16c78deec"
+  },
+  "patchSha256": "5ccabc1260e89901f1df3199e6f1f1726a2365df5c4ad1b197f9309ba0b97843"
+}

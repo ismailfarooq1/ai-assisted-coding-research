@@ -1,0 +1,127 @@
+{
+  "exitCode": 0,
+  "timedOut": false,
+  "processWallSeconds": 83.16297720500006,
+  "cpuUsageSeconds": 71.336957,
+  "cpuStatDelta": {
+    "usage_usec": 71336957,
+    "user_usec": 53832835,
+    "system_usec": 17504122,
+    "nr_periods": 825,
+    "nr_throttled": 23,
+    "throttled_usec": 391457
+  },
+  "initialMemoryBytes": 7049216,
+  "sampledPeakMemoryBytes": 1051758592,
+  "memorySamples": 820,
+  "samplingIntervalSeconds": 0.1,
+  "memoryDefinition": "Observed maximum memory.current, including container cache/kernel; not exact peak or process RSS. Startup before wrapper is excluded.",
+  "cpuDefinition": "Container cgroup CPU delta during stage including local descendants and metering; remote inference compute unobserved.",
+  "rolloutUsageObservations": [
+    {
+      "input_tokens": 13594,
+      "cached_input_tokens": 0,
+      "output_tokens": 108,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 13702
+    },
+    {
+      "input_tokens": 27329,
+      "cached_input_tokens": 13440,
+      "output_tokens": 190,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 27519
+    },
+    {
+      "input_tokens": 44403,
+      "cached_input_tokens": 27008,
+      "output_tokens": 477,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 44880
+    },
+    {
+      "input_tokens": 61788,
+      "cached_input_tokens": 43904,
+      "output_tokens": 599,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 62387
+    },
+    {
+      "input_tokens": 79366,
+      "cached_input_tokens": 61056,
+      "output_tokens": 644,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 80010
+    },
+    {
+      "input_tokens": 97105,
+      "cached_input_tokens": 78464,
+      "output_tokens": 689,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 97794
+    },
+    {
+      "input_tokens": 114929,
+      "cached_input_tokens": 96000,
+      "output_tokens": 734,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 115663
+    },
+    {
+      "input_tokens": 132821,
+      "cached_input_tokens": 113664,
+      "output_tokens": 779,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 133600
+    },
+    {
+      "input_tokens": 150781,
+      "cached_input_tokens": 131328,
+      "output_tokens": 866,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 151647
+    },
+    {
+      "input_tokens": 168851,
+      "cached_input_tokens": 149120,
+      "output_tokens": 911,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 169762
+    },
+    {
+      "input_tokens": 186989,
+      "cached_input_tokens": 167040,
+      "output_tokens": 982,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 187971
+    },
+    {
+      "input_tokens": 205809,
+      "cached_input_tokens": 184960,
+      "output_tokens": 1027,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 206836
+    },
+    {
+      "input_tokens": 224757,
+      "cached_input_tokens": 203648,
+      "output_tokens": 1072,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 225829
+    },
+    {
+      "input_tokens": 243773,
+      "cached_input_tokens": 203648,
+      "output_tokens": 1122,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 244895
+    },
+    {
+      "input_tokens": 262910,
+      "cached_input_tokens": 222464,
+      "output_tokens": 1245,
+      "reasoning_output_tokens": 0,
+      "total_tokens": 264155
+    }
+  ]
+}

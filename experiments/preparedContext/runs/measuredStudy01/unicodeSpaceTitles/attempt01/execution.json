@@ -1,0 +1,200 @@
+{
+  "item": {
+    "task": "unicodeSpaceTitles",
+    "attempt": 1,
+    "method": "B"
+  },
+  "stage": {
+    "dockerExitCode": 0,
+    "hostWallSeconds": 134.44174166675657,
+    "finishedAt": "2026-11-08T21:43:01.493715+00:00",
+    "resources": {
+      "exitCode": 0,
+      "timedOut": false,
+      "processWallSeconds": 130.43769997600248,
+      "cpuUsageSeconds": 125.124203,
+      "cpuStatDelta": {
+        "usage_usec": 125124203,
+        "user_usec": 98181109,
+        "system_usec": 26943093,
+        "nr_periods": 1292,
+        "nr_throttled": 113,
+        "throttled_usec": 7391075
+      },
+      "initialMemoryBytes": 7053312,
+      "sampledPeakMemoryBytes": 1811771392,
+      "memorySamples": 1288,
+      "samplingIntervalSeconds": 0.1,
+      "memoryDefinition": "Observed maximum memory.current, including container cache/kernel; not exact peak or process RSS. Startup before wrapper is excluded.",
+      "cpuDefinition": "Container cgroup CPU delta during stage including local descendants and metering; remote inference compute unobserved.",
+      "rolloutUsageObservations": [
+        {
+          "input_tokens": 13613,
+          "cached_input_tokens": 8960,
+          "output_tokens": 75,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 13688
+        },
+        {
+          "input_tokens": 28151,
+          "cached_input_tokens": 22400,
+          "output_tokens": 146,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 28297
+        },
+        {
+          "input_tokens": 43482,
+          "cached_input_tokens": 36736,
+          "output_tokens": 248,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 43730
+        },
+        {
+          "input_tokens": 60128,
+          "cached_input_tokens": 51840,
+          "output_tokens": 892,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 61020
+        },
+        {
+          "input_tokens": 77442,
+          "cached_input_tokens": 68352,
+          "output_tokens": 990,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 78432
+        },
+        {
+          "input_tokens": 94936,
+          "cached_input_tokens": 85504,
+          "output_tokens": 1035,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 95971
+        },
+        {
+          "input_tokens": 112498,
+          "cached_input_tokens": 102784,
+          "output_tokens": 1080,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 113578
+        },
+        {
+          "input_tokens": 130128,
+          "cached_input_tokens": 120192,
+          "output_tokens": 1125,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 131253
+        },
+        {
+          "input_tokens": 147826,
+          "cached_input_tokens": 137600,
+          "output_tokens": 1170,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 148996
+        },
+        {
+          "input_tokens": 165592,
+          "cached_input_tokens": 155136,
+          "output_tokens": 1215,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 166807
+        },
+        {
+          "input_tokens": 183426,
+          "cached_input_tokens": 172672,
+          "output_tokens": 1260,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 184686
+        },
+        {
+          "input_tokens": 201388,
+          "cached_input_tokens": 190336,
+          "output_tokens": 1346,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 202734
+        },
+        {
+          "input_tokens": 219494,
+          "cached_input_tokens": 208128,
+          "output_tokens": 1392,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 220886
+        },
+        {
+          "input_tokens": 237934,
+          "cached_input_tokens": 226048,
+          "output_tokens": 1451,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 239385
+        },
+        {
+          "input_tokens": 256898,
+          "cached_input_tokens": 244352,
+          "output_tokens": 1547,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 258445
+        },
+        {
+          "input_tokens": 275982,
+          "cached_input_tokens": 263168,
+          "output_tokens": 1610,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 277592
+        },
+        {
+          "input_tokens": 295298,
+          "cached_input_tokens": 282112,
+          "output_tokens": 1675,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 296973
+        },
+        {
+          "input_tokens": 315427,
+          "cached_input_tokens": 301312,
+          "output_tokens": 1807,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 317234
+        }
+      ]
+    },
+    "usage": {
+      "completedTurns": 1,
+      "inputTokens": 315427,
+      "outputTokens": 1807,
+      "cachedInputTokens": 301312,
+      "cacheWriteInputTokens": 0,
+      "reasoningOutputTokens": 0,
+      "totalTokens": 317234,
+      "failedTurnEvents": 0,
+      "note": "Input includes cached input; output includes reported reasoning. Subsets are not added twice. Incomplete/failed turns may have unreported usage.",
+      "sessionCumulativeUsage": {
+        "input_tokens": 315427,
+        "cached_input_tokens": 301312,
+        "output_tokens": 1807,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 317234
+      },
+      "coverage": "completed-turn-reported",
+      "source": "CLI completed-turn events; cumulative session metadata fallback for incomplete turns",
+      "crossCheckMatches": true
+    },
+    "providerInfrastructureFailure": false
+  },
+  "changes": {
+    "files": [
+      "web/src/lib/space-display.ts",
+      "web/tests/space-display.test.ts"
+    ],
+    "permitted": true,
+    "headUnchanged": true,
+    "testFilesChanged": [
+      "web/tests/space-display.test.ts"
+    ],
+    "fileHashes": {
+      "web/src/lib/space-display.ts": "26b4eb86a9f06c8994831c5504913f6ec2d2ffe973158f263fbac779a7a9cf1a",
+      "web/tests/space-display.test.ts": "a1519a4d27362c7580a9b25531e1dec2f5548e4846d38fe055dbb5b7b3061191"
+    },
+    "patchSha256": "a41aa409bfd9f11bb5e861d4a017a48b86c714be13b1b75e182151d3c3aed1ea"
+  },
+  "executionProtocolSha256": "fcf0a9ad30869458d1cc9af6d5706a6c7fbf4b0961296f67a5f92ea78c499298",
+  "fullGuideExposureObserved": true
+}

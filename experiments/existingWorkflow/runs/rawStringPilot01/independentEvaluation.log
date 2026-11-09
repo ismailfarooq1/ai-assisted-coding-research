@@ -1,0 +1,130 @@
+{
+  "outcomes": [
+    {
+      "id": "rawLowerDouble",
+      "group": "acceptance",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n\n4 !== 3\n"
+    },
+    {
+      "id": "rawUpperSingle",
+      "group": "acceptance",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n\n4 !== 3\n"
+    },
+    {
+      "id": "rawLowerSingle",
+      "group": "acceptance",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n\n4 !== 3\n"
+    },
+    {
+      "id": "rawUpperDouble",
+      "group": "acceptance",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n\n4 !== 3\n"
+    },
+    {
+      "id": "rawBackslashN",
+      "group": "acceptance",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n\n4 !== 3\n"
+    },
+    {
+      "id": "rawUnicodeEscape",
+      "group": "acceptance",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n\n4 !== 3\n"
+    },
+    {
+      "id": "rawUnknownEscape",
+      "group": "acceptance",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ undefined\n- 'atom'\n"
+    },
+    {
+      "id": "rawOperators",
+      "group": "acceptance",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n\n4 !== 3\n"
+    },
+    {
+      "id": "mixedStringList",
+      "group": "acceptance",
+      "passed": false,
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ undefined\n- [\n-   'work',\n-   'release',\n-   'ordinary'\n- ]\n"
+    },
+    {
+      "id": "rawBooleanStructure",
+      "group": "acceptance",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ undefined\n- 'work'\n"
+    },
+    {
+      "id": "normalDouble",
+      "group": "regression",
+      "passed": true
+    },
+    {
+      "id": "normalSingle",
+      "group": "regression",
+      "passed": true
+    },
+    {
+      "id": "normalDecodedUnicode",
+      "group": "regression",
+      "passed": true
+    },
+    {
+      "id": "normalDecodedNewline",
+      "group": "regression",
+      "passed": true
+    },
+    {
+      "id": "unclosedRawDouble",
+      "group": "regression",
+      "passed": true
+    },
+    {
+      "id": "unclosedRawSingle",
+      "group": "regression",
+      "passed": true
+    },
+    {
+      "id": "danglingAnd",
+      "group": "regression",
+      "passed": true
+    },
+    {
+      "id": "unclosedParenthesis",
+      "group": "regression",
+      "passed": true
+    },
+    {
+      "id": "mismatchedBracket",
+      "group": "regression",
+      "passed": true
+    },
+    {
+      "id": "unsupportedToken",
+      "group": "regression",
+      "passed": true
+    },
+    {
+      "id": "normalComment",
+      "group": "regression",
+      "passed": true
+    },
+    {
+      "id": "ordinaryList",
+      "group": "regression",
+      "passed": true
+    },
+    {
+      "id": "nonLiteralList",
+      "group": "regression",
+      "passed": true
+    }
+  ],
+  "passed": false
+}

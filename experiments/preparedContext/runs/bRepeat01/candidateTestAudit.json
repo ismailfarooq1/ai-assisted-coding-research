@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "exitCode": 0,
+  "elapsedSeconds": 11.56,
+  "testFiles": [
+    "web/tests/memo-suggestions.test.ts"
+  ],
+  "summary": "65 passed (65)",
+  "classification": "Candidate-added/changed-test validation specified before this repetition"
+}

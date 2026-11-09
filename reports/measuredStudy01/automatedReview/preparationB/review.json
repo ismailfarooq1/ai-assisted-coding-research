@@ -1,0 +1,254 @@
+{
+  "judgments": [
+    {
+      "id": "c01",
+      "decision": "supported",
+      "text": "Frontend checks are run from web/: `pnpm lint`, `pnpm test` (unit tests; invokes `vitest run`), and `pnpm build`. To run unit tests directly, use `cd web && pnpm test`; Vitest configuration is `web/vitest.config.mts` (jsdom, setup file `./tests/setup.ts`, tests `tests/**/*.test.{ts,tsx}`). Backend guidance includes `go test ./...`, `go test -v ./store/...`, and `golangci-lint run`.",
+      "reason": "The package scripts map lint/build/test as stated, Vitest config states environment/setup/include, and AGENTS.md lists the backend commands.",
+      "evidence": [
+        {
+          "path": "web/package.json",
+          "excerpt": "\"test\": \"vitest run\""
+        },
+        {
+          "path": "web/vitest.config.mts",
+          "excerpt": "environment: \"jsdom\",\n    setupFiles: [\"./tests/setup.ts\"],\n    include: [\"tests/**/*.test.{ts,tsx}\"],"
+        },
+        {
+          "path": "AGENTS.md",
+          "excerpt": "go test ./...                      # Run all Go tests\ngo test -v ./store/...             # Store tests"
+        }
+      ]
+    },
+    {
+      "id": "c02",
+      "decision": "supported",
+      "text": "Route HTTP transport and thin handlers to `server/` and business rules to `core/`; store and migration behavior belongs in `store/`; markdown parsing/rendering and derived memo payload in `markdown/`; CEL filtering and SQL rendering in `filter/`. Import direction descends cmd \u2192 server \u2192 core \u2192 store \u2192 provider/markdown/filter \u2192 internal, with package-specific constraints enforced by depguard.",
+      "reason": "Repository layout, layered import rules, and package documentation directly state these areas and dependency constraints.",
+      "evidence": [
+        {
+          "path": "AGENTS.md",
+          "excerpt": "- Imports point downward only: `cmd` \u2192 `server` \u2192 `core` \u2192 `store` \u2192 {`provider`, `markdown`, `filter`} \u2192 `internal`."
+        },
+        {
+          "path": "markdown/doc.go",
+          "excerpt": "// Package markdown is the markdown engine: parsing memo content into the AST\n// in markdown/ast, the memos-specific syntax in markdown/extensions and\n// markdown/parser (tags, mentions, math, GFM extras), rendering, and the\n// derived memo payload (tags, properties, snippet).\n//\n// Layering: markdown may import proto/gen and internal. It must not import\n// store, core, or server."
+        },
+        {
+          "path": "filter/doc.go",
+          "excerpt": "// Package filter compiles the CEL filter expressions accepted by the list\n// endpoints into an intermediate representation and renders that IR into SQL\n// for each database driver. The schema of filterable memo and user fields\n// lives here.\n//\n// Layering: filter imports only third-party packages and internal. It must not\n// import store, core, or server; the SQL drivers import filter, not the other\n// way round."
+        },
+        {
+          "path": ".golangci.yaml",
+          "excerpt": "depguard:\n      rules:"
+        }
+      ]
+    },
+    {
+      "id": "c03",
+      "decision": "supported",
+      "text": "Frontend code uses `@/` absolute imports, strict TypeScript, and Biome formatting (2 spaces, double quotes, semicolons, 140-character line width). Put server data in React Query hooks under `web/src/hooks/`; keep UI-only state in contexts or component state. Memo display, editing, and composition use `MemoEditor`; reuse Base UI primitives and use Tailwind CSS v4 utilities, `cn()`, and CVA.",
+      "reason": "The tsconfig sets strict mode and the alias; AGENTS.md supplies formatting, data-state and styling conventions; MemoEditor README describes it as the common memo display/edit/compose component.",
+      "evidence": [
+        {
+          "path": "web/tsconfig.json",
+          "excerpt": "\"strict\": true,"
+        },
+        {
+          "path": "AGENTS.md",
+          "excerpt": "Use `@/` for absolute imports.\n- Follow Biome formatting: 2-space indent, double quotes, semicolons, 140-character line width."
+        },
+        {
+          "path": "web/src/components/MemoEditor/README.md",
+          "excerpt": "`MemoEditor` is the one way a memo is shown, edited or composed."
+        }
+      ]
+    },
+    {
+      "id": "c04",
+      "decision": "supported",
+      "text": "The web package requires Node.js `>=24` and pins pnpm `11.0.1` in `web/package.json`; CI setup uses Node 24 and installs with `pnpm install --frozen-lockfile`. Go CI setup selects the version declared in `go.mod`; the repository guidance identifies Go 1.27.2. Tool versions belong in the shared setup actions rather than individual workflows.",
+      "reason": "Package metadata, composite action files and the CI reference support the stated versions, install mode, and location of toolchain configuration.",
+      "evidence": [
+        {
+          "path": "web/package.json",
+          "excerpt": "\"packageManager\": \"pnpm@11.0.1\",\n  \"engines\": {\n    \"node\": \">=24\""
+        },
+        {
+          "path": ".github/actions/setup-web/action.yml",
+          "excerpt": "node-version: \"24\""
+        },
+        {
+          "path": ".github/actions/setup-web/action.yml",
+          "excerpt": "run: pnpm install --frozen-lockfile"
+        },
+        {
+          "path": ".github/actions/setup-go/action.yml",
+          "excerpt": "go-version-file: go.mod"
+        },
+        {
+          "path": "AGENTS.md",
+          "excerpt": "Workflows install toolchains through `.github/actions/setup-go` (Go version from `go.mod`) and `.github/actions/setup-web`"
+        }
+      ]
+    },
+    {
+      "id": "c05",
+      "decision": "supported",
+      "text": "Do not hand-edit generated proto outputs: change `.proto` sources and run `cd proto && buf generate`; generated outputs include Go/OpenAPI under `proto/gen/` and TypeScript under `web/src/types/proto/`. Database schema changes require SQLite, MySQL, and PostgreSQL migrations plus each driver's `LATEST.sql`; fresh-install SQL and incremental migrations must stay equivalent.",
+      "reason": "AGENTS.md explicitly gives the generated-output workflow, locations, and migration parity requirements.",
+      "evidence": [
+        {
+          "path": "AGENTS.md",
+          "excerpt": "Do not hand-edit generated proto outputs. Change `.proto` files, then run `buf generate`."
+        },
+        {
+          "path": "AGENTS.md",
+          "excerpt": "- Schema changes require SQLite, MySQL, and PostgreSQL migrations plus `LATEST.sql` updates.\n- Fresh-install SQL and incremental migrations must stay equivalent."
+        }
+      ]
+    },
+    {
+      "id": "c06",
+      "decision": "supported",
+      "text": "For current behavior, use source code, tests, and package README.md/doc.go files rather than design documents. Design documents remain editable until release; after release their body is frozen and later changes go in a dated `## Amendments` section. If this repository guide conflicts with source files or CI configuration, trust the source/CI and update the guide.",
+      "reason": "Both the design README lifecycle and AGENTS.md authority instructions state these rules.",
+      "evidence": [
+        {
+          "path": "docs/design/README.md",
+          "excerpt": "Source code, tests, and package `README.md` or `doc.go` files describe current\nbehavior; a design document does not have to."
+        },
+        {
+          "path": "docs/design/README.md",
+          "excerpt": "Once the feature ships in a release, set `Status: Implemented` and freeze the body."
+        },
+        {
+          "path": "AGENTS.md",
+          "excerpt": "If a fact here conflicts with source files or CI config, trust the source file and update this guide."
+        }
+      ]
+    },
+    {
+      "id": "c07",
+      "decision": "supported",
+      "text": "The store test README says Docker must be running for MySQL, PostgreSQL, and released-binary upgrade tests. A single-driver test can be selected with `DRIVER=mysql go test -v ./store/test/...`; upgrade tests can be selected with `DRIVER=sqlite go test -v -count=1 -timeout 30m -run 'TestMigration|TestUpgrade|TestFreshInstall' ./store/test/...`.",
+      "reason": "The README states the Docker prerequisite and reproduces both command selections exactly.",
+      "evidence": [
+        {
+          "path": "store/test/README.md",
+          "excerpt": "Docker must be running for MySQL, PostgreSQL, and released-binary upgrade tests."
+        },
+        {
+          "path": "store/test/README.md",
+          "excerpt": "DRIVER=mysql go test -v ./store/test/... # One driver only"
+        },
+        {
+          "path": "store/test/README.md",
+          "excerpt": "DRIVER=sqlite go test -v -count=1 -timeout 30m -run 'TestMigration|TestUpgrade|TestFreshInstall' ./store/test/..."
+        }
+      ]
+    }
+  ],
+  "coverage": {
+    "routing": "yes",
+    "verification": "yes",
+    "toolchain": "yes",
+    "generated-file rules": "yes",
+    "authority": "yes"
+  },
+  "notes": "Reviewed all seven claims and their cited supplied sources. No application suites or runtime execution were performed.",
+  "completed": true,
+  "reviewType": "automated",
+  "completedAt": "2026-11-08T21:04:43.478140+00:00",
+  "stage": {
+    "dockerExitCode": 0,
+    "hostWallSeconds": 54.71245741657913,
+    "finishedAt": "2026-11-08T21:04:05.490223+00:00",
+    "resources": {
+      "exitCode": 0,
+      "timedOut": false,
+      "processWallSeconds": 45.30367043800106,
+      "cpuUsageSeconds": 7.224553,
+      "cpuStatDelta": {
+        "usage_usec": 7224553,
+        "user_usec": 3970262,
+        "system_usec": 3254291,
+        "nr_periods": 445,
+        "nr_throttled": 2,
+        "throttled_usec": 276602
+      },
+      "initialMemoryBytes": 7118848,
+      "sampledPeakMemoryBytes": 150597632,
+      "memorySamples": 443,
+      "samplingIntervalSeconds": 0.1,
+      "memoryDefinition": "Observed maximum memory.current, including container cache/kernel; not exact peak or process RSS. Startup before wrapper is excluded.",
+      "cpuDefinition": "Container cgroup CPU delta during stage including local descendants and metering; remote inference compute unobserved.",
+      "rolloutUsageObservations": [
+        {
+          "input_tokens": 13609,
+          "cached_input_tokens": 4480,
+          "output_tokens": 75,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 13684
+        },
+        {
+          "input_tokens": 33302,
+          "cached_input_tokens": 17920,
+          "output_tokens": 204,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 33506
+        },
+        {
+          "input_tokens": 58043,
+          "cached_input_tokens": 37376,
+          "output_tokens": 1998,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 60041
+        },
+        {
+          "input_tokens": 84601,
+          "cached_input_tokens": 61952,
+          "output_tokens": 2022,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 86623
+        }
+      ]
+    },
+    "usage": {
+      "completedTurns": 1,
+      "inputTokens": 84601,
+      "outputTokens": 2022,
+      "cachedInputTokens": 61952,
+      "cacheWriteInputTokens": 0,
+      "reasoningOutputTokens": 0,
+      "totalTokens": 86623,
+      "failedTurnEvents": 0,
+      "note": "Input includes cached input; output includes reported reasoning. Subsets are not added twice. Incomplete/failed turns may have unreported usage.",
+      "sessionCumulativeUsage": {
+        "input_tokens": 84601,
+        "cached_input_tokens": 61952,
+        "output_tokens": 2022,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 86623
+      },
+      "coverage": "completed-turn-reported",
+      "source": "CLI completed-turn events; cumulative session metadata fallback for incomplete turns",
+      "crossCheckMatches": true
+    },
+    "providerInfrastructureFailure": false
+  },
+  "humanActiveSeconds": null,
+  "beforeHashes": {
+    "sourceMap.json": "5b589eaa0b5a1a92ba4e2d9dba3521bea44e85f7bc574275ffd6504974764fbf",
+    "contextGuide.md": "5b91f0afa9aa5872fb9922ba6b57314d0b3bc24a0107c72320bd436ae17790b3",
+    "claims.json": "42e445329ebeeea07b5fc7d12bdbd9d00a60ec34396bbacdc5ab17692cd1d9f2"
+  },
+  "afterHashes": {
+    "sourceMap.json": "5b589eaa0b5a1a92ba4e2d9dba3521bea44e85f7bc574275ffd6504974764fbf",
+    "contextGuide.md": "5b91f0afa9aa5872fb9922ba6b57314d0b3bc24a0107c72320bd436ae17790b3",
+    "claims.json": "42e445329ebeeea07b5fc7d12bdbd9d00a60ec34396bbacdc5ab17692cd1d9f2"
+  },
+  "rawReviewSha256": "443c712356a7df2442a8f2f216b41c4838b7ae9e3aac8e9d3cb6fcf0fa37be16",
+  "coordinatorCorrectionSha256": "457ad31308f1cedbe882781b45c357349b7864da68eddfc2bacf7f4579bf99aa",
+  "limitation": "Same model family as author/coder with coordinator source checking. No independent expert human review; coordinator effort is unavailable."
+}

@@ -1,0 +1,492 @@
+$ vitest run
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.5 [39m[90m/project/web[39m
+
+ [32m✓[39m tests/app-sidebar-logo.test.tsx [2m([22m[2m54 tests[22m[2m)[22m[33m 1507[2mms[22m[39m
+ [32m✓[39m tests/preview-image-dialog.test.tsx [2m([22m[2m27 tests[22m[2m)[22m[33m 1044[2mms[22m[39m
+ [32m✓[39m tests/space-queries.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[33m 363[2mms[22m[39m
+[90mstderr[2m | tests/spaces-section.test.tsx[2m > [22m[2mSpacesSection[2m > [22m[2mkeeps ordinary Space members read-only and hides governance controls
+[22m[39mEncountered two children with the same key, `spaces/product/members/alice`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+ [32m✓[39m tests/spaces-section.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[33m 664[2mms[22m[39m
+ [32m✓[39m tests/usage-limits-settings.test.tsx [2m([22m[2m12 tests[22m[2m)[22m[33m 957[2mms[22m[39m
+ [32m✓[39m tests/memo-content-view.test.tsx [2m([22m[2m27 tests[22m[2m)[22m[33m 624[2mms[22m[39m
+ [32m✓[39m tests/memo-detail-sidebar.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[33m 594[2mms[22m[39m
+ [32m✓[39m tests/sidebar-resize-handle.test.tsx [2m([22m[2m18 tests[22m[2m)[22m[32m 213[2mms[22m[39m
+[90mstderr[2m | tests/paged-memo-list.test.tsx[2m > [22m[2m<PagedMemoList>[2m > [22m[2mkeeps prior pages but stops automatic pagination after a failed page until Retry
+[22m[39mEach child in a list should have a unique "key" prop.
+
+Check the render method of `div`. It was passed a child from PagedMemoList. See https://react.dev/link/warning-keys for more information.
+
+ [32m✓[39m tests/paged-memo-list.test.tsx [2m([22m[2m22 tests[22m[2m)[22m[32m 241[2mms[22m[39m
+ [32m✓[39m tests/space-switcher.test.tsx [2m([22m[2m12 tests[22m[2m)[22m[33m 1061[2mms[22m[39m
+ [32m✓[39m tests/global-memo-editor.test.tsx [2m([22m[2m33 tests[22m[2m)[22m[33m 696[2mms[22m[39m
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+ [32m✓[39m tests/editor-suggestions.test.tsx [2m([22m[2m20 tests[22m[2m)[22m[33m 786[2mms[22m[39m
+ [32m✓[39m tests/use-memo-save.test.tsx [2m([22m[2m10 tests[22m[2m)[22m[33m 4628[2mms[22m[39m
+     [33m[2m✓[22m[39m refreshes the parent memo total after creating a comment [33m 920[2mms[22m[39m
+     [33m[2m✓[22m[39m holds a saved confirmation before a closing host resets [33m 922[2mms[22m[39m
+     [33m[2m✓[22m[39m clears the new memo hoist after editing that memo [33m 916[2mms[22m[39m
+     [33m[2m✓[22m[39m preserves the new memo hoist when editing another memo [33m 924[2mms[22m[39m
+     [33m[2m✓[22m[39m preserves a newer marker created while the edit save is pending [33m 908[2mms[22m[39m
+ [32m✓[39m tests/calendar-day-model.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 24[2mms[22m[39m
+ [32m✓[39m tests/live-memo-refresh.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 187[2mms[22m[39m
+ [32m✓[39m tests/quick-find-navigation.test.tsx [2m([22m[2m10 tests[22m[2m)[22m[33m 641[2mms[22m[39m
+ [32m✓[39m tests/calendar-day-snapshot.test.tsx [2m([22m[2m21 tests[22m[2m)[22m[32m 222[2mms[22m[39m
+ [32m✓[39m tests/space-routes.test.tsx [2m([22m[2m28 tests[22m[2m)[22m[32m 202[2mms[22m[39m
+[90mstderr[2m | tests/create-space-dialog.test.tsx[2m > [22m[2mCreateSpaceDialog[2m > [22m[2mreveals and associates a conflicting Space UID returned by the server
+[22m[39mConnectError: [already_exists] space already exists
+    at [90m/project/web/[39mtests/create-space-dialog.test.tsx:107:41
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:302:11
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:1903:26
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2326:20
+    at new Promise (<anonymous>)
+    at runWithCancel [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2323:10[90m)[39m
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2305:20
+    at new Promise (<anonymous>)
+    at runWithTimeout [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2272:10[90m)[39m
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2955:64 {
+  rawMessage: [32m'space already exists'[39m,
+  code: [33m6[39m,
+  metadata: Headers {},
+  details: [],
+  cause: [90mundefined[39m
+}
+
+[90mstderr[2m | tests/create-space-dialog.test.tsx[2m > [22m[2mCreateSpaceDialog[2m > [22m[2mreuses the Space UID for retries and generates a new one for the next open
+[22m[39mError: Unavailable
+    at [90m/project/web/[39mtests/create-space-dialog.test.tsx:126:45
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:302:11
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:1903:26
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2326:20
+    at new Promise (<anonymous>)
+    at runWithCancel [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2323:10[90m)[39m
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2305:20
+    at new Promise (<anonymous>)
+    at runWithTimeout [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2272:10[90m)[39m
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2955:64
+
+ [32m✓[39m tests/create-space-dialog.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[33m 836[2mms[22m[39m
+     [33m[2m✓[22m[39m keeps the icon in the draft until creating and clears it when the dialog closes [33m 325[2mms[22m[39m
+ [32m✓[39m tests/audience-menu.test.tsx [2m([22m[2m12 tests[22m[2m)[22m[33m 1118[2mms[22m[39m
+[90mstderr[2m | tests/sso-auth-pages.test.tsx[2m > [22m[2mautomatic SSO auth pages[2m > [22m[2mreturns to manual controls after initiation fails without automatically retrying
+[22m[39mError: Storage unavailable
+    at [90m/project/web/[39mtests/sso-auth-pages.test.tsx:175:52
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:302:11
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:1903:26
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2326:20
+    at new Promise (<anonymous>)
+    at runWithCancel [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2323:10[90m)[39m
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2305:20
+    at new Promise (<anonymous>)
+    at runWithTimeout [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2272:10[90m)[39m
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2955:64
+
+ [32m✓[39m tests/sso-auth-pages.test.tsx [2m([22m[2m18 tests[22m[2m)[22m[32m 274[2mms[22m[39m
+ [32m✓[39m tests/memo-record.test.tsx [2m([22m[2m10 tests[22m[2m)[22m[32m 255[2mms[22m[39m
+[90mstderr[2m | tests/space-invitation-message.test.tsx[2m > [22m[2mSpaceInvitationMessage[2m > [22m[2mreports a failed accept without pretending it succeeded
+[22m[39mError: space invitation not found
+    at [90m/project/web/[39mtests/space-invitation-message.test.tsx:124:50
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:302:11
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:1903:26
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2326:20
+    at new Promise (<anonymous>)
+    at runWithCancel [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2323:10[90m)[39m
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2305:20
+    at new Promise (<anonymous>)
+    at runWithTimeout [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2272:10[90m)[39m
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2955:64
+
+[90mstderr[2m | tests/space-invitation-message.test.tsx[2m > [22m[2mSpaceInvitationMessage[2m > [22m[2marchives through the shared notification mutation and reports failures
+[22m[39mError: offline
+    at [90m/project/web/[39mtests/space-invitation-message.test.tsx:169:53
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:1903:20
+
+ [32m✓[39m tests/space-invitation-message.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[33m 373[2mms[22m[39m
+ [32m✓[39m tests/memo-content-security.test.ts [2m([22m[2m16 tests[22m[2m)[22m[32m 53[2mms[22m[39m
+ [32m✓[39m tests/user-menu.test.tsx [2m([22m[2m11 tests[22m[2m)[22m[33m 1382[2mms[22m[39m
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+ [32m✓[39m tests/editor-controller.test.tsx [2m([22m[2m29 tests[22m[2m)[22m[33m 604[2mms[22m[39m
+ [32m✓[39m tests/managed-attachment.test.ts [2m([22m[2m14 tests[22m[2m)[22m[32m 13[2mms[22m[39m
+ [32m✓[39m tests/locale-resources.test.ts [2m([22m[2m97 tests[22m[2m)[22m[33m 3189[2mms[22m[39m
+     [33m[2m✓[22m[39m references every English key and reviews every computed key pattern [33m 1938[2mms[22m[39m
+ [32m✓[39m tests/tag-tree-render.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[32m 248[2mms[22m[39m
+[90mstderr[2m | tests/memo-editor-source-mode.test.tsx[2m > [22m[2mMemoEditor source mode[2m > [22m[2mswitches back when saving the mode fails
+[22m[39mError: unavailable
+    at [90m/project/web/[39mtests/memo-editor-source-mode.test.tsx:119:83
+    at Mock [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+spy@4.1.5/node_modules/[4m@vitest/spy[24m/dist/index.js:332:34[90m)[39m
+    at [90m/project/web/[39msrc/hooks/useSourceMode.ts:24:7
+    at onToggle [90m(/project/web/[39msrc/components/MemoEditor/edit/EditSession.tsx:104:54[90m)[39m
+    at handleClick [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@base-ui+react@1.7.0_@types+react@19.2.14_react-dom@19.2.6_react@19.2.6__react@19.2.6/node_modules/[4m@base-ui/react[24m/menu/checkbox-item/MenuCheckboxItem.mjs:79:22[90m)[39m
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@base-ui+react@1.7.0_@types+react@19.2.14_react-dom@19.2.6_react@19.2.6__react@19.2.6/node_modules/[4m@base-ui/react[24m/merge-props/mergeProps.mjs:179:22
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@base-ui+react@1.7.0_@types+react@19.2.14_react-dom@19.2.6_react@19.2.6__react@19.2.6/node_modules/[4m@base-ui/react[24m/merge-props/mergeProps.mjs:179:22
+    at onClick [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@base-ui+react@1.7.0_@types+react@19.2.14_react-dom@19.2.6_react@19.2.6__react@19.2.6/node_modules/[4m@base-ui/react[24m/internals/use-button/useButton.mjs:83:26[90m)[39m
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@base-ui+react@1.7.0_@types+react@19.2.14_react-dom@19.2.6_react@19.2.6__react@19.2.6/node_modules/[4m@base-ui/react[24m/merge-props/mergeProps.mjs:199:12
+    at executeDispatch [90m(/project/web/[39mnode_modules/[4m.pnpm[24m/react-dom@19.2.6_react@19.2.6/node_modules/[4mreact-dom[24m/cjs/react-dom-client.development.js:19116:9[90m)[39m
+
+ [32m✓[39m tests/memo-editor-source-mode.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 1205[2mms[22m[39m
+     [33m[2m✓[22m[39m shows the Markdown label only while source mode is on [33m 370[2mms[22m[39m
+ [32m✓[39m tests/memo-view-icons.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[33m 1294[2mms[22m[39m
+     [33m[2m✓[22m[39m creates and validates a view with a selected icon [33m 637[2mms[22m[39m
+ [32m✓[39m tests/query-deduplication.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 385[2mms[22m[39m
+ [32m✓[39m tests/memo-suggestions.test.ts [2m([22m[2m59 tests[22m[2m)[22m[32m 13[2mms[22m[39m
+ [32m✓[39m tests/map-view.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[33m 325[2mms[22m[39m
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+Not implemented: Window's scrollBy() method
+ [32m✓[39m tests/editor.test.tsx [2m([22m[2m10 tests[22m[2m)[22m[33m 486[2mms[22m[39m
+ [32m✓[39m tests/memo-action-menu.test.tsx [2m([22m[2m14 tests[22m[2m)[22m[33m 1254[2mms[22m[39m
+     [33m[2m✓[22m[39m groups an owner's memo actions by what they do to the card and puts Delete last, with no Move entry [33m 317[2mms[22m[39m
+ [32m✓[39m tests/memo-header-navigation.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[32m 202[2mms[22m[39m
+ [32m✓[39m tests/memo-detail-access.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[32m 285[2mms[22m[39m
+ [32m✓[39m tests/about-page.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[33m 489[2mms[22m[39m
+ [32m✓[39m tests/space-icon-picker.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[33m 741[2mms[22m[39m
+     [33m[2m✓[22m[39m searches and selects a symbol with keyboard navigation and restores trigger focus [33m 384[2mms[22m[39m
+ [32m✓[39m tests/filtered-memo-stats.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 24[2mms[22m[39m
+ [32m✓[39m tests/memo-editor-cache.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m tests/map-canvas.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 37[2mms[22m[39m
+ [32m✓[39m tests/use-memo-init.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[32m 30[2mms[22m[39m
+ [32m✓[39m tests/map-memos.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 552[2mms[22m[39m
+ [32m✓[39m tests/use-inline-image-upload.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 208[2mms[22m[39m
+[90mstderr[2m | tests/media-metadata-service.test.ts[2m > [22m[2mmediaMetadataService[2m > [22m[2mfalls back to browser dimensions when EXIF parsing fails
+[22m[39mMedia metadata extraction failed; continuing without metadata.
+
+[90mstderr[2m | tests/media-metadata-service.test.ts[2m > [22m[2mmediaMetadataService[2m > [22m[2mtimes out video extraction, revokes the object URL, and returns no metadata
+[22m[39mMedia metadata extraction failed; continuing without metadata.
+
+ [32m✓[39m tests/media-metadata-service.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32m✓[39m tests/use-auto-save.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 23[2mms[22m[39m
+[90mstderr[2m | tests/memo-editor-upload-retry.test.tsx[2m > [22m[2museMemoSave after a failed save[2m > [22m[2mkeeps uploaded files on the draft so a retry does not upload them again
+[22m[39mError: quota exceeded
+    at Object.<anonymous> [90m(/project/web/[39mtests/memo-editor-upload-retry.test.tsx:96:13[90m)[39m
+    at Object.Mock [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+spy@4.1.5/node_modules/[4m@vitest/spy[24m/dist/index.js:332:34[90m)[39m
+    at Object.save [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+spy@4.1.5/node_modules/[4m@vitest/spy[24m/dist/index.js:332:34[90m)[39m
+    at Object.current [90m(/project/web/[39msrc/components/MemoEditor/edit/hooks/useMemoSave.ts:107:40[90m)[39m
+    at [90m/project/web/[39mtests/memo-editor-upload-retry.test.tsx:104:34
+    at [90m/project/web/[39mnode_modules/[4m.pnpm[24m/@testing-library+react@16.3.2_@testing-library+dom@10.4.1_@types+react-dom@19.2.3_@type_01f2c7bab43719bd0469ec1c0554baf5/node_modules/[4m@testing-library/react[24m/dist/act-compat.js:47:24
+    at process.env.NODE_ENV.exports.act [90m(/project/web/[39mnode_modules/[4m.pnpm[24m/react@19.2.6/node_modules/[4mreact[24m/cjs/react.development.js:814:22[90m)[39m
+    at Proxy.<anonymous> [90m(/project/web/[39mnode_modules/[4m.pnpm[24m/@testing-library+react@16.3.2_@testing-library+dom@10.4.1_@types+react-dom@19.2.3_@type_01f2c7bab43719bd0469ec1c0554baf5/node_modules/[4m@testing-library/react[24m/dist/act-compat.js:46:25[90m)[39m
+    at [90m/project/web/[39mtests/memo-editor-upload-retry.test.tsx:104:11
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:302:11
+
+[90mstderr[2m | tests/memo-editor-upload-retry.test.tsx[2m > [22m[2museMemoSave after a failed save[2m > [22m[2mleaves the draft alone when nothing uploaded
+[22m[39mError: offline
+    at [90m/project/web/[39mtests/memo-editor-upload-retry.test.tsx:119:38
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:302:11
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:1903:26
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2326:20
+    at new Promise (<anonymous>)
+    at runWithCancel [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2323:10[90m)[39m
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2305:20
+    at new Promise (<anonymous>)
+    at runWithTimeout [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2272:10[90m)[39m
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:2955:64
+
+ [32m✓[39m tests/memo-editor-upload-retry.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 28[2mms[22m[39m
+ [32m✓[39m tests/memo-editor-relations.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m tests/guards.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[32m 36[2mms[22m[39m
+ [32m✓[39m tests/memo-share-image.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 16[2mms[22m[39m
+ [32m✓[39m tests/memo-views.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m tests/invite-space-member-dialog.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 173[2mms[22m[39m
+ [32m✓[39m tests/attachment-library-stats.test.ts [2m([22m[2m7 tests[22m[2m)[22m[33m 387[2mms[22m[39m
+ [32m✓[39m tests/memo-body-compact.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 179[2mms[22m[39m
+[90mstderr[2m | tests/attachment-library-source-link.test.tsx[2m > [22m[2m<AttachmentMediaGrid>[2m > [22m[2mlinks a media attachment to its source memo without replacing the direct file action
+[22m[39mBase UI: A component that acts as a button expected a native <button> because the `nativeButton` prop is true. Rendering a non-<button> removes native button semantics, which can impact forms and accessibility. Use a real <button> in the `render` prop, or set `nativeButton` to `false`.
+    at Button (/project/web/src/components/ui/button.tsx:52:146)
+    at AttachmentOpenButton (/project/web/src/components/AttachmentLibrary/AttachmentLibraryPrimitives.tsx:128:58)
+    at AttachmentMediaCard (/project/web/src/components/AttachmentLibrary/AttachmentMediaGrid.tsx:144:64)
+    at /project/web/src/components/AttachmentLibrary/AttachmentMediaGrid.tsx:191:89
+    at Array.map (<anonymous>)
+    at /project/web/src/components/AttachmentLibrary/AttachmentMediaGrid.tsx:191:27
+    at Array.map (<anonymous>)
+    at AttachmentMediaGrid (/project/web/src/components/AttachmentLibrary/AttachmentMediaGrid.tsx:169:20)
+
+[90mstderr[2m | tests/attachment-library-source-link.test.tsx[2m > [22m[2m<AttachmentMediaGrid>[2m > [22m[2mshows the uploader on document rows
+[22m[39mBase UI: A component that acts as a button expected a native <button> because the `nativeButton` prop is true. Rendering a non-<button> removes native button semantics, which can impact forms and accessibility. Use a real <button> in the `render` prop, or set `nativeButton` to `false`.
+    at Button (/project/web/src/components/ui/button.tsx:52:146)
+    at AttachmentOpenButton (/project/web/src/components/AttachmentLibrary/AttachmentLibraryPrimitives.tsx:128:58)
+    at /project/web/src/components/AttachmentLibrary/AttachmentFileRows.tsx:155:53
+    at Array.map (<anonymous>)
+    at AttachmentDocumentRows (/project/web/src/components/AttachmentLibrary/AttachmentFileRows.tsx:91:19)
+
+ [32m✓[39m tests/attachment-library-source-link.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 222[2mms[22m[39m
+ [32m✓[39m tests/insert-menu.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[33m 528[2mms[22m[39m
+ [32m✓[39m tests/derive-default-create-time.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m tests/quick-find.test.ts [2m([22m[2m22 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32m✓[39m tests/memo-access-transitions.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 486[2mms[22m[39m
+ [32m✓[39m tests/instance-access-query.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 243[2mms[22m[39m
+ [32m✓[39m tests/media-metadata-exif-fixture.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 16[2mms[22m[39m
+ [32m✓[39m tests/memo-editor-timestamps.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[33m 558[2mms[22m[39m
+ [32m✓[39m tests/sidebar-width.test.tsx [2m([22m[2m13 tests[22m[2m)[22m[32m 41[2mms[22m[39m
+ [32m✓[39m tests/space-context.test.tsx [2m([22m[2m11 tests[22m[2m)[22m[32m 87[2mms[22m[39m
+ [32m✓[39m tests/app-sidebar-context.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 193[2mms[22m[39m
+ [32m✓[39m tests/hooks.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[32m 77[2mms[22m[39m
+ [32m✓[39m tests/home-loading-boundary.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 21[2mms[22m[39m
+ [32m✓[39m tests/upload-service.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32m✓[39m tests/router-config.test.tsx [2m([22m[2m13 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32m✓[39m tests/tags-section.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 428[2mms[22m[39m
+ [32m✓[39m tests/memo-filter-context.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 169[2mms[22m[39m
+ [32m✓[39m tests/memo-editor-view.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 166[2mms[22m[39m
+ [31m❯[39m tests/sidebar-row-state.test.tsx [2m([22m[2m8 tests[22m[2m | [22m[31m3 failed[39m[2m)[22m[32m 165[2mms[22m[39m
+     [32m✓[39m fills only a current row[32m 2[2mms[22m[39m
+     [32m✓[39m marks a checked row so its icon and count take the accent[32m 106[2mms[22m[39m
+     [32m✓[39m checks a tag row instead of filling it[32m 36[2mms[22m[39m
+[31m     [31m×[31m echoes the active view like any other filter, and clears it from the chip[39m[32m 7[2mms[22m[39m
+[31m     [31m×[31m names a saved view by its title[39m[32m 3[2mms[22m[39m
+[31m     [31m×[31m announces a view on a creator collection, where it narrows that user's memos[39m[32m 2[2mms[22m[39m
+     [32m✓[39m stays quiet about a view off the collection routes, where it does not apply[32m 3[2mms[22m[39m
+     [32m✓[39m formats a day filter as a date rather than the raw value[32m 6[2mms[22m[39m
+ [32m✓[39m tests/memo-action-navigation.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[32m 32[2mms[22m[39m
+ [32m✓[39m tests/instance-section-access.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 377[2mms[22m[39m
+ [32m✓[39m tests/use-attachment-transcription.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 30[2mms[22m[39m
+ [32m✓[39m tests/attachment-storage-usage.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 256[2mms[22m[39m
+ [32m✓[39m tests/redirect-safety.test.ts [2m([22m[2m14 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+ [32m✓[39m tests/calendar-cell-empty-clickable.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[32m 189[2mms[22m[39m
+Not implemented: Window's scrollBy() method
+[90mstderr[2m | tests/memo-editor-transcription.test.tsx[2m > [22m[2mexisting memo audio transcription[2m > [22m[2mblocks save while transcribing, inserts into the editable draft and retains the original attachment on save
+[22m[39mError: [vitest] No "userKeys" export is defined on the "@/hooks/useUserQueries" mock. Did you forget to return it from "vi.mock"?
+If you need to partially mock a module, you can use "importOriginal" helper inside:
+
+    at VitestMocker.createError [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/vitest@4.1.5_@types+node@24.12.2_jsdom@29.1.1_vite@8.0.11_@types+node@24.12.2_jiti@2.6.1_/node_modules/[4mvitest[24m/dist/chunks/startVitestModuleRunner.bRl2_oI_.js:62:17[90m)[39m
+    at Object.get [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/vitest@4.1.5_@types+node@24.12.2_jsdom@29.1.1_vite@8.0.11_@types+node@24.12.2_jiti@2.6.1_/node_modules/[4mvitest[24m/dist/chunks/startVitestModuleRunner.bRl2_oI_.js:324:16[90m)[39m
+    at Object.onSuccess [90m(/project/web/[39msrc/hooks/useMemoQueries.ts:383:49[90m)[39m
+    at Mutation.execute [90m(file:///project/web/[39mnode_modules/[4m.pnpm[24m/@tanstack+query-core@5.100.9/node_modules/[4m@tanstack/query-core[24m/build/modern/mutation.js:123:37[90m)[39m
+    at Object.save [90m(/project/web/[39msrc/components/MemoEditor/edit/services/memoService.ts:121:20[90m)[39m
+    at [90m/project/web/[39msrc/components/MemoEditor/edit/hooks/useMemoSave.ts:107:22 {
+  codeFrame: [32m'vi.mock(import("@/hooks/useUserQueries"), async (importOriginal) => {\n'[39m +
+    [32m'  const actual = await importOriginal()\n'[39m +
+    [32m'  return {\n'[39m +
+    [32m'    ...actual,\n'[39m +
+    [32m'    // your mocked methods\n'[39m +
+    [32m'  }\n'[39m +
+    [32m'})'[39m
+}
+
+ [32m✓[39m tests/memo-editor-transcription.test.tsx [2m([22m[2m1 test[22m[2m)[22m[33m 495[2mms[22m[39m
+     [33m[2m✓[22m[39m blocks save while transcribing, inserts into the editable draft and retains the original attachment on save [33m 447[2mms[22m[39m
+ [32m✓[39m tests/memo-space-badge.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[32m 54[2mms[22m[39m
+ [32m✓[39m tests/basemap-layer.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[33m 359[2mms[22m[39m
+ [32m✓[39m tests/map-model.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 24[2mms[22m[39m
+ [32m✓[39m tests/attachment-inline-placement.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[32m 292[2mms[22m[39m
+ [32m✓[39m tests/root-layout-global-editor.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 135[2mms[22m[39m
+ [32m✓[39m tests/upload-media-metadata.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+ [32m✓[39m tests/memo-export.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 33[2mms[22m[39m
+[90mstderr[2m | tests/sso-callback.test.tsx[2m > [22m[2mSSO callback recovery[2m > [22m[2mdoes not trust the return path when cancellation state does not match
+[22m[39mOAuth state mismatch - possible CSRF attack
+
+[90mstderr[2m | tests/sso-callback.test.tsx[2m > [22m[2mSSO callback recovery[2m > [22m[2mretains the destination after the sign-in RPC fails without retrying
+[22m[39mError: Provider unavailable
+    at [90m/project/web/[39mtests/sso-callback.test.tsx:60:40
+    at [90mfile:///project/web/[39mnode_modules/[4m.pnpm[24m/@vitest+runner@4.1.5/node_modules/[4m@vitest/runner[24m/dist/chunk-artifact.js:1903:20
+
+ [32m✓[39m tests/sso-callback.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[32m 283[2mms[22m[39m
+ [32m✓[39m tests/memo-display-setting-menu.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 587[2mms[22m[39m
+     [33m[2m✓[22m[39m opens from an accessible trigger and explains the compact grid constraint [33m 403[2mms[22m[39m
+ [32m✓[39m tests/column-grid.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[32m 55[2mms[22m[39m
+ [32m✓[39m tests/memo-view-navigation.test.ts [2m([22m[2m24 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m tests/calendar-grid-rows.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 11[2mms[22m[39m
+[90mstderr[2m | tests/memo-comment-section.test.tsx[2m > [22m[2mMemoCommentSection[2m > [22m[2mopens and focuses the existing comment editor through its sidebar handle
+[22m[39mThe current testing environment is not configured to support act(...)
+
+ [32m✓[39m tests/memo-comment-section.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 153[2mms[22m[39m
+ [32m✓[39m tests/video-poster.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 170[2mms[22m[39m
+ [32m✓[39m tests/transcription-service.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 21[2mms[22m[39m
+ [32m✓[39m tests/sidebar-row-grammar.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[32m 170[2mms[22m[39m
+ [32m✓[39m tests/create-webhook-dialog.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 286[2mms[22m[39m
+ [32m✓[39m tests/memo-search-queries.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[33m 639[2mms[22m[39m
+ [32m✓[39m tests/memo-related-settings.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 271[2mms[22m[39m
+ [32m✓[39m tests/auth-redirect.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m tests/app-branding.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[32m 35[2mms[22m[39m
+ [32m✓[39m tests/memo-editor-paste-files.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 178[2mms[22m[39m
+ [32m✓[39m tests/search-match-highlight.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[32m 94[2mms[22m[39m
+ [32m✓[39m tests/column-grid-untrapped.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 50[2mms[22m[39m
+ [32m✓[39m tests/code-highlight.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 33[2mms[22m[39m
+ [32m✓[39m tests/tabs.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 394[2mms[22m[39m
+ [32m✓[39m tests/memo-editor-space-move.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m tests/memo-panel-list.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 26[2mms[22m[39m
+ [32m✓[39m tests/auth-context-initialization.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 142[2mms[22m[39m
+ [32m✓[39m tests/attachment-urls.test.ts [2m([22m[2m14 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m tests/draft-key.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m tests/memos-logo.test.tsx [2m([22m[2m16 tests[22m[2m)[22m[32m 167[2mms[22m[39m
+ [32m✓[39m tests/location-picker.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 35[2mms[22m[39m
+ [32m✓[39m tests/memo-card-height.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m tests/i18n-locale-search.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 190[2mms[22m[39m
+ [32m✓[39m tests/visibility-space.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[32m 38[2mms[22m[39m
+ [32m✓[39m tests/auth-page-layout.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[32m 136[2mms[22m[39m
+ [32m✓[39m tests/attachment-transcription-action.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 213[2mms[22m[39m
+ [32m✓[39m tests/usage-limit-errors.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+Not implemented: Window's scrollTo() method
+ [32m✓[39m tests/scroll-restoration.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 45[2mms[22m[39m
+ [32m✓[39m tests/editor-tag-autocomplete.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m tests/dropdown-menu-size.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[33m 463[2mms[22m[39m
+ [32m✓[39m tests/sign-in-page.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 49[2mms[22m[39m
+ [32m✓[39m tests/sso.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32m✓[39m tests/attachment-document-rows.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[32m 43[2mms[22m[39m
+ [32m✓[39m tests/tag.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m tests/app-sidebar-routes.test.ts [2m([22m[2m43 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32m✓[39m tests/tag-grammar.test.ts [2m([22m[2m27 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m tests/timeline-view-scope.test.tsx [2m([22m[2m17 tests[22m[2m)[22m[32m 161[2mms[22m[39m
+ [32m✓[39m tests/error-info.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m tests/preferences-media-metadata.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[33m 344[2mms[22m[39m
+ [32m✓[39m tests/editor-commit-button.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 175[2mms[22m[39m
+ [32m✓[39m tests/location-display-view.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 328[2mms[22m[39m
+ [32m✓[39m tests/memo-outline-headings.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32m✓[39m tests/markdown-task-actions.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m tests/memo-comments-pagination.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 127[2mms[22m[39m
+ [32m✓[39m tests/use-memo-suggestions.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 17[2mms[22m[39m
+ [32m✓[39m tests/map-utils.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 21[2mms[22m[39m
+ [32m✓[39m tests/search-match.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m tests/space-feed-pages.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 99[2mms[22m[39m
+ [32m✓[39m tests/map-routes.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m tests/user-stats-filter-queries.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 122[2mms[22m[39m
+ [32m✓[39m tests/inline-image-upload-files.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m tests/view-context-columns.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[32m 19[2mms[22m[39m
+ [32m✓[39m tests/calendar-month-days.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32m✓[39m tests/markdown-manipulation.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 17[2mms[22m[39m
+ [32m✓[39m tests/create-access-token-dialog.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 288[2mms[22m[39m
+ [32m✓[39m tests/user-avatar.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 32[2mms[22m[39m
+ [32m✓[39m tests/near-viewport.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 28[2mms[22m[39m
+ [32m✓[39m tests/configuration-queries.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+ [32m✓[39m tests/user-locale-direction.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 24[2mms[22m[39m
+ [32m✓[39m tests/reaction-selector.test.tsx [2m([22m[2m1 test[22m[2m)[22m[33m 320[2mms[22m[39m
+     [33m[2m✓[22m[39m uses a named native trigger with a visible focus state [33m 319[2mms[22m[39m
+ [32m✓[39m tests/i18n-document-direction.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 22[2mms[22m[39m
+ [32m✓[39m tests/user-theme.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 25[2mms[22m[39m
+ [32m✓[39m tests/date-filter-navigation.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 173[2mms[22m[39m
+ [32m✓[39m tests/device-preferences.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 28[2mms[22m[39m
+ [32m✓[39m tests/calendar-paths.test.ts [2m([22m[2m11 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m tests/select.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 264[2mms[22m[39m
+ [32m✓[39m tests/basemap-layer-lifecycle.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 143[2mms[22m[39m
+ [32m✓[39m tests/overflow-title.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 23[2mms[22m[39m
+ [32m✓[39m tests/hoist-new-memo.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+ [32m✓[39m tests/theme.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 20[2mms[22m[39m
+ [32m✓[39m tests/media-metadata-display.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m tests/oauth.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 16[2mms[22m[39m
+ [32m✓[39m tests/month-navigator.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 148[2mms[22m[39m
+ [32m✓[39m tests/calendar-today-path.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+ [32m✓[39m tests/activity-calendar-tooltip.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+ [32m✓[39m tests/space-display.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+ [32m✓[39m tests/memo-share-attachment-links.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+ [32m✓[39m tests/column-grid-planner.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+ [32m✓[39m tests/password-sign-in-form.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 21[2mms[22m[39m
+ [32m✓[39m tests/legacy-profile-redirect.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 33[2mms[22m[39m
+ [32m✓[39m tests/column-count.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+ [32m✓[39m tests/memo-view-locales.test.ts [2m([22m[2m46 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32m✓[39m tests/memo-parent-placeholder.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 106[2mms[22m[39m
+ [32m✓[39m tests/placeholder-component.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 63[2mms[22m[39m
+ [32m✓[39m tests/space-settings-shell.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m tests/username.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+ [32m✓[39m tests/focus-mode-exit-button.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 121[2mms[22m[39m
+ [32m✓[39m tests/tag-tree.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 13[2mms[22m[39m
+ [32m✓[39m tests/editor-inline-image-validation.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 2[2mms[22m[39m
+ [32m✓[39m tests/can-manage-memo.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 2[2mms[22m[39m
+ [32m✓[39m tests/release-version.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m tests/media-item-preview-metadata.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 3[2mms[22m[39m
+ [32m✓[39m tests/mention-extraction.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m tests/memo-pinned-mark.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 110[2mms[22m[39m
+ [32m✓[39m tests/tag-unicode-parity.test.ts [2m([22m[2m1 test[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m tests/locale-picker.test.tsx [2m([22m[2m1 test[22m[2m)[22m[33m 327[2mms[22m[39m
+     [33m[2m✓[22m[39m links to GitHub feedback when no locale matches the search [33m 326[2mms[22m[39m
+ [32m✓[39m tests/switch.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 128[2mms[22m[39m
+ [32m✓[39m tests/error.test.ts [2m([22m[2m2 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 3 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/sidebar-row-state.test.tsx[2m > [22mMemoFilters[2m > [22mechoes the active view like any other filter, and clears it from the chip
+[31m[1mTestingLibraryElementError[22m: Unable to find an element with the text: Last week. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div />[31m
+[36m</body>[31m[39m
+[90m [2m❯[22m Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m tests/sidebar-row-state.test.tsx:[2m86:19[22m[39m
+    [90m 84|[39m     [34mrenderChips[39m([32m"/"[39m[33m,[39m [32m"abc"[39m)[33m;[39m
+    [90m 85|[39m
+    [90m 86|[39m     [34mexpect[39m(screen[33m.[39m[34mgetByText[39m([32m"Last week"[39m))[33m.[39m[34mtoBeInTheDocument[39m()[33m;[39m
+    [90m   |[39m                   [31m^[39m
+    [90m 87|[39m     fireEvent.click(screen.getByRole("button", { name: "Remove filter"…
+    [90m 88|[39m     [34mexpect[39m(screen[33m.[39m[34mqueryByText[39m([32m"Last week"[39m))[33m.[39mnot[33m.[39m[34mtoBeInTheDocument[39m()[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/sidebar-row-state.test.tsx[2m > [22mMemoFilters[2m > [22mnames a saved view by its title
+[31m[1mTestingLibraryElementError[22m: Unable to find an element with the text: Last week. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div />[31m
+[36m</body>[31m[39m
+[90m [2m❯[22m Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m tests/sidebar-row-state.test.tsx:[2m93:19[22m[39m
+    [90m 91|[39m   [34mit[39m([32m"names a saved view by its title"[39m[33m,[39m () [33m=>[39m {
+    [90m 92|[39m     [34mrenderChips[39m([32m"/"[39m[33m,[39m [32m"abc"[39m)[33m;[39m
+    [90m 93|[39m     [34mexpect[39m(screen[33m.[39m[34mgetByText[39m([32m"Last week"[39m))[33m.[39m[34mtoBeInTheDocument[39m()[33m;[39m
+    [90m   |[39m                   [31m^[39m
+    [90m 94|[39m   })[33m;[39m
+    [90m 95|[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/sidebar-row-state.test.tsx[2m > [22mMemoFilters[2m > [22mannounces a view on a creator collection, where it narrows that user's memos
+[31m[1mTestingLibraryElementError[22m: Unable to find an element with the text: Last week. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div />[31m
+[36m</body>[31m[39m
+[90m [2m❯[22m Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m❯[22m node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m tests/sidebar-row-state.test.tsx:[2m98:19[22m[39m
+    [90m 96|[39m   it("announces a view on a creator collection, where it narrows that …
+    [90m 97|[39m     [34mrenderChips[39m([32m"/?creator=alice"[39m[33m,[39m [32m"abc"[39m)[33m;[39m
+    [90m 98|[39m     [34mexpect[39m(screen[33m.[39m[34mgetByText[39m([32m"Last week"[39m))[33m.[39m[34mtoBeInTheDocument[39m()[33m;[39m
+    [90m   |[39m                   [31m^[39m
+    [90m 99|[39m   })[33m;[39m
+    [90m100|[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m191 passed[39m[22m[90m (192)[39m
+[2m      Tests [22m [1m[31m3 failed[39m[22m[2m | [22m[1m[32m1613 passed[39m[22m[90m (1616)[39m
+[2m   Start at [22m 22:23:03
+[2m   Duration [22m 237.15s[2m (transform 9.08s, setup 18.14s, import 58.36s, tests 46.23s, environment 89.24s)[22m
+
+ ELIFECYCLE  Test failed. See above for more details.

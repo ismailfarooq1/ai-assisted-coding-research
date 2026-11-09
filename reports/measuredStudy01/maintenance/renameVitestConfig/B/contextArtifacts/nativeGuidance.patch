@@ -1,0 +1,11 @@
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -53,7 +53,7 @@
+ cd web && pnpm install             # Install dependencies
+ cd web && pnpm dev                 # Dev server on :3001, proxying API to :8081
+ cd web && pnpm lint                # Type check + Biome lint
+-cd web && pnpm test                # Vitest unit tests
++cd web && pnpm test                # Vitest unit tests (vitest.project.config.mts)
+ cd web && pnpm build               # Production build
+ cd web && pnpm release             # Build SPA into server/frontend/dist
+ 

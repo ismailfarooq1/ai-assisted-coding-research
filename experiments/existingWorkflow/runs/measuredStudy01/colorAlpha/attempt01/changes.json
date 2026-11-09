@@ -1,0 +1,16 @@
+{
+  "files": [
+    "web/src/lib/color.ts",
+    "web/tests/color.test.ts"
+  ],
+  "permitted": true,
+  "headUnchanged": true,
+  "testFilesChanged": [
+    "web/tests/color.test.ts"
+  ],
+  "fileHashes": {
+    "web/src/lib/color.ts": "0066471b9c5ab70a4f9ac0c536431f930104c9a511fa8671452bd76901fb14b0",
+    "web/tests/color.test.ts": "83a64fc1c13894fcfbba0fbe8c5bb1ae72f3229313ba7399d03faa06643c8db7"
+  },
+  "patchSha256": "fe6b6d5e841ed2bab6025223ee90d380c67f82f7a5d1211b8be364d50d95ab58"
+}

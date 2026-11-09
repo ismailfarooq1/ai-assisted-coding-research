@@ -1,0 +1,100 @@
+{
+  "episode": "renameLintScript",
+  "method": "B",
+  "controlledChange": "The frontend lint package script was renamed to check; CI has been updated to use pnpm check.",
+  "stage": {
+    "dockerExitCode": 0,
+    "hostWallSeconds": 31.637080125510693,
+    "finishedAt": "2026-11-08T23:07:14.981535+00:00",
+    "resources": {
+      "exitCode": 0,
+      "timedOut": false,
+      "processWallSeconds": 27.1487540119997,
+      "cpuUsageSeconds": 5.741729,
+      "cpuStatDelta": {
+        "usage_usec": 5741729,
+        "user_usec": 2541556,
+        "system_usec": 3200173,
+        "nr_periods": 267,
+        "nr_throttled": 1,
+        "throttled_usec": 120442
+      },
+      "initialMemoryBytes": 7024640,
+      "sampledPeakMemoryBytes": 178290688,
+      "memorySamples": 264,
+      "samplingIntervalSeconds": 0.1,
+      "memoryDefinition": "Observed maximum memory.current, including container cache/kernel; not exact peak or process RSS. Startup before wrapper is excluded.",
+      "cpuDefinition": "Container cgroup CPU delta during stage including local descendants and metering; remote inference compute unobserved.",
+      "rolloutUsageObservations": [
+        {
+          "input_tokens": 13544,
+          "cached_input_tokens": 0,
+          "output_tokens": 144,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 13688
+        },
+        {
+          "input_tokens": 27317,
+          "cached_input_tokens": 13312,
+          "output_tokens": 249,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 27566
+        },
+        {
+          "input_tokens": 46989,
+          "cached_input_tokens": 26880,
+          "output_tokens": 790,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 47779
+        },
+        {
+          "input_tokens": 67226,
+          "cached_input_tokens": 46336,
+          "output_tokens": 896,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 68122
+        },
+        {
+          "input_tokens": 88586,
+          "cached_input_tokens": 66432,
+          "output_tokens": 985,
+          "reasoning_output_tokens": 0,
+          "total_tokens": 89571
+        }
+      ]
+    },
+    "usage": {
+      "completedTurns": 1,
+      "inputTokens": 88586,
+      "outputTokens": 985,
+      "cachedInputTokens": 66432,
+      "cacheWriteInputTokens": 0,
+      "reasoningOutputTokens": 0,
+      "totalTokens": 89571,
+      "failedTurnEvents": 0,
+      "note": "Input includes cached input; output includes reported reasoning. Subsets are not added twice. Incomplete/failed turns may have unreported usage.",
+      "sessionCumulativeUsage": {
+        "input_tokens": 88586,
+        "cached_input_tokens": 66432,
+        "output_tokens": 985,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 89571
+      },
+      "coverage": "completed-turn-reported",
+      "source": "CLI completed-turn events; cumulative session metadata fallback for incomplete turns",
+      "crossCheckMatches": true
+    },
+    "providerInfrastructureFailure": false
+  },
+  "changedFiles": [
+    "AGENTS.md",
+    "contextPack/claims.json"
+  ],
+  "addedFiles": [],
+  "allowedScope": true,
+  "reviewAlerts": [],
+  "staleClaimsBefore": null,
+  "staleClaimsAfter": null,
+  "humanReviewRequired": true,
+  "note": "Source hash changes are review triggers, not stale-claim labels. Human judgments determine factual errors and common-fact coverage."
+}

@@ -1,0 +1,10 @@
+--- a/web/src/lib/release-version.ts
++++ b/web/src/lib/release-version.ts
+@@ -3,6 +3,7 @@
+   /^(?:[1-9]\d\.(?:0[1-9]|1[0-2])\.(?:0|[1-9]\d*)|0\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*))(?:-rc\.[1-9]\d*)?$/.test(version);
+ 
+ export const getReleaseTag = (version: string): string | undefined => {
++  if (version.startsWith("v0.") && isReleaseVersion(version.slice(1))) return version;
+   if (!isReleaseVersion(version)) return undefined;
+   return version.startsWith("0.") ? `v${version}` : version;
+ };

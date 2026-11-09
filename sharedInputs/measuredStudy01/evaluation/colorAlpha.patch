@@ -1,0 +1,19 @@
+--- a/web/src/lib/color.ts
++++ b/web/src/lib/color.ts
+@@ -2,7 +2,7 @@
+  * Converts a google.type.Color (r/g/b as 0–1 floats) to a CSS hex string (#rrggbb).
+  * Returns undefined when no color is provided.
+  */
+-export const colorToHex = (color?: { red?: number; green?: number; blue?: number }): string | undefined => {
++export const colorToHex = (color?: { red?: number; green?: number; blue?: number; alpha?: number }): string | undefined => {
+   if (!color) return undefined;
+   const clamp = (val: number | undefined): number => {
+     const n = val ?? 0;
+@@ -17,5 +17,6 @@
+   const b = Math.round(clamp(color.blue) * 255)
+     .toString(16)
+     .padStart(2, "0");
+-  return `#${r}${g}${b}`;
++  const alpha = color.alpha === undefined ? "" : Math.round((Number.isFinite(color.alpha) ? Math.max(0, Math.min(1, color.alpha)) : 1) * 255).toString(16).padStart(2, "0");
++  return `#${r}${g}${b}${alpha}`;
+ };

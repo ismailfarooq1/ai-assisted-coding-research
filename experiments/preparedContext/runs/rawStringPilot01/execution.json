@@ -1,0 +1,30 @@
+{
+  "method": "B",
+  "strategy": "preparedContext",
+  "startedAt": "2026-11-08T17:08:22.751029+00:00",
+  "finishedAt": "2026-11-08T17:08:27.420507+00:00",
+  "elapsedSeconds": 4.67,
+  "exitCode": 1,
+  "timedOut": false,
+  "protocolSha256": "89a8cc8e08aee70c07e28f765a5627a11b74b7839ba5aea572bd8564d6ad09b7",
+  "usage": {
+    "completedTurns": 0,
+    "inputTokens": null,
+    "outputTokens": null,
+    "cachedInputTokens": null,
+    "cacheWriteInputTokens": null,
+    "reasoningOutputTokens": null,
+    "totalTokens": null,
+    "failedTurnEvents": 0,
+    "note": "Input includes cached input; output includes reported reasoning. Subsets are not added twice. Incomplete/failed turns may have unreported usage."
+  },
+  "changes": {
+    "files": [],
+    "permitted": true,
+    "headUnchanged": true,
+    "testFilesChanged": [],
+    "fileHashes": {},
+    "patchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "contextReadCommands": []
+}

@@ -1,0 +1,75 @@
+{
+  "snapshot": "b40d8a7b573774c52b022c8d6537d6baf2129dc0",
+  "sources": [
+    {
+      "id": "S1",
+      "path": "AGENTS.md",
+      "sha256": "5f6b002a44d0f658527404dfd54a38ae04445cd40f6b1d0188e315881e8aa7f6"
+    },
+    {
+      "id": "S2",
+      "path": ".golangci.yaml",
+      "sha256": "bbc3a35d670f3153319f034378a31c8c5ee6b2206027385a618df7ee94853ed4"
+    },
+    {
+      "id": "S3",
+      "path": "core/memoexport/doc.go",
+      "sha256": "f5636047b1f501384bc9db3cce66fa2fe0afbdb3d109245c9b8369be95c61615"
+    },
+    {
+      "id": "S4",
+      "path": "markdown/doc.go",
+      "sha256": "b900e2c8499d5e28f720cd6148ee7b70955038f065d86d34b5cd60fcbef3d07e"
+    },
+    {
+      "id": "S5",
+      "path": "filter/doc.go",
+      "sha256": "8b55278cb6263bade3ca97c4e3f4b56b1290788333e7f2ee1d703a24d30773f6"
+    },
+    {
+      "id": "S6",
+      "path": "web/src/components/MemoEditor/README.md",
+      "sha256": "3574b37dc7ed1a31aa71707ed9ef062f870c02238a2864875af4802da4a888bd"
+    },
+    {
+      "id": "S7",
+      "path": "web/package.json",
+      "sha256": "77b3b0dfa2021b2f0274228f3ca135156e23e5f3074336aec4420750be271f56"
+    },
+    {
+      "id": "S8",
+      "path": ".github/actions/setup-web/action.yml",
+      "sha256": "f19fa515360e7bc082a96c08a7b8189ee3e755352926b210e98ed80bf1d7402f"
+    },
+    {
+      "id": "S9",
+      "path": "web/vitest.project.config.mts",
+      "sha256": "de436c682943e59b1731b6d76c8b7a2868cf26f12f4f710ccc589cc46ec26341"
+    },
+    {
+      "id": "S10",
+      "path": "web/tsconfig.json",
+      "sha256": "23ac60ea9b800d38610dc119aab3bca00e4e85b1bb18bef199d0889cf1bca551"
+    },
+    {
+      "id": "S11",
+      "path": ".github/actions/setup-go/action.yml",
+      "sha256": "6d86761afa7f80b95e12b5ee26148dc5504d1da2a78a956e2d550ec16b469645"
+    },
+    {
+      "id": "S12",
+      "path": "store/test/README.md",
+      "sha256": "f06e2e58d3419b87e3fafba9e8892b43aa5ee6a50776c678e27fbdfa3c72f47c"
+    },
+    {
+      "id": "S13",
+      "path": "CONTEXT.md",
+      "sha256": "a99cf9dda0d87494001bdfcdb953805e393184485bf58ee2ffbd011590c589d0"
+    },
+    {
+      "id": "S14",
+      "path": "docs/design/README.md",
+      "sha256": "f24194e0d286bed61b0723a8832578f05eefd3708ebcfbe90d2e15492d5c438d"
+    }
+  ]
+}

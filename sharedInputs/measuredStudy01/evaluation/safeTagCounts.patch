@@ -1,0 +1,14 @@
+--- a/web/src/lib/tag.ts
++++ b/web/src/lib/tag.ts
+@@ -7,7 +7,10 @@
+ export const mergeTagCounts = (...sources: Array<Record<string, number> | undefined>): Record<string, number> => {
+   const result = Object.create(null) as Record<string, number>;
+   for (const source of sources) {
+-    for (const [tag, count] of Object.entries(source ?? {})) result[tag] = (result[tag] ?? 0) + count;
++    for (const [tag, count] of Object.entries(source ?? {})) {
++      if (typeof count !== "number" || !Number.isSafeInteger(count) || count < 0) continue;
++      result[tag] = Math.min(Number.MAX_SAFE_INTEGER, (result[tag] ?? 0) + count);
++    }
+   }
+   return result;
+ };

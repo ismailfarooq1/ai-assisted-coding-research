@@ -1,0 +1,46 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.5 [39m[90m/project/web[39m
+
+ [31m❯[39m tests/tag.test.ts [2m([22m[2m5 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 11[2mms[22m[39m
+[31m     [31m×[31m merges only nonnegative safe integer counts and saturates sums[39m[32m 7[2mms[22m[39m
+     [32m✓[39m aggregates names that collide with Object prototype properties[32m 0[2mms[22m[39m
+     [32m✓[39m preserves exact prototype-shaped tag keys through protobuf maps[32m 1[2mms[22m[39m
+     [32m✓[39m preserves exact prototype-shaped metadata keys when creating tag settings[32m 1[2mms[22m[39m
+     [32m✓[39m does not treat inherited properties as exact metadata[32m 0[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/tag.test.ts[2m > [22mexact tag keys[2m > [22mmerges only nonnegative safe integer counts and saturates sums
+[31m[1mAssertionError[22m: expected [ 'fraction', 'infinite', 'nan', …(6) ] to deeply equal [ 'saturating', 'zero' ][39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  [[22m
+[31m+   "fraction",[39m
+[31m+   "infinite",[39m
+[31m+   "nan",[39m
+[31m+   "negative",[39m
+[31m+   "runtime-null",[39m
+[31m+   "runtime-string",[39m
+[2m    "saturating",[22m
+[31m+   "unsafe",[39m
+[2m    "zero",[22m
+[2m  ][22m
+
+[36m [2m❯[22m tests/tag.test.ts:[2m36:40[22m[39m
+    [90m 34|[39m     [34mexpect[39m(counts[33m.[39mzero)[33m.[39m[34mtoBe[39m([34m0[39m)[33m;[39m
+    [90m 35|[39m     [34mexpect[39m(counts[33m.[39msaturating)[33m.[39m[34mtoBe[39m([33mNumber[39m[33m.[39m[33mMAX_SAFE_INTEGER[39m)[33m;[39m
+    [90m 36|[39m     [34mexpect[39m([33mObject[39m[33m.[39m[34mkeys[39m(counts)[33m.[39m[34msort[39m())[33m.[39m[34mtoEqual[39m([[32m"saturating"[39m[33m,[39m [32m"zero"[39m])[33m;[39m
+    [90m   |[39m                                        [31m^[39m
+    [90m 37|[39m     [34mexpect[39m(first[33m.[39mnegative)[33m.[39m[34mtoBe[39m([33m-[39m[34m1[39m)[33m;[39m
+    [90m 38|[39m     [34mexpect[39m(second[33m.[39msaturating)[33m.[39m[34mtoBe[39m([34m10[39m)[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m4 passed[39m[22m[90m (5)[39m
+[2m   Start at [22m 22:18:23
+[2m   Duration [22m 1.16s[2m (transform 193ms, setup 184ms, import 248ms, tests 11ms, environment 576ms)[22m
+

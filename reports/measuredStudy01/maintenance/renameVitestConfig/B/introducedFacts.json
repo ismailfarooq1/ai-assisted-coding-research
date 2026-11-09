@@ -1,0 +1,8 @@
+{
+  "frontendCheckCommand": "cd web && pnpm lint",
+  "unitTestCommand": "cd web && pnpm test",
+  "vitestConfig": "web/vitest.project.config.mts",
+  "nodeEngine": ">=24",
+  "pnpm": "pnpm@11.0.1",
+  "generatedTypeScript": "web/src/types/proto/; do not hand-edit"
+}

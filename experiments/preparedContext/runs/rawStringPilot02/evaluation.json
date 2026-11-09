@@ -1,0 +1,142 @@
+{
+  "method": "B",
+  "verifiedCompletion": true,
+  "checks": {
+    "independent": {
+      "exitCode": 0,
+      "passed": true,
+      "elapsedSeconds": 0.578,
+      "details": {
+        "outcomes": [
+          {
+            "id": "rawLowerDouble",
+            "group": "acceptance",
+            "passed": true
+          },
+          {
+            "id": "rawUpperSingle",
+            "group": "acceptance",
+            "passed": true
+          },
+          {
+            "id": "rawLowerSingle",
+            "group": "acceptance",
+            "passed": true
+          },
+          {
+            "id": "rawUpperDouble",
+            "group": "acceptance",
+            "passed": true
+          },
+          {
+            "id": "rawBackslashN",
+            "group": "acceptance",
+            "passed": true
+          },
+          {
+            "id": "rawUnicodeEscape",
+            "group": "acceptance",
+            "passed": true
+          },
+          {
+            "id": "rawUnknownEscape",
+            "group": "acceptance",
+            "passed": true
+          },
+          {
+            "id": "rawOperators",
+            "group": "acceptance",
+            "passed": true
+          },
+          {
+            "id": "mixedStringList",
+            "group": "acceptance",
+            "passed": true
+          },
+          {
+            "id": "rawBooleanStructure",
+            "group": "acceptance",
+            "passed": true
+          },
+          {
+            "id": "normalDouble",
+            "group": "regression",
+            "passed": true
+          },
+          {
+            "id": "normalSingle",
+            "group": "regression",
+            "passed": true
+          },
+          {
+            "id": "normalDecodedUnicode",
+            "group": "regression",
+            "passed": true
+          },
+          {
+            "id": "normalDecodedNewline",
+            "group": "regression",
+            "passed": true
+          },
+          {
+            "id": "unclosedRawDouble",
+            "group": "regression",
+            "passed": true
+          },
+          {
+            "id": "unclosedRawSingle",
+            "group": "regression",
+            "passed": true
+          },
+          {
+            "id": "danglingAnd",
+            "group": "regression",
+            "passed": true
+          },
+          {
+            "id": "unclosedParenthesis",
+            "group": "regression",
+            "passed": true
+          },
+          {
+            "id": "mismatchedBracket",
+            "group": "regression",
+            "passed": true
+          },
+          {
+            "id": "unsupportedToken",
+            "group": "regression",
+            "passed": true
+          },
+          {
+            "id": "normalComment",
+            "group": "regression",
+            "passed": true
+          },
+          {
+            "id": "ordinaryList",
+            "group": "regression",
+            "passed": true
+          },
+          {
+            "id": "nonLiteralList",
+            "group": "regression",
+            "passed": true
+          }
+        ],
+        "passed": true
+      }
+    },
+    "native": {
+      "exitCode": 0,
+      "passed": true,
+      "elapsedSeconds": 254.426,
+      "statuses": {
+        "lint": 0,
+        "test": 0,
+        "build": 0
+      }
+    }
+  },
+  "note": "Native tests restored from pristine snapshot. Agent-authored tests are retained in the patch; their quality is not independently graded."
+}

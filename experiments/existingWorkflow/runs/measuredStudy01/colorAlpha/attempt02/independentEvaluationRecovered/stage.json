@@ -1,0 +1,26 @@
+{
+  "hostWallSeconds": 277.0474221659824,
+  "dockerExitCode": 0,
+  "finishedAt": "2026-11-08T22:18:13.127794+00:00",
+  "resources": {
+    "exitCode": 0,
+    "timedOut": false,
+    "processWallSeconds": 275.66411291799886,
+    "cpuUsageSeconds": 352.748841,
+    "cpuStatDelta": {
+      "usage_usec": 352748841,
+      "user_usec": 280456637,
+      "system_usec": 72292204,
+      "nr_periods": 2743,
+      "nr_throttled": 25,
+      "throttled_usec": 561467
+    },
+    "initialMemoryBytes": 7036928,
+    "sampledPeakMemoryBytes": 1702359040,
+    "memorySamples": 2734,
+    "samplingIntervalSeconds": 0.1,
+    "memoryDefinition": "Observed maximum memory.current, including container cache/kernel; not exact peak or process RSS. Startup before wrapper is excluded.",
+    "cpuDefinition": "Container cgroup CPU delta during stage including local descendants and metering; remote inference compute unobserved.",
+    "rolloutUsageObservations": []
+  }
+}

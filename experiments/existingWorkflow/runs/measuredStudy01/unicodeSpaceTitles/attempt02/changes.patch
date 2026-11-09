@@ -1,0 +1,63 @@
+diff --git a/web/src/lib/space-display.ts b/web/src/lib/space-display.ts
+index c2a15a5..0010540 100644
+--- a/web/src/lib/space-display.ts
++++ b/web/src/lib/space-display.ts
+@@ -4,14 +4,18 @@ const LONG_CUSTOM_UID_LENGTH = 18;
+ export const extractSpaceUidFromName = (name: string): string => name.split("/").at(-1) ?? "";
+ 
+ export const getDuplicateSpaceTitles = (spaces: readonly { title: string }[]): ReadonlySet<string> => {
+-  const seen = new Set<string>();
+-  const duplicates = new Set<string>();
++  const counts = new Map<string, number>();
+ 
+   for (const space of spaces) {
+-    if (seen.has(space.title)) {
++    const normalizedTitle = space.title.normalize("NFC");
++    counts.set(normalizedTitle, (counts.get(normalizedTitle) ?? 0) + 1);
++  }
++
++  const duplicates = new Set<string>();
++  for (const space of spaces) {
++    const normalizedTitle = space.title.normalize("NFC");
++    if ((counts.get(normalizedTitle) ?? 0) >= 2) {
+       duplicates.add(space.title);
+-    } else {
+-      seen.add(space.title);
+     }
+   }
+ 
+diff --git a/web/tests/space-display.test.ts b/web/tests/space-display.test.ts
+index ad559f5..ea6bd64 100644
+--- a/web/tests/space-display.test.ts
++++ b/web/tests/space-display.test.ts
+@@ -13,8 +13,28 @@ describe("Space display identity", () => {
+     expect(formatSpaceUidForDisplay("spaces/customer-support-development")).toBe("customer…opment");
+   });
+ 
+-  it("marks only titles that match exactly", () => {
+-    const duplicates = getDuplicateSpaceTitles([{ title: "Product" }, { title: "Research" }, { title: "Product" }, { title: "product" }]);
++  it("marks original spellings whose titles match after NFC normalization", () => {
++    const composed = "Caf\u00e9";
++    const decomposed = "Cafe\u0301";
++    const duplicates = getDuplicateSpaceTitles([
++      { title: composed },
++      { title: "Research" },
++      { title: decomposed },
++      { title: composed },
++      { title: "product" },
++    ]);
++
++    expect([...duplicates]).toEqual([composed, decomposed]);
++  });
++
++  it("keeps exact duplicate behavior and does not trim or case-fold", () => {
++    const duplicates = getDuplicateSpaceTitles([
++      { title: "Product" },
++      { title: "Research" },
++      { title: "Product" },
++      { title: "product" },
++      { title: " Product" },
++    ]);
+ 
+     expect([...duplicates]).toEqual(["Product"]);
+   });

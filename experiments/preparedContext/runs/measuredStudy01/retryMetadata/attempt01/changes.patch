@@ -1,0 +1,39 @@
+diff --git a/web/src/lib/error.ts b/web/src/lib/error.ts
+index 2fe2cf7..1143b8e 100644
+--- a/web/src/lib/error.ts
++++ b/web/src/lib/error.ts
+@@ -76,8 +76,12 @@ export function getRetryAfterSeconds(error: unknown): number | undefined {
+   if (info?.reason !== ERROR_REASON_RATE_LIMITED) {
+     return undefined;
+   }
+-  const seconds = Number.parseInt(info.metadata.retry_after_seconds ?? "", 10);
+-  return Number.isFinite(seconds) && seconds > 0 ? seconds : undefined;
++  const value = info.metadata.retry_after_seconds ?? "";
++  if (!/^[1-9][0-9]*$/.test(value)) {
++    return undefined;
++  }
++  const seconds = Number(value);
++  return Number.isSafeInteger(seconds) ? seconds : undefined;
+ }
+ 
+ /**
+diff --git a/web/tests/error-info.test.ts b/web/tests/error-info.test.ts
+index 7da065c..bd63136 100644
+--- a/web/tests/error-info.test.ts
++++ b/web/tests/error-info.test.ts
+@@ -49,6 +49,15 @@ describe("ErrorInfo decoding", () => {
+     expect(getErrorMessage(rateLimitError("300"))).toBe("Too many requests. Try again in 5 min.");
+   });
+ 
++  it("accepts only canonical positive safe-integer retry metadata", () => {
++    expect(getRetryAfterSeconds(rateLimitError("1"))).toBe(1);
++    expect(getRetryAfterSeconds(rateLimitError(String(Number.MAX_SAFE_INTEGER)))).toBe(Number.MAX_SAFE_INTEGER);
++
++    for (const value of ["0", "-1", "+1", "01", " 1", "1 ", "1.0", "1e2", "12x", "9007199254740992"]) {
++      expect(getRetryAfterSeconds(rateLimitError(value))).toBeUndefined();
++    }
++  });
++
+   it("leaves other errors alone", () => {
+     const plain = new ConnectError("nope", Code.InvalidArgument);
+     expect(getErrorInfo(plain)).toBeUndefined();

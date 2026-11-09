@@ -1,0 +1,80 @@
+{
+  "classification": "Shared controlled-change validation; no model or human observations",
+  "episodes": {
+    "renameLintScript": {
+      "configuredFacts": {
+        "frontendCheckCommand": "cd web && pnpm check",
+        "unitTestCommand": "cd web && pnpm test",
+        "vitestConfig": "web/vitest.config.mts",
+        "nodeEngine": ">=24",
+        "pnpm": "pnpm@11.0.1",
+        "generatedTypeScript": "web/src/types/proto/; do not hand-edit"
+      },
+      "commandPass": true,
+      "stage": {
+        "dockerExitCode": 0,
+        "hostWallSeconds": 5.7835759576410055,
+        "finishedAt": "2026-11-08T18:46:09.017926+00:00",
+        "resources": {
+          "exitCode": 0,
+          "timedOut": false,
+          "processWallSeconds": 1.9203201259997513,
+          "cpuUsageSeconds": 2.145412,
+          "cpuStatDelta": {
+            "usage_usec": 2145412,
+            "user_usec": 1506133,
+            "system_usec": 639280,
+            "nr_periods": 19,
+            "nr_throttled": 0,
+            "throttled_usec": 0
+          },
+          "initialMemoryBytes": 7036928,
+          "sampledPeakMemoryBytes": 335798272,
+          "memorySamples": 20,
+          "samplingIntervalSeconds": 0.1,
+          "memoryDefinition": "Observed maximum memory.current, including container cache/kernel; not exact peak or process RSS. Startup before wrapper is excluded.",
+          "cpuDefinition": "Container cgroup CPU delta during stage including local descendants and metering; remote inference compute unobserved.",
+          "rolloutUsageObservations": []
+        }
+      }
+    },
+    "renameVitestConfig": {
+      "configuredFacts": {
+        "frontendCheckCommand": "cd web && pnpm lint",
+        "unitTestCommand": "cd web && pnpm test",
+        "vitestConfig": "web/vitest.project.config.mts",
+        "nodeEngine": ">=24",
+        "pnpm": "pnpm@11.0.1",
+        "generatedTypeScript": "web/src/types/proto/; do not hand-edit"
+      },
+      "commandPass": true,
+      "stage": {
+        "dockerExitCode": 0,
+        "hostWallSeconds": 5.283620582893491,
+        "finishedAt": "2026-11-08T18:46:15.181165+00:00",
+        "resources": {
+          "exitCode": 0,
+          "timedOut": false,
+          "processWallSeconds": 1.9160387929996432,
+          "cpuUsageSeconds": 2.194225,
+          "cpuStatDelta": {
+            "usage_usec": 2194225,
+            "user_usec": 1578288,
+            "system_usec": 615937,
+            "nr_periods": 19,
+            "nr_throttled": 0,
+            "throttled_usec": 0
+          },
+          "initialMemoryBytes": 7008256,
+          "sampledPeakMemoryBytes": 343392256,
+          "memorySamples": 20,
+          "samplingIntervalSeconds": 0.1,
+          "memoryDefinition": "Observed maximum memory.current, including container cache/kernel; not exact peak or process RSS. Startup before wrapper is excluded.",
+          "cpuDefinition": "Container cgroup CPU delta during stage including local descendants and metering; remote inference compute unobserved.",
+          "rolloutUsageObservations": []
+        }
+      }
+    }
+  },
+  "passed": true
+}

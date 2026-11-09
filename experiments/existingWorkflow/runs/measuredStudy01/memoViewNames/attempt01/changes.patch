@@ -1,0 +1,40 @@
+diff --git a/web/src/lib/memo-views.ts b/web/src/lib/memo-views.ts
+index 435c3e4..dea3354 100644
+--- a/web/src/lib/memo-views.ts
++++ b/web/src/lib/memo-views.ts
+@@ -5,7 +5,9 @@ export type MemoScope = "home" | "explore" | "archived";
+ 
+ export const getMemoViewId = (name: string): string => {
+   const parts = name.split("/");
+-  return parts.length === 4 ? parts[3] : name;
++  return parts.length === 4 && parts[0] === "users" && parts[1] !== "" && parts[2] === "views" && parts[3] !== ""
++    ? parts[3]
++    : name;
+ };
+ 
+ const cleanPathname = (value: string): string => {
+diff --git a/web/tests/memo-views.test.ts b/web/tests/memo-views.test.ts
+index b56dae4..def9e4b 100644
+--- a/web/tests/memo-views.test.ts
++++ b/web/tests/memo-views.test.ts
+@@ -50,8 +50,19 @@ describe("memo views", () => {
+       '(space == "spaces/product") && ((creator == "users/steven") && (has_link || has_code) && (content.contains("plan") || pinned) && (tag in ["work"]))',
+     );
+   });
+-  it("extracts the saved view ID", () => {
++  it("extracts the saved view ID only from exact user view resource names", () => {
+     expect(getMemoViewId("users/steven/views/work")).toBe("work");
++    expect(getMemoViewId("users/a b/views/work name")).toBe("work name");
++    for (const name of [
++      "groups/steven/views/work",
++      "users//views/work",
++      "users/steven//work",
++      "users/steven/views/",
++      "users/steven/views/work/extra",
++      "work",
++    ]) {
++      expect(getMemoViewId(name)).toBe(name);
++    }
+   });
+ 
+   it("composes a saved task view with search, tags, creator, and visibility", () => {

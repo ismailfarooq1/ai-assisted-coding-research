@@ -1,0 +1,24 @@
+{
+  "frozenInputsMatch": true,
+  "allNativeSourceFilesStillMatch": true,
+  "preparationSourcesMentionedInSuccessfulCommands": {
+    "AGENTS.md": true,
+    ".golangci.yaml": true,
+    "core/memoexport/doc.go": true,
+    "markdown/doc.go": true,
+    "filter/doc.go": true,
+    "web/src/components/MemoEditor/README.md": true,
+    "web/package.json": true,
+    ".github/actions/setup-web/action.yml": true,
+    "web/vitest.config.mts": true,
+    "web/tsconfig.json": true,
+    ".github/actions/setup-go/action.yml": true,
+    "store/test/README.md": true,
+    "CONTEXT.md": true,
+    "docs/design/README.md": true
+  },
+  "note": "Command path presence supports source access; it does not establish attention or source comprehension.",
+  "preparationUsageCrossCheckMatches": true,
+  "codingRunsRecorded": 0,
+  "humanReviewComplete": false
+}

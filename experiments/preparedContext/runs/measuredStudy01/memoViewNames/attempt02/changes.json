@@ -1,0 +1,16 @@
+{
+  "files": [
+    "web/src/lib/memo-views.ts",
+    "web/tests/memo-views.test.ts"
+  ],
+  "permitted": true,
+  "headUnchanged": true,
+  "testFilesChanged": [
+    "web/tests/memo-views.test.ts"
+  ],
+  "fileHashes": {
+    "web/src/lib/memo-views.ts": "2cc23c7b840f8c810ff1adc6e1c3b36dae0552908cf9a7419883cfcb7a1b3d5f",
+    "web/tests/memo-views.test.ts": "f4653a810ebd2bfde515d5c9a75c150d9ab31dcc7f9c2dd01d6734b0fd131742"
+  },
+  "patchSha256": "f1dd051df4225ee21ba4805b1dbb3cb6387cb808a0a613a33776b26a4fe9046a"
+}

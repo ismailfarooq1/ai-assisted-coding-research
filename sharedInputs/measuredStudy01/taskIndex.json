@@ -1,0 +1,44 @@
+[
+  {
+    "id": "colorAlpha",
+    "productionFile": "web/src/lib/color.ts",
+    "taskFile": "tasks/colorAlpha.md",
+    "acceptanceFile": "evaluation/colorAlpha.test.ts",
+    "positiveControl": "evaluation/colorAlpha.patch"
+  },
+  {
+    "id": "legacyReleaseTag",
+    "productionFile": "web/src/lib/release-version.ts",
+    "taskFile": "tasks/legacyReleaseTag.md",
+    "acceptanceFile": "evaluation/legacyReleaseTag.test.ts",
+    "positiveControl": "evaluation/legacyReleaseTag.patch"
+  },
+  {
+    "id": "unicodeSpaceTitles",
+    "productionFile": "web/src/lib/space-display.ts",
+    "taskFile": "tasks/unicodeSpaceTitles.md",
+    "acceptanceFile": "evaluation/unicodeSpaceTitles.test.ts",
+    "positiveControl": "evaluation/unicodeSpaceTitles.patch"
+  },
+  {
+    "id": "retryMetadata",
+    "productionFile": "web/src/lib/error.ts",
+    "taskFile": "tasks/retryMetadata.md",
+    "acceptanceFile": "evaluation/retryMetadata.test.ts",
+    "positiveControl": "evaluation/retryMetadata.patch"
+  },
+  {
+    "id": "memoViewNames",
+    "productionFile": "web/src/lib/memo-views.ts",
+    "taskFile": "tasks/memoViewNames.md",
+    "acceptanceFile": "evaluation/memoViewNames.test.ts",
+    "positiveControl": "evaluation/memoViewNames.patch"
+  },
+  {
+    "id": "safeTagCounts",
+    "productionFile": "web/src/lib/tag.ts",
+    "taskFile": "tasks/safeTagCounts.md",
+    "acceptanceFile": "evaluation/safeTagCounts.test.ts",
+    "positiveControl": "evaluation/safeTagCounts.patch"
+  }
+]

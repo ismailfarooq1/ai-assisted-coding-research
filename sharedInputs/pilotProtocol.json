@@ -1,0 +1,76 @@
+{
+  "pilotId": "rawStringPilot02",
+  "status": "frozen-before-agent-execution",
+  "frozenAt": "2026-11-08T17:10:42.763059+00:00",
+  "purpose": "Feasibility only; researcher-designed task, one task and one attempt per method",
+  "snapshot": "b40d8a7b573774c52b022c8d6537d6baf2129dc0",
+  "sourceTree": "9f86f8a96542b5724d7968c70e7cfed3d4ee06a1",
+  "snapshotChecks": {
+    "experiments/existingWorkflow/memos": {
+      "head": "b40d8a7b573774c52b022c8d6537d6baf2129dc0",
+      "tree": "9f86f8a96542b5724d7968c70e7cfed3d4ee06a1",
+      "clean": true
+    },
+    "experiments/preparedContext/memos": {
+      "head": "b40d8a7b573774c52b022c8d6537d6baf2129dc0",
+      "tree": "9f86f8a96542b5724d7968c70e7cfed3d4ee06a1",
+      "clean": true
+    },
+    "experiments/proposedStrategy/memos": {
+      "head": "b40d8a7b573774c52b022c8d6537d6baf2129dc0",
+      "tree": "9f86f8a96542b5724d7968c70e7cfed3d4ee06a1",
+      "clean": true
+    }
+  },
+  "image": "sha256:09eea9cc9b651793aabace5c6931c518f683e2857f8700c57c397e38e701b355",
+  "model": "gpt-6-luna",
+  "modelSelection": "Existing user CLI default at preparation time",
+  "reasoningEffort": "low",
+  "cliVersion": "0.167.0",
+  "methods": {
+    "A": "existingWorkflow",
+    "B": "preparedContext"
+  },
+  "taskCount": 1,
+  "attemptsPerMethod": 1,
+  "methodOrder": [
+    "A",
+    "B"
+  ],
+  "orderSeed": 20261108,
+  "executionWallSeconds": 600,
+  "cpuLimit": 2,
+  "memoryLimit": "4g",
+  "pidLimit": 256,
+  "tokenCap": null,
+  "tokenCapNote": "CLI does not enforce a registered token cap; actual usage is recorded",
+  "requiredChecks": [
+    "independent acceptance and focused regressions",
+    "native frontend lint",
+    "pristine native frontend tests",
+    "frontend build",
+    "permitted changes"
+  ],
+  "permittedProductionChanges": [
+    "web/src/lib/suggestion-expression.ts"
+  ],
+  "permittedTestChangesPrefix": "web/tests/",
+  "requireTestChanges": true,
+  "inputHashes": {
+    "sharedInputs/tasks/rawStringPilot.md": "518c96856efe02b8840e37868323df27aaf0ff27417144065990c55fcf3bb9c8",
+    "sharedInputs/evaluation/rawStringPilot.mjs": "cf73c4c106c30d20b117a05f7259ae2e92c812ed97b1fd4d47db0070ae907b5e",
+    "sharedInputs/evaluation/evaluatorValidation.json": "968f03884ecb756875b711062bbb9b7f66377c5ab4afeb8c10e194bdee14ee8b",
+    "sharedInputs/metricsDefinition.md": "285e0237a1979c8fe9e2c5174f261983ef038c1407a074efee21c60e522f6b92",
+    "experiments/tools/pilotRuntime/Dockerfile": "8e1129da45a66b5d4201247744fedd834d41b0350def9c0b5cf01e1462e06821",
+    "experiments/tools/pilotRuntime/frontend.Dockerfile": "00e97ecce45d4d2843f4a96f635b4fc7814b5035fa3116f1883d0d4ef3dc2b4a",
+    "experiments/tools/runPilot.py": "d51d98d5817c58a85dd4e2d503490f1b1d44bbf43bd361adda7a691b37587193",
+    "experiments/preparedContext/strategy/contextPack/packManifest.json": "130b39c948804c48e6f39fec78c69aed3448760a63d49714fa219b582d2fcd6e"
+  },
+  "baselineLogSha256": "d14f8b281a4d498e14326f97b16833d6038e2e45a25128aeaaa199c0a8481663",
+  "isolation": "Fresh containers and project copies; only own project and B-only read-only context mounted. Evaluator, research, reports and other methods are not mounted. Fresh CLI homes; memories, delegation, apps and web search disabled.",
+  "network": "Provider access available; external solutions prohibited in task prompt. Shell egress is not technically restricted to provider domains.",
+  "evaluation": "Fresh offline containers; no agent credentials; pristine upstream test files restored; all candidate changes and original logs retained",
+  "failurePolicy": "No best-of retries or manual code repair. Agent errors/timeouts count as task failure. Infrastructure interruption is reported separately; no selective rerun.",
+  "missingPreparationUsage": "Coordinator token consumption and active human time unavailable; whole-workflow savings cannot be computed",
+  "inference": "Descriptive one-task result only; no superiority test, confidence interval or general ranking"
+}

@@ -1,0 +1,16 @@
+{
+  "files": [
+    "web/src/lib/error.ts",
+    "web/tests/error-info.test.ts"
+  ],
+  "permitted": true,
+  "headUnchanged": true,
+  "testFilesChanged": [
+    "web/tests/error-info.test.ts"
+  ],
+  "fileHashes": {
+    "web/src/lib/error.ts": "3b7e5aadcf06cb3c50b445d98b0fab262e95b789fdd080f23e3223a551b713bf",
+    "web/tests/error-info.test.ts": "fdffd917c10392a21e8abbca7d8f5ba9c9bc59a62315c40a563bd593c2eeb43b"
+  },
+  "patchSha256": "6c8584803a50e0d9c0cfab930faaa2220a1dbcb937ef58e284ba33c377716e5a"
+}
